@@ -1,0 +1,835 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Collaborative - RAJAPI-COP Africa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2ecc71;
+            --primary-blue: #3498db;
+            --primary-orange: #e67e22;
+            --dark-green: #27ae60;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #ecf0f1;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        .top-bar {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--color-vert); /* couleur de ta charte */
+}
+
+.logo-img {
+    width: 60px;   /* taille similaire à l’icône FontAwesome */
+    height: 60px;
+    margin-right: 8px; /* espace entre l’image et le texte */
+}
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: var(--white);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><circle cx="100" cy="100" r="80" fill="rgba(255,255,255,0.05)"/><circle cx="400" cy="200" r="120" fill="rgba(255,255,255,0.05)"/><circle cx="800" cy="150" r="100" fill="rgba(255,255,255,0.05)"/><circle cx="1100" cy="250" r="90" fill="rgba(255,255,255,0.05)"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary-orange);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-green);
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.2);
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 42px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--bg-light);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-orange);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+
+        /* User Types */
+        .user-types {
+            background: var(--white);
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .type-card {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            padding: 40px;
+            border-radius: 20px;
+            color: var(--white);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .type-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .type-card i {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .type-card h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .type-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .type-card ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .type-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        /* Services */
+        .services {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-item {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-green);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .service-item i {
+            font-size: 48px;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+
+        .service-item ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .service-item ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-item ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-orange);
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-green);
+        }
+
+        .btn-white:hover {
+            background: var(--bg-light);
+            transform: translateY(-3px);
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-light);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun</div>
+            <div><i class="fas fa-envelope"></i> fonder.rajapicop@gmail.com</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="{% static 'rajapi/images/rajapi-cop_logo.ico' %}" alt="RAJAPI-COP Logo" class="logo-img">
+                RAJAPI-COP Africa
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home-page' %}">Accueil</a></li>
+                <li><a href="{% url 'plateforme-page' %}" style="color: var(--primary-green);">Plateforme</a></li>
+                <li><a href="{% url 'programmes-page' %}">Programmes</a></li>
+                <li><a href="{% url 'apropos-page' %}">À Propos</a></li>
+                <li><a href="{% url 'actualites-page' %}">Actualités</a></li>
+                <li><a href="{% url 'noscontacts-page' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Plateforme Collaborative RAJAPI-COP</h1>
+            <p>L'espace digital qui transforme vos idées en projets d'impact pour le climat et la biodiversité</p>
+            <a href="#inscription" class="btn">Créer Mon Compte Gratuitement</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Fonctionnalités de la Plateforme</h2>
+            <p class="section-subtitle">Un écosystème digital complet pour accompagner votre projet de A à Z</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Soumission de Projets</h3>
+                    <p>Proposez vos idées innovantes en quelques clics grâce à notre formulaire intelligent. Décrivez votre projet, son impact et ses besoins.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Incubation Numérique</h3>
+                    <p>Bénéficiez d'un parcours d'accompagnement personnalisé avec des outils, formations et ressources adaptés à votre niveau.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Mentorat Expert</h3>
+                    <p>Connectez-vous avec des mentors expérimentés dans votre domaine pour recevoir conseils et guidance professionnelle.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Accès au Financement</h3>
+                    <p>Découvrez des opportunités de financement et soyez mis en relation automatique avec des bailleurs adaptés à votre projet.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Tableau de Bord Interactif</h3>
+                    <p>Suivez l'évolution de votre projet en temps réel avec des indicateurs clairs et des visualisations de données.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Messagerie Intégrée</h3>
+                    <p>Communiquez directement avec votre équipe, mentors, partenaires et la communauté RAJAPI-COP.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Base de Solutions</h3>
+                    <p>Accédez à une bibliothèque de solutions éprouvées, études de cas et bonnes pratiques partagées par la communauté.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Matching Intelligent</h3>
+                    <p>Notre algorithme vous connecte automatiquement avec les partenaires, financeurs et collaborateurs pertinents.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Centre de Formation</h3>
+                    <p>Formations vidéo, webinaires, guides pratiques et outils pour renforcer vos compétences entrepreneuriales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Comment Ça Marche ?</h2>
+            <p class="section-subtitle">Un processus simple en 5 étapes pour transformer votre idée en réalité</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Inscription</h3>
+                    <p>Créez votre compte gratuit et complétez votre profil en quelques minutes</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Soumission</h3>
+                    <p>Présentez votre projet ou idée via notre formulaire intelligent</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Évaluation</h3>
+                    <p>Notre équipe analyse votre projet et vous assigne un parcours personnalisé</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Accompagnement</h3>
+                    <p>Bénéficiez de formations, mentorat et mise en relation avec des partenaires</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Déploiement</h3>
+                    <p>Lancez votre projet avec le soutien financier et technique nécessaire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Types -->
+    <section class="user-types">
+        <div class="container">
+            <h2 class="section-title">Qui Peut Rejoindre ?</h2>
+            <p class="section-subtitle">La plateforme est ouverte à tous les acteurs de l'écosystème climatique africain</p>
+
+            <div class="types-grid">
+                <div class="type-card">
+                    <i class="fas fa-user"></i>
+                    <h3>Jeunes Porteurs de Projets</h3>
+                    <p>Vous avez une idée ou un projet pour le climat ?</p>
+                    <ul>
+                        <li>Soumettez votre projet</li>
+                        <li>Accédez aux formations</li>
+                        <li>Trouvez des financements</li>
+                        <li>Rejoignez la communauté</li>
+                    </ul>
+                </div>
+
+                <div class="type-card" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>ONGs & Organisations</h3>
+                    <p>Vous travaillez sur le climat et la biodiversité ?</p>
+                    <ul>
+                        <li>Partagez vos expertises</li>
+                        <li>Trouvez des collaborateurs</li>
+                        <li>Accédez aux projets</li>
+                        <li>Élargissez votre réseau</li>
+                    </ul>
+                </div>
+
+                <div class="type-card" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Partenaires & Financeurs</h3>
+                    <p>Vous cherchez des projets à soutenir ?</p>
+                    <ul>
+                        <li>Découvrez des projets innovants</li>
+                        <li>Identifiez des talents</li>
+                        <li>Maximisez votre impact</li>
+                        <li>Suivez vos investissements</li>
+                    </ul>
+                </div>
+
+                <div class="type-card" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Mentors & Experts</h3>
+                    <p>Vous voulez transmettre votre expertise ?</p>
+                    <ul>
+                        <li>Accompagnez des jeunes</li>
+                        <li>Partagez vos connaissances</li>
+                        <li>Créez du contenu</li>
+                        <li>Élargissez votre impact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Services Disponibles</h2>
+            <p class="section-subtitle">Un accompagnement complet pour chaque étape de votre parcours</p>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Idéation & Conception</h3>
+                    <p>Transformez votre idée en projet structuré</p>
+                    <ul>
+                        <li>Ateliers de design thinking</li>
+                        <li>Analyse de faisabilité</li>
+                        <li>Définition du modèle d'impact</li>
+                        <li>Étude de marché et besoins</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Structuration de Projet</h3>
+                    <p>Développez un dossier professionnel solide</p>
+                    <ul>
+                        <li>Rédaction de business plan</li>
+                        <li>Théorie du changement</li>
+                        <li>Budget prévisionnel</li>
+                        <li>Cadre logique et indicateurs</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Recherche de Financement</h3>
+                    <p>Accédez aux opportunités de financement</p>
+                    <ul>
+                        <li>Matching avec des bailleurs</li>
+                        <li>Aide à la rédaction de proposals</li>
+                        <li>Préparation aux pitchs</li>
+                        <li>Crowdfunding et levée de fonds</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Mise en Œuvre</h3>
+                    <p>Déployez votre projet efficacement</p>
+                    <ul>
+                        <li>Gestion de projet</li>
+                        <li>Suivi-évaluation</li>
+                        <li>Reporting et documentation</li>
+                        <li>Communication et visibilité</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <p class="section-subtitle">Tout ce que vous devez savoir sur la plateforme</p>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        La plateforme est-elle gratuite ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Oui, l'inscription et l'utilisation de base de la plateforme sont entièrement gratuites pour tous les jeunes africains. Des services premium optionnels sont disponibles pour les organisations et partenaires.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Qui peut soumettre un projet ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Tous les jeunes africains (18-35 ans), ONGs, associations et organisations travaillant sur le climat, la biodiversité ou la réduction des risques de catastrophes peuvent soumettre des projets.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Comment sont sélectionnés les projets pour le financement ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Les projets sont évalués sur leur innovation, impact potentiel, faisabilité, alignement avec les ODD et capacité d'exécution de l'équipe. Un comité d'experts examine chaque dossier.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Quels types de projets sont acceptés ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Projets liés au climat, biodiversité, énergies renouvelables, agriculture durable, gestion des déchets, eau et assainissement, réduction des risques, habitat écologique, etc.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        La plateforme est-elle sécurisée ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolument. Nous utilisons les dernières technologies de sécurité (SSL, cryptage des données) et sommes conformes aux normes RGPD et aux politiques de protection des données de l'ONU.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="inscription">
+        <div class="container">
+            <h2>Prêt à Transformer Votre Idée en Impact ?</h2>
+            <p>Rejoignez plus de 5000 jeunes africains qui utilisent déjà la plateforme pour créer le changement</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Créer Mon Compte</a>
+                <a href="#" class="btn btn-white">Découvrir la Démo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 RAJAPI-COP Africa. Tous droits réservés.</p>
+        <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+    </footer>
+</body>
+</html>

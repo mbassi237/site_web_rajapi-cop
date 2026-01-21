@@ -1,0 +1,849 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - RAJAPI-COP Africa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0295D2;
+            --light-gray: #F5F6FC;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --border-color: #e0e4f0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--light-gray);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        .top-bar {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            color: var(--primary-blue);
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            margin-right: 8px;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(2, 149, 210, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Contact Info */
+        .contact-info-section {
+            background: var(--white);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .info-card {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--border-color);
+        }
+
+        .info-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(2, 149, 210, 0.15);
+            background: var(--white);
+        }
+
+        .info-card i {
+            font-size: 48px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .info-card p {
+            color: var(--text-light);
+        }
+
+        .info-card a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .info-card a:hover {
+            opacity: 0.8;
+        }
+
+        /* Contact Form */
+        .contact-form-section {
+            background: var(--light-gray);
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .form-intro {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .form-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .response-time {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(2, 149, 210, 0.08);
+        }
+
+        .response-time i {
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .response-time h4 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .response-time p {
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(2, 149, 210, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        .form-group label span {
+            color: var(--primary-blue);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+            background-color: var(--light-gray);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(2, 149, 210, 0.1);
+            background-color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(2, 149, 210, 0.3);
+            background: #027ab0;
+        }
+
+        /* Messages */
+        .messages-container {
+            margin-bottom: 25px;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .alert-success {
+            background: var(--light-gray);
+            color: var(--primary-blue);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .alert-danger {
+            background: #fff5f5;
+            color: #c53030;
+            border-left: 4px solid #c53030;
+        }
+
+        /* National Contacts */
+        .national-contacts {
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 50px;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .country-card {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .country-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(2, 149, 210, 0.15);
+            background: var(--white);
+        }
+
+        .country-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .country-card p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .country-card strong {
+            color: var(--text-dark);
+        }
+
+        /* Social Media */
+        .social-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #027ab0 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .social-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .social-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: scale(1.1);
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--light-gray);
+        }
+
+        .map-container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .map-container iframe {
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(2, 149, 210, 0.15);
+        }
+
+        .page-header {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .page-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.9;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .form-intro {
+                position: static;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun</div>
+            <div><i class="fas fa-phone"></i> +237 696 967 609</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="{% static 'rajapi/images/rajapi-cop_logo.ico' %}" alt="RAJAPI-COP Logo" class="logo-img">
+                RAJAPI-COP Africa
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home-page' %}">Accueil</a></li>
+                <li><a href="{% url 'plateforme-page' %}">Plateforme</a></li>
+                <li><a href="{% url 'programmes-page' %}">Programmes</a></li>
+                <li><a href="{% url 'apropos-page' %}">À Propos</a></li>
+                <li><a href="{% url 'actualites-page' %}">Actualités</a></li>
+                <li><a href="{% url 'noscontacts-page' %}" style="color: var(--primary-green);">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <img src="{% static 'rajapi/images/contacts.jpeg' %}" alt="Nos Programmes Phares">
+    </div>
+
+    <!-- Contact Info -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Adresse Siège Social</h3>
+                    <p>Bastos, Yaoundé<br>Cameroun</p>
+                    <p style="margin-top: 15px;"><strong>Récépissé:</strong><br>N° 00001891/RDA/J06/SAAJP/BAPP<br>du 14 NOV. 2022</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Téléphone</h3>
+                    <p><a href="tel:+237696967609">+237 696 967 609</a></p>
+                    <p><a href="tel:+237676922282">+237 676 922 282</a></p>
+                    <p style="margin-top: 15px; color: var(--text-light);">Lun - Ven: 8h00 - 17h00 (GMT+1)</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:fonder.rajapicop@gmail.com">fonder.rajapicop@gmail.com</a></p>
+                    <p><a href="mailto:joepelking@gmail.com">rajapicop.dev.africa@gmail.com</a></p>
+                    <p style="margin-top: 15px; color: var(--text-light);">Réponse sous 24-48h</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Site Web</h3>
+                    <p><a href="http://www.rajapi-cop.org" target="_blank">www.rajapi-cop.org</a></p>
+                    <p style="margin-top: 15px; color: var(--text-light);">Plateforme collaborative en ligne</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+<section class="contact-form-section">
+    <div class="container">
+        <div class="form-container">
+            <div class="form-intro">
+                <h2>Envoyez-nous un Message</h2>
+                <p>Que vous soyez un jeune porteur de projet, une organisation partenaire, un financeur ou simplement intéressé par notre mission, nous serions ravis d'échanger avec vous.</p>
+                <p>Remplissez le formulaire ci-contre et notre équipe vous répondra dans les plus brefs délais.</p>
+                
+                <div class="response-time">
+                    <i class="fas fa-clock"></i>
+                    <h4>Temps de Réponse</h4>
+                    <p>Nous nous engageons à répondre à tous les messages sous 24 à 48 heures ouvrables.</p>
+                </div>
+            </div>
+
+            <form class="contact-form" method="post" action="{% url 'noscontacts-page' %}">
+                {% csrf_token %}
+                
+                <!-- Messages de succès/erreur -->
+                {% if messages %}
+                    <div class="messages-container" style="margin-bottom: 25px;">
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" style="padding: 15px; border-radius: 10px; margin-bottom: 15px; {% if message.tags == 'success' %}background: #d4edda; color: #155724; border-left: 4px solid #28a745;{% else %}background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545;{% endif %}">
+                                <i class="fas {% if message.tags == 'success' %}fa-check-circle{% else %}fa-exclamation-circle{% endif %}" style="margin-right: 10px;"></i>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <!-- Affichage des erreurs de formulaire -->
+                {% if form.errors %}
+                    <div class="alert alert-danger" style="padding: 15px; border-radius: 10px; margin-bottom: 25px; background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545;">
+                        <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i>
+                        <strong>Erreur :</strong> Veuillez corriger les erreurs ci-dessous.
+                    </div>
+                {% endif %}
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Prénom <span>*</span></label>
+                        <input type="text" name="prenom" required placeholder="Votre prénom" 
+                               value="{{ form.prenom.value|default:'' }}"
+                               {% if form.prenom.errors %}style="border-color: #dc3545;"{% endif %}>
+                        {% if form.prenom.errors %}
+                            <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
+                                {{ form.prenom.errors.0 }}
+                            </small>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label>Nom <span>*</span></label>
+                        <input type="text" name="nom" required placeholder="Votre nom"
+                               value="{{ form.nom.value|default:'' }}"
+                               {% if form.nom.errors %}style="border-color: #dc3545;"{% endif %}>
+                        {% if form.nom.errors %}
+                            <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
+                                {{ form.nom.errors.0 }}
+                            </small>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email <span>*</span></label>
+                        <input type="email" name="email" required placeholder="votre@email.com"
+                               value="{{ form.email.value|default:'' }}"
+                               {% if form.email.errors %}style="border-color: #dc3545;"{% endif %}>
+                        {% if form.email.errors %}
+                            <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
+                                {{ form.email.errors.0 }}
+                            </small>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label>Téléphone</label>
+                        <input type="tel" name="telephone" placeholder="+237 XXX XXX XXX"
+                               value="{{ form.telephone.value|default:'' }}">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Pays <span>*</span></label>
+                        <select name="pays" required {% if form.pays.errors %}style="border-color: #dc3545;"{% endif %}>
+                            <option value="">Sélectionnez votre pays</option>
+                            <option value="cameroun" {% if form.pays.value == 'cameroun' %}selected{% endif %}>Cameroun</option>
+                            <option value="congo" {% if form.pays.value == 'congo' %}selected{% endif %}>Congo</option>
+                            <option value="rd-congo" {% if form.pays.value == 'rd-congo' %}selected{% endif %}>RD Congo</option>
+                            <option value="senegal" {% if form.pays.value == 'senegal' %}selected{% endif %}>Sénégal</option>
+                            <option value="cote-ivoire" {% if form.pays.value == 'cote-ivoire' %}selected{% endif %}>Côte d'Ivoire</option>
+                            <option value="ghana" {% if form.pays.value == 'ghana' %}selected{% endif %}>Ghana</option>
+                            <option value="nigeria" {% if form.pays.value == 'nigeria' %}selected{% endif %}>Nigeria</option>
+                            <option value="kenya" {% if form.pays.value == 'kenya' %}selected{% endif %}>Kenya</option>
+                            <option value="benin" {% if form.pays.value == 'benin' %}selected{% endif %}>Bénin</option>
+                            <option value="mauritanie" {% if form.pays.value == 'mauritanie' %}selected{% endif %}>Mauritanie</option>
+                            <option value="guinee" {% if form.pays.value == 'guinee' %}selected{% endif %}>Guinée Conakry</option>
+                            <option value="afrique-sud" {% if form.pays.value == 'afrique-sud' %}selected{% endif %}>Afrique du Sud</option>
+                            <option value="somalie" {% if form.pays.value == 'somalie' %}selected{% endif %}>Somalie</option>
+                            <option value="egypte" {% if form.pays.value == 'egypte' %}selected{% endif %}>Égypte</option>
+                            <option value="autre" {% if form.pays.value == 'autre' %}selected{% endif %}>Autre pays africain</option>
+                        </select>
+                        {% if form.pays.errors %}
+                            <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
+                                {{ form.pays.errors.0 }}
+                            </small>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label>Type de Demande <span>*</span></label>
+                        <select name="type_demande" required {% if form.type_demande.errors %}style="border-color: #dc3545;"{% endif %}>
+                            <option value="">Choisir...</option>
+                            <option value="projet" {% if form.type_demande.value == 'projet' %}selected{% endif %}>Soumettre un projet</option>
+                            <option value="adhesion" {% if form.type_demande.value == 'adhesion' %}selected{% endif %}>Devenir membre</option>
+                            <option value="partenariat" {% if form.type_demande.value == 'partenariat' %}selected{% endif %}>Proposition de partenariat</option>
+                            <option value="financement" {% if form.type_demande.value == 'financement' %}selected{% endif %}>Opportunité de financement</option>
+                            <option value="media" {% if form.type_demande.value == 'media' %}selected{% endif %}>Demande média/presse</option>
+                            <option value="stage" {% if form.type_demande.value == 'stage' %}selected{% endif %}>Stage/Bénévolat</option>
+                            <option value="information" {% if form.type_demande.value == 'information' %}selected{% endif %}>Demande d'information</option>
+                            <option value="autre" {% if form.type_demande.value == 'autre' %}selected{% endif %}>Autre</option>
+                        </select>
+                        {% if form.type_demande.errors %}
+                            <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
+                                {{ form.type_demande.errors.0 }}
+                            </small>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Organisation (si applicable)</label>
+                    <input type="text" name="organisation" placeholder="Nom de votre organisation"
+                           value="{{ form.organisation.value|default:'' }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Sujet <span>*</span></label>
+                    <input type="text" name="sujet" required placeholder="Résumez l'objet de votre message"
+                           value="{{ form.sujet.value|default:'' }}"
+                           {% if form.sujet.errors %}style="border-color: #dc3545;"{% endif %}>
+                    {% if form.sujet.errors %}
+                        <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
+                            {{ form.sujet.errors.0 }}
+                        </small>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label>Message <span>*</span></label>
+                    <textarea name="message" required placeholder="Décrivez votre demande en détail..."
+                              {% if form.message.errors %}style="border-color: #dc3545;"{% endif %}>{{ form.message.value|default:'' }}</textarea>
+                    {% if form.message.errors %}
+                        <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
+                            {{ form.message.errors.0 }}
+                        </small>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Envoyer le Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- National Contacts -->
+    <section class="national-contacts">
+        <div class="container">
+            <h2 class="section-title">Coordinations Nationales</h2>
+            <p class="section-subtitle">Contactez directement nos représentants dans votre pays</p>
+
+            <div class="countries-grid">
+                <div class="country-card">
+                    <h4><i class="fas fa-flag"></i>Egypt</h4>
+                    <p><strong>Coordonnateur:</strong>Aya Salah</p>
+                    <p><i class="fas fa-envelope"></i>rajapicop.rep.egypt@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>+20 11 45296335</p>
+                </div>
+
+                <div class="country-card">
+                    <h4><i class="fas fa-flag"></i>Bénin</h4>
+                    <p><strong>Coordonnateur:</strong>Camille Sousou</p>
+                    <p><i class="fas fa-envelope"></i>rajapicopbenin@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>+229 61 75 17 29</p>
+                </div>
+
+                <div class="country-card">
+                    <h4><i class="fas fa-flag"></i>Mauritanie</h4>
+                    <p><strong>Coordonnateur:</strong>Fatimetou Abdelahi M’Aillime</p>
+                    <p><i class="fas fa-envelope"></i>rajapicopmauritanie@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>+222 41 65 65 24</p>
+                </div>
+
+                <div class="country-card">
+                    <h4><i class="fas fa-flag"></i> Sénégal</h4>
+                    <p><strong>Coordonnateur:</strong>Abdourahmane Marena </p>
+                    <p><i class="fas fa-envelope"></i>rajapicopsenegal@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>+221 77 384 55 99</p>
+                </div>
+
+                <div class="country-card">
+                    <h4><i class="fas fa-flag"></i>Guinée Conakry</h4>
+                    <p><strong>Coordonnateur:</strong>Faya Mohamed</p>
+                    <p><i class="fas fa-envelope"></i>rajapicopguinee@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>+224 627 45 91 26</p>
+                </div>
+
+                <div class="country-card">
+                    <h4><i class="fas fa-flag"></i>Afrique du Sud</h4>
+                    <p><strong>Coordonnateur:</strong>Rutendo Esther Chikowore</p>
+                    <p><i class="fas fa-envelope"></i>rajapicop.southafrica@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>+27 81 501 4296</p>
+                </div>
+
+                <div class="country-card">
+                    <h4><i class="fas fa-flag"></i> Nigeria</h4>
+                    <p><strong>Coordonnateur:</strong>Osayomore Lucky Omorogieva</p>
+                    <p><i class="fas fa-envelope"></i>rajapicopnigeria@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>+234 912 450 3168</p>
+                </div>
+
+                <div class="country-card">
+                    <h4><i class="fas fa-flag"></i>Somalie</h4>
+                    <p><strong>Coordonnateur:</strong>Fardowsa Wehliye</p>
+                    <p><i class="fas fa-envelope"></i> rajapicopsomalia@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>+252 61 5108668</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-section">
+        <div class="container">
+            <h2>Suivez-nous sur les Réseaux Sociaux</h2>
+            <p>Restez connectés avec la communauté RAJAPI-COP Africa</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61571915817660" class="social-link" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/rajapi-cop-afrique/" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/p/DSK47wUiLvh/?igsh=MXBpem0wb2N4czRvbA%3D%3D" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-link" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Notre Localisation</h2>
+            <p class="section-subtitle">Siège social à Yaoundé, Cameroun</p>
+            
+            <div class="map-container">
+                <!-- Google Maps intégré -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.6514933687617!2d11.506130575474385!3d3.8846667960891117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcfd6fd21a861%3A0xf284ccaf8e1b6a8c!2sRAJAPI-COP%20Afrique%20%3A%20R%C3%A9seau%20Panafricain%20des%20jeunes%20pour%20les%20solutions%20environnementales!5e0!3m2!1sfr!2scm!4v1766146748060!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <p style="margin-top: 20px; color: var(--text-light);">
+                    Bastos, Yaoundé - Cameroun
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
+        <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+    </footer>
+</body>
+</html>

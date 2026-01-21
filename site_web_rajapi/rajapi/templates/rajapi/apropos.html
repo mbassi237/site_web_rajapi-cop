@@ -1,0 +1,810 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - RAJAPI-COP Africa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2ecc71;
+            --primary-blue: #3498db;
+            --primary-orange: #e67e22;
+            --dark-green: #27ae60;
+            --dark-blue: #2980b9;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #ecf0f1;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        .top-bar {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--color-vert); /* couleur de ta charte */
+}
+
+.logo-img {
+    width: 60px;   /* taille similaire à l’icône FontAwesome */
+    height: 60px;
+    margin-right: 8px; /* espace entre l’image et le texte */
+}
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--bg-light);
+            padding: 15px 0;
+        }
+
+        .breadcrumb .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .page-header {
+    width: 100%;
+    height: 300px; /* ajuste la hauteur selon ton besoin */
+    overflow: hidden;
+}
+
+.page-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* l’image remplit le cadre sans se déformer */
+    display: block;
+}
+
+        /* Section Base */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Histoire Section */
+        .histoire {
+            background: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--primary-blue);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-blue);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-blue);
+        }
+
+        /* Mission Vision */
+        .mission-vision {
+            background: var(--bg-light);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .mv-card i {
+            font-size: 48px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .mv-card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .mv-card ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .mv-card ul li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .mv-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Governance */
+        .governance {
+            background: var(--white);
+        }
+
+        .governance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .governance-card {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            padding: 40px;
+            border-radius: 15px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .governance-card i {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .governance-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Founder Section */
+        .founder {
+            background: var(--bg-light);
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .founder-image {
+            width: 350px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 120px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .founder-bio h3 {
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .founder-bio .title {
+            font-size: 18px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .founder-bio p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .achievements {
+            margin-top: 30px;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .achievements h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .achievements ul {
+            list-style: none;
+        }
+
+        .achievements ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .achievements ul li::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .country-badge {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s;
+        }
+
+        .country-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .country-badge i {
+            font-size: 32px;
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 60px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+
+            .mv-grid,
+            .founder-content {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-image {
+                width: 100%;
+                height: 300px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+        }
+        .founder-image {
+    width: 380px;   /* même largeur que l’icône */
+    height: 380px;  /* même hauteur que l’icône */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* cercle comme une icône */
+    overflow: hidden;
+    background-color: var(--color-cloud); /* couleur neutre de fond */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* garde les proportions et remplit le cadre */
+}
+
+
+.africa-map img {
+    width: 600px;   /* même largeur que l’icône */
+    height: 600px;  /* même hauteur que l’icône */
+    object-fit: contain; /* garde les proportions */
+    display: block;
+    margin: 0 auto 10px auto; /* centrer et espacer */
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div>
+                <i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun
+                <a href="tel:+237696967609"><i class="fas fa-phone"></i> +237 696 967 609</a>
+            </div>
+            <div>
+                <a href="mailto:fonder.rajapicop@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="{% static 'rajapi/images/rajapi-cop_logo.ico' %}" alt="RAJAPI-COP Logo" class="logo-img">
+                RAJAPI-COP Africa
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home-page' %}">Accueil</a></li>
+                <li><a href="{% url 'plateforme-page' %}">Plateforme</a></li>
+                <li><a href="{% url 'programmes-page' %}">Programmes</a></li>
+                <li><a href="{% url 'apropos-page' %}" style="color: var(--primary-green);">À Propos</a></li>
+                <li><a href="{% url 'actualites-page' %}">Actualités</a></li>
+                <li><a href="{% url 'noscontacts-page' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <img src="{% static 'rajapi/images/galerie6.jpeg' %}" alt="Nos Programmes Phares">
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+            <span>/</span>
+            <span>À Propos</span>
+        </div>
+    </div>
+
+    <!-- Histoire Section -->
+    <section class="histoire">
+        <div class="container">
+            <h2 class="section-title">Notre Histoire</h2>
+            <p class="section-subtitle">Un parcours d'engagement et d'innovation depuis 2022</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Novembre 2022</span>
+                        <h3>Création de RAJAPI-COP</h3>
+                        <p>Déclaration officielle de l'association à Yaoundé, Cameroun. Récépissé N° 00001891/RDA/J06/SAAJP/BAPP. Début de la mobilisation des jeunes africains pour la COP27.</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023</span>
+                        <h3>Expansion Panafricaine</h3>
+                        <p>Extension du réseau dans plus de 15 pays africains. Lancement des premiers programmes : Éco-Habitats Cameroun et CongoBotanika. Participation active à la COP28.</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3>Consolidation et Innovation</h3>
+                        <p>Présence dans 30+ pays africains. Lancement de BlueGuard Africa et du Biodiversité Challenge. Partenariats stratégiques avec UNEP, UN-Habitat et UNFCCC.</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3>Transformation Digitale</h3>
+                        <p>Lancement de la plateforme collaborative digitale. Plus de 5000 jeunes mobilisés et 150+ projets incubés. Reconnaissance internationale comme acteur clé de la jeunesse climatique africaine.</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <h2 class="section-title">Mission & Vision</h2>
+            <p class="section-subtitle">Notre raison d'être et notre ambition pour l'Afrique</p>
+
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Notre Mission</h3>
+                    <p>Mobiliser, former et accompagner les jeunes africains dans le développement de solutions innovantes pour la résilience climatique, la conservation de la biodiversité et la justice environnementale.</p>
+                    <ul>
+                        <li>Incuber des projets innovants portés par les jeunes</li>
+                        <li>Faciliter l'accès au financement climatique</li>
+                        <li>Renforcer les capacités des jeunes leaders</li>
+                        <li>Promouvoir la participation aux COP et espaces internationaux</li>
+                        <li>Créer des ponts entre projets locaux et partenaires globaux</li>
+                    </ul>
+                </div>
+
+                <div class="mv-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Notre Vision</h3>
+                    <p>Une Afrique où chaque jeune est un acteur du changement climatique, disposant des outils, ressources et opportunités pour transformer son environnement et influencer les politiques internationales.</p>
+                    <ul>
+                        <li>Une jeunesse africaine leader en innovation climatique</li>
+                        <li>Des solutions locales reconnues mondialement</li>
+                        <li>Une voix africaine forte dans les négociations climatiques</li>
+                        <li>Des écosystèmes résilients pour les générations futures</li>
+                        <li>Une justice climatique et sociale pour tous</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Governance -->
+    <section class="governance">
+        <div class="container">
+            <h2 class="section-title">Gouvernance & Structure</h2>
+            <p class="section-subtitle">Une organisation panafricaine structurée et transparente</p>
+
+            <div class="governance-grid">
+                <div class="governance-card">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Bureau Exécutif</h3>
+                    <p>Coordination stratégique et opérationnelle du réseau à l'échelle panafricaine</p>
+                </div>
+
+                <div class="governance-card">
+                    <i class="fas fa-globe-africa"></i>
+                    <h3>Coordinations Nationales</h3>
+                    <p>Ambassadeurs et points focaux dans 30+ pays africains</p>
+                </div>
+
+                <div class="governance-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Conseil Consultatif</h3>
+                    <p>Experts, mentors et partenaires techniques internationaux</p>
+                </div>
+
+                <div class="governance-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Comités Thématiques</h3>
+                    <p>Climat, Biodiversité, DRR, Genre, Innovation, Financement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder">
+        <div class="container">
+            <h2 class="section-title">Le Fondateur</h2>
+            <p class="section-subtitle">Vision et leadership pour une Afrique résiliente</p>
+
+            <div class="founder-content">
+                <div class="founder-image">
+                    <img src="{% static 'rajapi/images/fondateur1.jpeg' %}" alt="Fondateur de l'ONG">
+                </div>
+
+                <div class="founder-bio">
+                    <h3>Edgard Rodrigue MVONDO</h3>
+                    <p class="title">Fondateur & Coordonnateur Général de RAJAPI-COP Africa</p>
+
+                    <p>Expert en changement climatique, biodiversité et développement durable, Edgard Rodrigue MVONDO est un jeune leader panafricain reconnu pour son engagement exceptionnel dans la mobilisation de la jeunesse africaine pour la justice climatique.</p>
+
+                    <p>Diplômé en sciences environnementales et politique internationale, il a participé à de nombreuses COP (Conférences des Parties) de l'UNFCCC, représentant la voix des jeunes africains dans les négociations climatiques mondiales.</p>
+
+                    <p>Sa vision : transformer chaque jeune africain en acteur du changement, capable de porter des solutions innovantes depuis leurs communautés jusqu'aux instances internationales.</p>
+
+                    <div class="achievements">
+                        <h4>Distinctions & Engagements Internationaux</h4>
+                        <ul>
+                            <li>Délégué officiel aux COP Climat (UNFCCC)</li>
+                            <li>Expert-conseil auprès de l'UNEP pour la jeunesse</li>
+                            <li>Membre du UN-Habitat Youth Advisory Board</li>
+                            <li>Lauréat de plusieurs prix d'innovation climatique</li>
+                            <li>Conférencier international sur la justice climatique</li>
+                            <li>Formateur certifié en leadership et entrepreneuriat vert</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Notre Présence Panafricaine</h2>
+            <p class="section-subtitle">Un réseau actif dans 30 pays africains</p>
+
+            <div class="africa-map">
+                <img src="{% static 'rajapi/images/carte-vierge-gratuite-de-l-afrique.jpg' %}" alt="Carte de l'Afrique">
+                <h3>30 Pays Membres</h3>
+                <p>Des coordinations nationales actives dans toutes les régions d'Afrique</p>
+            </div>
+
+
+            <div class="countries-grid">
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Cameroun</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Congo</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>RD Congo</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Sénégal</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Côte d'Ivoire</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Ghana</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Nigeria</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Kenya</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Ouganda</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Tanzanie</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Éthiopie</strong>
+                </div>
+                <div class="country-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>+ 19 autres pays</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>RAJAPI-COP Africa</h3>
+                <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+                <p style="margin-top: 20px;">
+                    <i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé<br>
+                    Cameroun<br>
+                    <i class="fas fa-phone"></i> +237 696 967 609<br>
+                    <i class="fas fa-envelope"></i> fonder.rajapicop@gmail.com
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="{% url 'home-page' %}">Accueil</a></li>
+                    <li><a href="{% url 'apropos-page' %}">À Propos</a></li>
+                    <li><a href="{% url 'programmes-page' %}">Programmes</a></li>
+                    <li><a href="{% url 'actualites-page' %}">Actualités</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

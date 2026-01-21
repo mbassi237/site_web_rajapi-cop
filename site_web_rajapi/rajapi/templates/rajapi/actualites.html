@@ -1,0 +1,1882 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités & Médias - RAJAPI-COP Africa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2ecc71;
+            --primary-blue: #3498db;
+            --dark-green: #27ae60;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #ecf0f1;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        .top-bar {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--color-vert); /* couleur de ta charte */
+}
+
+.logo-img {
+    width: 60px;   /* taille similaire à l’icône FontAwesome */
+    height: 60px;
+    margin-right: 8px; /* espace entre l’image et le texte */
+}
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Page Header */
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Filter Tabs */
+        .filter-section {
+            background: var(--white);
+            padding: 30px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 12px 30px;
+            border: 2px solid var(--primary-blue);
+            background: transparent;
+            color: var(--primary-blue);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 50px;
+        }
+
+        /* Featured Article */
+        .featured-article {
+            background: var(--white);
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            background: var(--bg-light);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .featured-image {
+            height: 500px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 120px;
+        }
+
+        .featured-text {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .featured-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .featured-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 25px;
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .article-meta i {
+            color: var(--primary-blue);
+            margin-right: 8px;
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            background: var(--bg-light);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 64px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-date {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .blog-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 12px;
+        }
+
+        /* COP & Conferences */
+        .conferences-section {
+            background: var(--white);
+        }
+
+        .conference-timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-date {
+            text-align: right;
+            padding-top: 10px;
+        }
+
+        .timeline-date .month {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .timeline-date .year {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .timeline-content {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content .location {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Press Releases */
+        .press-section {
+            background: var(--bg-light);
+        }
+
+        .press-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .press-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 25px;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .press-item:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transform: translateX(5px);
+        }
+
+        .press-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 32px;
+        }
+
+        .press-content h4 {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .press-content .date {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .press-download {
+            padding: 10px 25px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .press-download:hover {
+            background: var(--dark-green);
+            transform: scale(1.05);
+        }
+
+        /* Video Preview Styles */
+.video-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-thumbnail {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease;
+}
+
+.video-modal-content {
+    position: relative;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.video-modal-content video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.video-modal-close:hover {
+    color: var(--primary-orange);
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-modal-content {
+        margin: 20% auto;
+        width: 95%;
+    }
+
+    .video-modal-close {
+        top: -30px;
+        font-size: 30px;
+    }
+}
+/* Gallery Section */
+        .gallery-section {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Gallery Tabs */
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .gallery-tab {
+            padding: 12px 30px;
+            border: 2px solid var(--primary-green);
+            background: transparent;
+            color: var(--primary-green);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .gallery-tab:hover,
+        .gallery-tab.active {
+            background: var(--primary-green);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        /* Gallery Grid - Masonry Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--bg-light);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Overlay Effect */
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to top,
+                rgba(46, 204, 113, 0.9) 0%,
+                rgba(46, 204, 113, 0.6) 50%,
+                transparent 100%
+            );
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Caption */
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption strong {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-caption p {
+            font-size: 14px;
+            opacity: 0.95;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Zoom Icon */
+        .gallery-zoom-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-green);
+            transition: transform 0.3s ease;
+            z-index: 3;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item:hover .gallery-zoom-icon {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Hidden Class */
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        /* Gallery Modal Lightbox */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .gallery-modal-content {
+            position: relative;
+            margin: 50px auto;
+            display: block;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 10px;
+            animation: zoomIn 0.3s ease;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        #modalCaption {
+            margin: 20px auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            font-size: 18px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        #modalCaption strong {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--primary-green);
+        }
+
+        /* Close Button */
+        .gallery-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10000;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-modal-close:hover {
+            background: var(--primary-green);
+            transform: rotate(90deg);
+        }
+
+        /* Navigation Arrows */
+        .gallery-prev,
+        .gallery-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 60px;
+            margin-top: -30px;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            user-select: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-next {
+            right: 30px;
+        }
+
+        .gallery-prev {
+            left: 30px;
+        }
+
+        .gallery-prev:hover,
+        .gallery-next:hover {
+            background-color: var(--primary-green);
+            transform: scale(1.1);
+        }
+
+        /* View All Button */
+        .view-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(46, 204, 113, 0.3);
+        }
+
+        .view-all-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(46, 204, 113, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 32px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+
+            .gallery-tabs {
+                gap: 10px;
+            }
+
+            .gallery-tab {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .gallery-modal-content {
+                width: 95%;
+                margin: 30px auto;
+            }
+
+            #modalCaption {
+                width: 95%;
+                font-size: 16px;
+                padding: 15px;
+            }
+
+            .gallery-prev,
+            .gallery-next {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .gallery-prev {
+                left: 10px;
+            }
+
+            .gallery-next {
+                right: 10px;
+            }
+
+            .gallery-modal-close {
+                top: 10px;
+                right: 10px;
+                font-size: 40px;
+            }
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue));
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .newsletter-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .newsletter-form button {
+            padding: 18px 40px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .newsletter-form button:hover {
+            background: #d35400;
+            transform: scale(1.05);
+        }
+
+        .newsletter-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefit-item i {
+            font-size: 24px;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 300px;
+                font-size: 80px;
+            }
+
+            .featured-text {
+                padding: 30px;
+            }
+
+            .blog-grid,
+            .video-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-date {
+                text-align: left;
+            }
+
+            .press-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+        }
+        .page-header {
+    width: 100%;
+    height: 500px; /* ajuste la hauteur selon ton besoin */
+    overflow: hidden;
+}
+
+.page-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* l’image remplit le cadre sans se déformer */
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun</div>
+            <div><i class="fas fa-envelope"></i> fonder.rajapicop@gmail.com</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="{% static 'rajapi/images/rajapi-cop_logo.ico' %}" alt="RAJAPI-COP Logo" class="logo-img">
+                RAJAPI-COP Africa
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home-page' %}">Accueil</a></li>
+                <li><a href="{% url 'plateforme-page' %}">Plateforme</a></li>
+                <li><a href="{% url 'programmes-page' %}">Programmes</a></li>
+                <li><a href="{% url 'apropos-page' %}">À Propos</a></li>
+                <li><a href="{% url 'actualites-page' %}" style="color: var(--primary-blue);">Actualités</a></li>
+                <li><a href="{% url 'noscontacts-page' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <img src="{% static 'rajapi/images/actuallite2.jpeg' %}" alt="Nos Programmes Phares">
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active">Tous</button>
+            <button class="filter-btn">Articles Blog</button>
+            <button class="filter-btn">COP & Conférences</button>
+            <button class="filter-btn">Communiqués</button>
+            <button class="filter-btn">Vidéos</button>
+            <button class="filter-btn">Photos</button>
+        </div>
+    </div>
+
+    <!-- Featured Article -->
+    <section class="featured-article">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-image">
+                    <i class="fas fa-globe-africa"></i>
+                </div>
+                <div class="featured-text">
+                    <span class="featured-badge">À LA UNE</span>
+                    <h2>RAJAPI-COP représente la jeunesse africaine à la COP29</h2>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar"></i> 15 Décembre 2024</span>
+                        <span><i class="fas fa-user"></i> Edgard R. MVONDO</span>
+                        <span><i class="fas fa-tag"></i> COP29</span>
+                    </div>
+                    <p>Notre délégation de 25 jeunes leaders africains a participé activement aux négociations de la COP29 à Bakou, portant la voix de la jeunesse africaine sur les enjeux de financement climatique et d'adaptation.</p>
+                    <a href="#" class="read-more">
+                        Lire l'article complet <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Blog Thématique</h2>
+            <p class="section-subtitle">Articles, analyses et perspectives sur le climat et la biodiversité en Afrique</p>
+
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category">Biodiversité</span>
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-date"><i class="fas fa-calendar"></i> 10 Décembre 2024</p>
+                        <h3>Le Bassin du Congo : Enjeux et solutions pour sa préservation</h3>
+                        <p>Analyse approfondie des défis auxquels fait face le deuxième poumon vert de la planète et les initiatives portées par les jeunes pour sa conservation.</p>
+                        <a href="#" class="read-more">
+                            Lire plus <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category">Innovation</span>
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-date"><i class="fas fa-calendar"></i> 5 Décembre 2024</p>
+                        <h3>5 innovations africaines qui changent la donne climatique</h3>
+                        <p>Découvrez ces solutions innovantes développées par des jeunes entrepreneurs africains pour lutter contre le changement climatique.</p>
+                        <a href="#" class="read-more">
+                            Lire plus <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category">Justice Climatique</span>
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-date"><i class="fas fa-calendar"></i> 1 Décembre 2024</p>
+                        <h3>Financement climatique : L'Afrique doit avoir sa juste part</h3>
+                        <p>Opinion : Pourquoi les pays africains méritent un accès équitable aux fonds climatiques internationaux et comment y parvenir.</p>
+                        <a href="#" class="read-more">
+                            Lire plus <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category">Énergie Verte</span>
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-date"><i class="fas fa-calendar"></i> 28 Novembre 2024</p>
+                        <h3>L'avenir de l'énergie solaire en Afrique</h3>
+                        <p>Le continent africain dispose du plus grand potentiel solaire au monde. Comment les jeunes entrepreneurs s'en emparent.</p>
+                        <a href="#" class="read-more">
+                            Lire plus <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category">Agriculture</span>
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-date"><i class="fas fa-calendar"></i> 25 Novembre 2024</p>
+                        <h3>Agriculture climato-intelligente : L'exemple camerounais</h3>
+                        <p>Retour d'expérience sur les pratiques agricoles résilientes développées par nos membres au Cameroun.</p>
+                        <a href="#" class="read-more">
+                            Lire plus <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category">Économie Bleue</span>
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-date"><i class="fas fa-calendar"></i> 20 Novembre 2024</p>
+                        <h3>Protéger nos océans pour un avenir durable</h3>
+                        <p>Les initiatives BlueGuard Africa pour la protection des écosystèmes marins et côtiers africains.</p>
+                        <a href="#" class="read-more">
+                            Lire plus <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COP & Conferences -->
+    <section class="conferences-section">
+        <div class="container">
+            <h2 class="section-title">COP & Conférences Internationales</h2>
+            <p class="section-subtitle">Notre participation aux grands rendez-vous climatiques mondiaux</p>
+
+            <div class="conference-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <div class="month">DÉC</div>
+                        <div class="year">2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>COP29 - Bakou, Azerbaïdjan</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Bakou, Azerbaïdjan</p>
+                        <p>Participation active de notre délégation de 25 jeunes aux négociations sur le financement climatique. Organisation de 3 side events sur la jeunesse africaine et présentation de 5 projets innovants.</p>
+                        <p style="margin-top: 15px;"><strong>Résultats clés :</strong> Engagement de 3 nouveaux partenaires financiers, signature de 2 MoU avec des organisations internationales.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <div class="month">NOV</div>
+                        <div class="year">2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Sommet Africain sur le Climat</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                        <p>Co-organisation du forum de la jeunesse africaine avec l'Union Africaine. Plus de 500 jeunes leaders réunis pour définir une position commune africaine.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <div class="month">SEPT</div>
+                        <div class="year">2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Semaine du Climat de New York</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+                        <p>Présentation de nos programmes d'innovation climatique lors de plusieurs événements parallèles à l'Assemblée Générale de l'ONU.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <div class="month">JUIN</div>
+                        <div class="year">2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Conférence sur la Biodiversité - CBD COP16</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Cali, Colombie</p>
+                        <p>Mobilisation pour la protection du Bassin du Congo. Lancement officiel du programme CongoBotanika à l'échelle internationale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Releases -->
+    <section class="press-section">
+        <div class="container">
+            <h2 class="section-title">Communiqués de Presse</h2>
+            <p class="section-subtitle">Nos annonces officielles et prises de position</p>
+
+            <div class="press-grid">
+                <div class="press-item">
+                    <div class="press-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="press-content">
+                        <h4>Lancement de la Plateforme Collaborative RAJAPI-COP</h4>
+                        <p class="date">15 Décembre 2024</p>
+                    </div>
+                    <a href="#" class="press-download">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+
+                <div class="press-item">
+                    <div class="press-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="press-content">
+                        <h4>Position de RAJAPI-COP sur le financement climatique à la COP29</h4>
+                        <p class="date">1 Décembre 2024</p>
+                    </div>
+                    <a href="#" class="press-download">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+
+                <div class="press-item">
+                    <div class="press-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="press-content">
+                        <h4>RAJAPI-COP remporte le Prix de l'Innovation Climatique 2024</h4>
+                        <p class="date">20 Novembre 2024</p>
+                    </div>
+                    <a href="#" class="press-download">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+
+                <div class="press-item">
+                    <div class="press-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="press-content">
+                        <h4>Nouveau partenariat stratégique avec l'UNEP</h4>
+                        <p class="date">10 Novembre 2024</p>
+                    </div>
+                    <a href="#" class="press-download">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+
+                <div class="press-item">
+                    <div class="press-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="press-content">
+                        <h4>Expansion de RAJAPI-COP dans 10 nouveaux pays africains</h4>
+                        <p class="date">25 Octobre 2024</p>
+                    </div>
+                    <a href="#" class="press-download">
+                        <i class="fas fa-download"></i> Télécharger
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Web TV Section -->
+<section class="webtv-section">
+    <div class="container">
+        <h2 class="section-title">Web TV RAJAPI-COP</h2>
+        <p class="section-subtitle">Nos reportages, interviews et documentaires sur l'action climatique en Afrique</p>
+
+        <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-top: 40px;">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-thumbnail" data-video="video1" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
+                    <video class="video-preview" poster="{% static 'rajapi/images/presentation_rajapi-cop.png' %}" style="width: 100%; height: 220px; object-fit: cover;">
+                        <source src="{% static 'rajapi/videos/video_presentation _rajapi.mp4' %}" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">01:03</span>
+                </div>
+                <div class="video-info" style="padding: 20px 0;">
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Documentaire : Les gardiens du Bassin du Congo</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Découvrez le travail des jeunes pour protéger la forêt tropicale</p>
+                    <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
+                        <span><i class="fas fa-eye"></i> 12,450 vues</span>
+                        <span><i class="fas fa-calendar"></i> 8 Déc 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-thumbnail" data-video="video2" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
+                    <video class="video-preview" poster="{% static 'rajapi/images/bassincongo.png' %}" style="width: 100%; height: 220px; object-fit: cover;">
+                        <source src="{% static 'rajapi/videos/Bassin_congo.mp4' %}" type="video/mp4">
+                    </video>
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">04:02</span>
+                </div>
+                <div class="video-info" style="padding: 20px 0;">
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Reportage COP29 : La voix de la jeunesse africaine</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Notre délégation raconte son expérience à Bakou</p>
+                    <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
+                        <span><i class="fas fa-eye"></i> 8,920 vues</span>
+                        <span><i class="fas fa-calendar"></i> 5 Déc 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-thumbnail" data-video="video3" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
+                    <video class="video-preview" poster="{% static 'rajapi/images/doha_sommet.png' %}" style="width: 100%; height: 220px; object-fit: cover;">
+                        <source src="{% static 'rajapi/videos/2_sommet_mondial_developpement_social_Doha.mp4' %}" type="video/mp4">
+                    </video>
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">01:05</span>
+                </div>
+                <div class="video-info" style="padding: 20px 0;">
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Interview : Le fondateur de RAJAPI-COP</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Edgard R. MVONDO partage sa vision pour l'Afrique</p>
+                    <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
+                        <span><i class="fas fa-eye"></i> 15,780 vues</span>
+                        <span><i class="fas fa-calendar"></i> 1 Déc 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-thumbnail" data-video="video4" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
+                    <video class="video-preview" poster="{% static 'rajapi/images/video4-thumb.jpg' %}" style="width: 100%; height: 220px; object-fit: cover;">
+                        <source src="{% static 'rajapi/videos/video4.mp4' %}" type="video/mp4">
+                    </video>
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">18:20</span>
+                </div>
+                <div class="video-info" style="padding: 20px 0;">
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Success Story : Éco-Habitats Cameroun</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Comment nous construisons un habitat durable pour tous</p>
+                    <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
+                        <span><i class="fas fa-eye"></i> 6,340 vues</span>
+                        <span><i class="fas fa-calendar"></i> 28 Nov 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-card">
+                <div class="video-thumbnail" data-video="video5" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
+                    <video class="video-preview" poster="{% static 'rajapi/images/video5-thumb.jpg' %}" style="width: 100%; height: 220px; object-fit: cover;">
+                        <source src="{% static 'rajapi/videos/video5.mp4' %}" type="video/mp4">
+                    </video>
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">12:50</span>
+                </div>
+                <div class="video-info" style="padding: 20px 0;">
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Webinaire : Finance climatique pour les jeunes</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Comment accéder aux fonds climatiques internationaux</p>
+                    <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
+                        <span><i class="fas fa-eye"></i> 9,560 vues</span>
+                        <span><i class="fas fa-calendar"></i> 25 Nov 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="video-card">
+                <div class="video-thumbnail" data-video="video6" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
+                    <video class="video-preview" poster="{% static 'rajapi/images/video6-thumb.jpg' %}" style="width: 100%; height: 220px; object-fit: cover;">
+                        <source src="{% static 'rajapi/videos/video6.mp4' %}" type="video/mp4">
+                    </video>
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">8:30</span>
+                </div>
+                <div class="video-info" style="padding: 20px 0;">
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">BlueGuard Africa : Protéger nos océans</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Nos actions pour la préservation des écosystèmes marins</p>
+                    <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
+                        <span><i class="fas fa-eye"></i> 7,210 vues</span>
+                        <span><i class="fas fa-calendar"></i> 20 Nov 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal Video Player -->
+<div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+        <span class="video-modal-close">&times;</span>
+        <video id="modalVideo" controls>
+            <source id="modalVideoSource" src="" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+    </div>
+</div>
+
+    <!-- Gallery Section -->
+<section class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">Galerie Photos & Vidéos</h2>
+        <p class="section-subtitle">Revivez en images nos moments forts et nos actions sur le terrain</p>
+
+        <div class="gallery-tabs">
+            <button class="gallery-tab active" data-category="all">Toutes</button>
+            <button class="gallery-tab" data-category="cop">COP & Événements</button>
+            <button class="gallery-tab" data-category="terrain">Projets Terrain</button>
+            <button class="gallery-tab" data-category="formation">Formation</button>
+            <button class="gallery-tab" data-category="equipe">Équipe</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Image 1 -->
+            <div class="gallery-item" data-category="cop">
+                <img src="{% static 'rajapi/images/galerie1.jpeg' %}" alt="COP29 Bakou 2024">
+                <div class="gallery-caption">
+                    <strong>COP29 Bakou 2024</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Notre délégation à la conférence</p>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="gallery-item" data-category="terrain">
+                <img src="{% static 'rajapi/images/galerie2.jpeg' %}" alt="Plantation d'arbres - Cameroun">
+                <div class="gallery-caption">
+                    <strong>Plantation d'arbres - Cameroun</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">1000 arbres plantés en une journée</p>
+                </div>
+            </div>
+
+            <!-- Image 3 -->
+            <div class="gallery-item" data-category="formation">
+                <img src="{% static 'rajapi/images/galerie3.jpeg' %}" alt="Formation Leadership Climatique">
+                <div class="gallery-caption">
+                    <strong>Formation Leadership Climatique</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">50 jeunes formés à Yaoundé</p>
+                </div>
+            </div>
+
+            <!-- Image 4 -->
+            <div class="gallery-item" data-category="terrain">
+                <img src="{% static 'rajapi/images/galerie4.jpeg' %}" alt="BlueGuard - Nettoyage des plages">
+                <div class="gallery-caption">
+                    <strong>BlueGuard - Nettoyage des plages</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Action à Kribi, Cameroun</p>
+                </div>
+            </div>
+
+            <!-- Image 5 -->
+            <div class="gallery-item" data-category="cop">
+                <img src="{% static 'rajapi/images/galerie5.jpeg' %}" alt="Sommet de la Jeunesse Africaine">
+                <div class="gallery-caption">
+                    <strong>Sommet de la Jeunesse Africaine</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Nairobi, Kenya 2024</p>
+                </div>
+            </div>
+
+            <!-- Image 6 -->
+            <div class="gallery-item" data-category="terrain">
+                <img src="{% static 'rajapi/images/galerie6.jpeg' %}" alt="Éco-Habitats en construction">
+                <div class="gallery-caption">
+                    <strong>Éco-Habitats en construction</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Projet pilote à Bafoussam</p>
+                </div>
+            </div>
+
+            <!-- Image 7 -->
+            <div class="gallery-item" data-category="terrain">
+                <img src="{% static 'rajapi/images/galerie7.jpeg' %}" alt="Expédition CongoBotanika">
+                <div class="gallery-caption">
+                    <strong>Expédition CongoBotanika</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Recherche dans le Bassin du Congo</p>
+                </div>
+            </div>
+
+            <!-- Image 8 -->
+            <div class="gallery-item" data-category="cop">
+                <img src="{% static 'rajapi/images/galerie8.jpeg' %}" alt="Remise de Prix Innovation">
+                <div class="gallery-caption">
+                    <strong>Remise de Prix Innovation</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Biodiversité Challenge 2024</p>
+                </div>
+            </div>
+
+            <!-- Image 9 -->
+            <div class="gallery-item" data-category="equipe">
+                <img src="{% static 'rajapi/images/galerie9.jpeg' %}" alt="Équipe RAJAPI-COP">
+                <div class="gallery-caption">
+                    <strong>Équipe RAJAPI-COP</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Réunion stratégique 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#" class="btn" style="display: inline-block; padding: 15px 40px; background: var(--primary-green); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600;">
+                Voir toute la galerie <i class="fas fa-images"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Modal Lightbox pour les images -->
+<div id="galleryModal" class="gallery-modal">
+    <span class="gallery-modal-close">&times;</span>
+    <img class="gallery-modal-content" id="modalImage">
+    <div id="modalCaption"></div>
+    <a class="gallery-prev">&#10094;</a>
+    <a class="gallery-next">&#10095;</a>
+</div>
+
+   <!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="container">
+        <h2>Restez Connectés !</h2>
+        <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités, opportunités et événements directement dans votre boîte mail</p>
+        
+        <!-- Messages de succès/erreur -->
+        <div id="newsletter-message" style="margin-bottom: 20px; display: none;">
+            <div id="newsletter-alert" style="max-width: 600px; margin: 0 auto; padding: 15px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;"></div>
+        </div>
+        
+        <form class="newsletter-form" id="newsletter-form" method="post">
+            {% csrf_token %}
+            <input type="email" name="email" id="newsletter-email" placeholder="Votre adresse email" required>
+            <button type="submit" id="newsletter-btn">
+                <i class="fas fa-paper-plane"></i> S'abonner
+            </button>
+        </form>
+
+        <div class="newsletter-benefits">
+            <div class="benefit-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Actualités hebdomadaires</span>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Opportunités exclusives</span>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Invitations événements</span>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Ressources gratuites</span>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
+        <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+    </footer>
+
+    <script>
+    // Filter buttons functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Gallery tabs functionality
+    document.querySelectorAll('.gallery-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Newsletter form submission with AJAX
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const form = this;
+        const formData = new FormData(form);
+        const btn = document.getElementById('newsletter-btn');
+        const messageDiv = document.getElementById('newsletter-message');
+        const alertDiv = document.getElementById('newsletter-alert');
+        
+        // Désactiver le bouton pendant l'envoi
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+        
+        // Récupérer le token CSRF
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        
+        fetch("{% url 'newsletter-subscribe' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': csrftoken,
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Afficher le message
+            messageDiv.style.display = 'block';
+            
+            if (data.success) {
+                alertDiv.style.background = '#d4edda';
+                alertDiv.style.color = '#155724';
+                alertDiv.style.border = '2px solid #28a745';
+                alertDiv.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+                form.reset();
+                
+                // Masquer le message après 5 secondes
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            } else {
+                alertDiv.style.background = '#f8d7da';
+                alertDiv.style.color = '#721c24';
+                alertDiv.style.border = '2px solid #dc3545';
+                alertDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message;
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            messageDiv.style.display = 'block';
+            alertDiv.style.background = '#f8d7da';
+            alertDiv.style.color = '#721c24';
+            alertDiv.style.border = '2px solid #dc3545';
+            alertDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Une erreur s\'est produite. Veuillez réessayer.';
+        })
+        .finally(() => {
+            // Réactiver le bouton
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> S\'abonner';
+        });
+    });
+    // Video Modal Functionality
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalVideoSource = document.getElementById('modalVideoSource');
+    const modalClose = document.querySelector('.video-modal-close');
+
+    // Ouvrir la modal avec la vidéo
+    document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            const videoCard = this.closest('.video-card');
+            const videoElement = this.querySelector('.video-preview');
+            const videoSrc = videoElement.querySelector('source').src;
+            
+            // Charger la vidéo dans la modal
+            modalVideoSource.src = videoSrc;
+            modalVideo.load();
+            
+            // Afficher la modal
+            videoModal.style.display = 'block';
+            
+            // Démarrer la lecture
+            modalVideo.play();
+        });
+    });
+
+    // Fermer la modal
+    modalClose.addEventListener('click', function() {
+        videoModal.style.display = 'none';
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+    });
+
+    // Fermer en cliquant en dehors de la vidéo
+    videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) {
+            videoModal.style.display = 'none';
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        }
+    });
+
+    // Fermer avec la touche Échap
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal.style.display === 'block') {
+            videoModal.style.display = 'none';
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        }
+    });
+    // Gallery Modal Lightbox
+    const galleryModal = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeBtn = document.querySelector('.gallery-modal-close');
+    const prevBtn = document.querySelector('.gallery-prev');
+    const nextBtn = document.querySelector('.gallery-next');
+
+    let currentImageIndex = 0;
+    let galleryImages = [];
+
+    // Charger toutes les images de la galerie
+    function loadGalleryImages() {
+        galleryImages = Array.from(document.querySelectorAll('.gallery-item:not(.hidden)'));
+    }
+
+    // Ouvrir la modal
+    document.querySelectorAll('.gallery-item').forEach((item, index) => {
+        item.addEventListener('click', function() {
+            loadGalleryImages();
+            currentImageIndex = galleryImages.indexOf(this);
+            showImage(currentImageIndex);
+            galleryModal.style.display = 'block';
+        });
+    });
+
+    // Afficher l'image
+    function showImage(index) {
+        const item = galleryImages[index];
+        const img = item.querySelector('img');
+        const caption = item.querySelector('.gallery-caption');
+        
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        modalCaption.innerHTML = caption.innerHTML;
+    }
+
+    // Navigation
+    prevBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        showImage(currentImageIndex);
+    });
+
+    nextBtn.addEventListener('click', function() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        showImage(currentImageIndex);
+    });
+
+    // Fermer la modal
+    closeBtn.addEventListener('click', function() {
+        galleryModal.style.display = 'none';
+    });
+
+    galleryModal.addEventListener('click', function(e) {
+        if (e.target === galleryModal) {
+            galleryModal.style.display = 'none';
+        }
+    });
+
+    // Navigation clavier
+    document.addEventListener('keydown', function(e) {
+        if (galleryModal.style.display === 'block') {
+            if (e.key === 'Escape') {
+                galleryModal.style.display = 'none';
+            } else if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            }
+        }
+    });
+
+    // Gallery Tabs Filtering
+    document.querySelectorAll('.gallery-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            const category = this.getAttribute('data-category');
+            const items = document.querySelectorAll('.gallery-item');
+            
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            // Recharger la liste des images après le filtrage
+            loadGalleryImages();
+        });
+    });
+
+    // Initialiser la liste des images au chargement
+    loadGalleryImages();
+</script>
+</body>
+</html>

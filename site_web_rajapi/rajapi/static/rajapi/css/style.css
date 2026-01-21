@@ -1,0 +1,42 @@
+:root {
+  /* Primary colors */
+  --color-blanc-gris: #F5F6FC;
+  --color-vert: #209327;
+  --color-bleu: #0295D2; /* Bleu ciel */
+  --color-jaune: #FFB612;
+
+  /* Secondary colors */
+  --color-cyan: #2EDOFF;
+  --color-orange: #FF7022;
+  --color-rouge: #E92E4A;
+
+  /* Grayscale */
+  --color-cloud: #EDEFF7;
+  --color-smoke: #D3D6E0;
+  --color-space: #9DA2B3;
+  --color-black: #000000;
+}
+
+/* Appliquer le fond bleu ciel à toute la page */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bleu);
+  font-family: "Times New Roman", serif;
+  color: var(--color-space);
+}
+
+/* Titres */
+h1, h2, h3 {
+  color: var(--color-blanc-gris); /* Contraste avec le fond bleu */
+}
+
+/* Liens */
+a {
+  color: var(--color-jaune);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-orange);
+}

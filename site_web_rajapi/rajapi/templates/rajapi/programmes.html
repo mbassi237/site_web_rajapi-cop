@@ -1,0 +1,703 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmes - RAJAPI-COP Africa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0295D2;
+            --dark-blue: #0277a8;
+            --light-blue: #03a9f4;
+            --bg-light: #F5F6FC;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --grey-100: #f8f9fa;
+            --grey-200: #e9ecef;
+            --grey-300: #dee2e6;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        .top-bar {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            color: var(--primary-blue);
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            margin-right: 8px;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(2, 149, 210, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Page Header */
+        .page-header {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .page-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(2, 149, 210, 0.3), rgba(2, 149, 210, 0.1));
+        }
+
+        /* Program Detail */
+        .program-detail {
+            background: var(--white);
+            margin-bottom: 60px;
+            border-radius: 20px;
+            padding: 60px 0;
+        }
+
+        .program-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .program-icon-large {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 120px;
+            box-shadow: 0 10px 40px rgba(2, 149, 210, 0.2);
+        }
+
+        .program-intro h2 {
+            font-size: 36px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .program-intro .tagline {
+            font-size: 20px;
+            color: var(--dark-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .program-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .program-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--primary-blue);
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover {
+            background: var(--white);
+            box-shadow: 0 5px 20px rgba(2, 149, 210, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .stat-box .number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .stat-box .label {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .program-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .content-main h3 {
+            color: var(--primary-blue);
+            margin: 30px 0 15px 0;
+            font-size: 24px;
+        }
+
+        .content-main p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .content-main ul {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+
+        .content-main ul li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .content-sidebar {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            height: fit-content;
+            box-shadow: 0 5px 20px rgba(2, 149, 210, 0.08);
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .sidebar-section ul {
+            list-style: none;
+        }
+
+        .sidebar-section ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--grey-300);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-section ul li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-section ul li i {
+            color: var(--primary-blue);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .cta-box h4 {
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 15px;
+            max-width: 600px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(2, 149, 210, 0.15);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(2, 149, 210, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            margin: 80px 0;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .program-header,
+            .program-content {
+                grid-template-columns: 1fr;
+            }
+
+            .program-icon-large {
+                width: 100%;
+                height: 250px;
+                font-size: 80px;
+            }
+
+            .page-header {
+                height: 200px;
+            }
+
+            .program-intro h2 {
+                font-size: 28px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun</div>
+            <div><i class="fas fa-envelope"></i> fonder.rajapicop@gmail.com</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="{% static 'rajapi/images/rajapi-cop_logo.ico' %}" alt="RAJAPI-COP Logo" class="logo-img">
+                RAJAPI-COP Africa
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home-page' %}">Accueil</a></li>
+                <li><a href="{% url 'plateforme-page' %}">Plateforme</a></li>
+                <li><a href="{% url 'programmes-page' %}" style="color: var(--primary-blue);">Programmes</a></li>
+                <li><a href="{% url 'apropos-page' %}">À Propos</a></li>
+                <li><a href="{% url 'actualites-page' %}">Actualités</a></li>
+                <li><a href="{% url 'noscontacts-page' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <img src="{% static 'rajapi/images/Header1.jpeg' %}" alt="Nos Programmes Phares">
+    </div>
+
+    <!-- Programme 1: Éco-Habitats Cameroun -->
+    <section class="program-detail">
+        <div class="container">
+            <div class="program-header">
+                <div class="program-icon-large">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="program-intro">
+                    <h2>Éco-Habitats Cameroun</h2>
+                    <p class="tagline">Construire un habitat durable et résilient pour tous</p>
+                    <p>Programme innovant de construction et réhabilitation de logements écologiques et résilients face aux changements climatiques, destiné aux communautés vulnérables du Cameroun.</p>
+                </div>
+            </div>
+
+            <div class="program-stats">
+                <div class="stat-box">
+                    <div class="number">500+</div>
+                    <div class="label">Familles Bénéficiaires</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">15</div>
+                    <div class="label">Villes Ciblées</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">30%</div>
+                    <div class="label">Réduction Énergétique</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">100</div>
+                    <div class="label">Emplois Créés</div>
+                </div>
+            </div>
+
+            <div class="program-content">
+                <div class="content-main">
+                    <h3>Objectifs du Programme</h3>
+                    <ul>
+                        <li>Construire des habitats écologiques avec des matériaux locaux et durables</li>
+                        <li>Réduire l'empreinte carbone des bâtiments résidentiels</li>
+                        <li>Améliorer la résilience face aux inondations et aux vagues de chaleur</li>
+                        <li>Former les artisans locaux aux techniques de construction verte</li>
+                        <li>Créer des emplois verts dans le secteur du bâtiment</li>
+                    </ul>
+
+                    <h3>Méthodologie</h3>
+                    <p>Notre approche intègre les meilleures pratiques internationales adaptées au contexte camerounais. Nous utilisons des matériaux biosourcés (terre compressée, bambou, bois certifié), des systèmes de récupération d'eau de pluie, et des dispositifs d'efficacité énergétique (panneaux solaires, ventilation naturelle).</p>
+
+                    <h3>Impact & Résultats</h3>
+                    <p>Depuis son lancement, le programme a permis de construire plus de 120 logements écologiques, formé 150 artisans, et réduit significativement les coûts énergétiques des ménages bénéficiaires. L'utilisation de matériaux locaux a également stimulé l'économie communautaire.</p>
+
+                    <h3>Galerie Photo</h3>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="{% static 'rajapi/images/galerie6.jpeg' %}" alt="Photo 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="{% static 'rajapi/images/galerie2.jpeg' %}" alt="Photo 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="{% static 'rajapi/images/galerie3.jpeg' %}" alt="Photo 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="{% static 'rajapi/images/galerie5.jpeg' %}" alt="Photo 4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-sidebar">
+                    <div class="sidebar-section">
+                        <h4>Informations Clés</h4>
+                        <ul>
+                            <li><i class="fas fa-calendar"></i> Lancé en 2023</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Yaoundé, Douala, Bafoussam</li>
+                            <li><i class="fas fa-users"></i> 500+ bénéficiaires directs</li>
+                            <li><i class="fas fa-clock"></i> Programme en cours</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>Partenaires</h4>
+                        <ul>
+                            <li><i class="fas fa-handshake"></i> UN-Habitat</li>
+                            <li><i class="fas fa-handshake"></i> Ministère de l'Habitat</li>
+                            <li><i class="fas fa-handshake"></i> ONG Locales</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-box">
+                        <h4>Participer au Programme</h4>
+                        <p>Vous êtes une communauté, un artisan ou un partenaire financier ?</p>
+                        <a href="#" class="btn">Nous Contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Programme 2: CongoBotanika -->
+    <section class="program-detail">
+        <div class="container">
+            <div class="program-header">
+                <div class="program-icon-large" style="background: linear-gradient(135deg, #0295D2, #0277a8);">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="program-intro">
+                    <h2>CongoBotanika</h2>
+                    <p class="tagline">Préserver la biodiversité du Bassin du Congo</p>
+                    <p>Initiative scientifique et citoyenne de recensement, préservation et valorisation de la biodiversité exceptionnelle du Bassin du Congo, le deuxième poumon vert de la planète.</p>
+                </div>
+            </div>
+
+            <div class="program-stats">
+                <div class="stat-box">
+                    <div class="number">1200+</div>
+                    <div class="label">Espèces Recensées</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">6</div>
+                    <div class="label">Pays du Bassin</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">800</div>
+                    <div class="label">Jeunes Formés</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">50</div>
+                    <div class="label">Zones Protégées</div>
+                </div>
+            </div>
+
+            <div class="program-content">
+                <div class="content-main">
+                    <h3>Objectifs du Programme</h3>
+                    <ul>
+                        <li>Documenter la biodiversité floristique du Bassin du Congo</li>
+                        <li>Former des jeunes scientifiques et éco-gardes</li>
+                        <li>Créer une base de données numérique accessible</li>
+                        <li>Sensibiliser les communautés à la conservation</li>
+                        <li>Valoriser les savoirs traditionnels liés aux plantes</li>
+                    </ul>
+
+                    <h3>Actions Concrètes</h3>
+                    <p>CongoBotanika mobilise des jeunes botanistes, écologues et citoyens pour inventorier systématiquement la flore du Bassin du Congo. Nous organisons des expéditions scientifiques, créons des herbiers numériques, et développons des applications mobiles pour la science citoyenne.</p>
+
+                    <p>Le programme travaille également avec les communautés autochtones pour documenter l'utilisation traditionnelle des plantes médicinales et alimentaires, assurant ainsi la préservation de ces connaissances ancestrales.</p>
+
+                    <h3>Impact & Réalisations</h3>
+                    <p>Plus de 1200 espèces ont été documentées, dont plusieurs nouvelles pour la science. Notre base de données est utilisée par des chercheurs internationaux et sert à la planification de la conservation. 800 jeunes ont été formés aux techniques de recensement botanique.</p>
+                </div>
+
+                <div class="content-sidebar">
+                    <div class="sidebar-section">
+                        <h4>Zone d'Intervention</h4>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Cameroun</li>
+                            <li><i class="fas fa-map-marker-alt"></i> RD Congo</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Congo-Brazzaville</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Gabon</li>
+                            <li><i class="fas fa-map-marker-alt"></i> RCA</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Guinée Équatoriale</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>Partenaires Scientifiques</h4>
+                        <ul>
+                            <li><i class="fas fa-university"></i> CIFOR</li>
+                            <li><i class="fas fa-university"></i> Kew Gardens</li>
+                            <li><i class="fas fa-university"></i> Universités Locales</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-box">
+                        <h4>Devenir Science Citoyen</h4>
+                        <p>Participez aux expéditions botaniques !</p>
+                        <a href="#" class="btn">S'Inscrire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Programme 3: BlueGuard Africa -->
+    <section class="program-detail">
+        <div class="container">
+            <div class="program-header">
+                <div class="program-icon-large" style="background: linear-gradient(135deg, #03a9f4, #0295D2);">
+                    <i class="fas fa-water"></i>
+                </div>
+                <div class="program-intro">
+                    <h2>BlueGuard Africa</h2>
+                    <p class="tagline">Protéger nos océans et écosystèmes côtiers</p>
+                    <p>Initiative panafricaine de protection et restauration des écosystèmes marins et côtiers face aux menaces du changement climatique, de la pollution et de la surpêche.</p>
+                </div>
+            </div>
+
+            <div class="program-stats">
+                <div class="stat-box">
+                    <div class="number">25</div>
+                    <div class="label">Zones Côtières</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">10,000+</div>
+                    <div class="label">Pêcheurs Sensibilisés</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">500</div>
+                    <div class="label">Jeunes Éco-Gardes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">15</div>
+                    <div class="label">Pays Africains</div>
+                </div>
+            </div>
+
+            <div class="program-content">
+                <div class="content-main">
+                    <h3>Enjeux & Défis</h3>
+                    <p>Les écosystèmes côtiers africains (mangroves, récifs coralliens, herbiers marins) sont essentiels pour la sécurité alimentaire de millions de personnes et constituent des puits de carbone majeurs. Pourtant, ils sont gravement menacés par la montée des eaux, la pollution plastique, la surpêche et l'acidification des océans.</p>
+
+                    <h3>Nos Solutions</h3>
+                    <ul>
+                        <li>Restauration de mangroves et récifs coralliens</li>
+                        <li>Formation d'éco-gardes marins communautaires</li>
+                        <li>Campagnes de nettoyage des plages et océans</li>
+                        <li>Promotion de la pêche durable et de l'aquaculture responsable</li>
+                        <li>Surveillance participative des zones marines protégées</li>
+                        <li>Éducation environnementale dans les écoles côtières</li>
+                    </ul>
+
+                    <h3>Résultats Tangibles</h3>
+                    <p>BlueGuard Africa a permis de planter 250,000 palétuviers, nettoyer 100 km de côtes, former 500 éco-gardes marins, et sensibiliser plus de 10,000 pêcheurs aux pratiques durables. Nos actions contribuent directement à l'ODD 14 (Vie aquatique) et à la lutte contre le changement climatique.</p>
+                </div>
+
+                <div class="content-sidebar">
+                    <div class="sidebar-section">
+                        <h4>Zones Prioritaires</h4>
+                        <ul>
+                            <li><i class="fas fa-anchor"></i> Golfe de Guinée</li>
+                            <li><i class="fas fa-anchor"></i> Côte Est Africaine</li>
+                            <li><i class="fas fa-anchor"></i> Afrique du Nord</li>
+                            <li><i class="fas fa-anchor"></i> Afrique Australe</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>Partenaires</h4>
+                        <ul>
+                            <li><i class="fas fa-handshake"></i> UNEP</li>
+                            <li><i class="fas fa-handshake"></i> Ocean Conservancy</li>
+                            <li><i class="fas fa-handshake"></i> WWF</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-box">
+                        <h4>Rejoindre BlueGuard</h4>
+                        <p>Devenez éco-garde marin ou organisez un cleanup !</p>
+                        <a href="#" class="btn">S'Engager</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
+        <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+    </footer>
+</body>
+</html>
