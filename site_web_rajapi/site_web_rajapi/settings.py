@@ -110,7 +110,7 @@ EMAIL_HOST = 'smtp.gmail.com'  # ou votre serveur SMTP
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'yannickserge.escobar@gmail.com'
-EMAIL_HOST_PASSWORD = 'commando93230'  # Utilisez un mot de passe d'application Gmail
+EMAIL_HOST_PASSWORD = 'goej lfrc zsrl tkoj'  # Utilisez un mot de passe d'application Gmail
 DEFAULT_FROM_EMAIL = 'RAJAPI-COP Africa <yannickserge.escobar@gmail.com>'
 
 # Internationalization
@@ -136,3 +136,28 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,  "static"),]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+from django.utils.translation import gettext_lazy as _
+
+# Langues disponibles
+LANGUAGES = [
+    ('fr', _('Français')),
+    ('en', _('English')),
+    ('ar', _('العربية')),
+    ('es', _('Español')),
+]
+
+# Langue par défaut
+LANGUAGE_CODE = 'fr'
+
+# Activer i18n
+USE_I18N = True
+USE_L10N = True
+
+# Chemin des fichiers de traduction
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]

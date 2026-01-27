@@ -37,6 +37,9 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from .models import ContactMessage, NewsletterSubscriber
 from .forms import ContactForm, NewsletterForm
+import json
+from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
 
 def get_client_ip(request):
     """Récupère l'adresse IP du client"""
@@ -254,30 +257,62 @@ def send_confirmation_email(contact_message):
 
 @require_http_methods(["POST"])
 def newsletter_subscribe(request):
-    """
-    Vue AJAX pour l'inscription à la newsletter
-    """
-    form = NewsletterForm(request.POST)
-    
-    if form.is_valid():
-        subscriber = form.save()
-        
-        # Envoyer un email de bienvenue
+    print("=== DEBUG NEWSLETTER ===")
+    print("Content-Type :", request.META.get('CONTENT_TYPE', 'absent'))
+    print("Raw body :", request.body[:400])
+
+    email = None
+
+    # Tentative 1 : JSON (ce que tu veux supporter)
+    if request.META.get('CONTENT_TYPE', '').startswith('application/json'):
         try:
-            send_welcome_newsletter_email(subscriber)
+            data = json.loads(request.body)
+            email = data.get('email', '').strip()
+            print("JSON parsé → email :", email)
+        except json.JSONDecodeError as e:
+            print("Erreur JSON decode :", str(e))
+            return JsonResponse({
+                'success': False,
+                'message': 'Format JSON invalide'
+            }, status=400)
         except Exception as e:
-            print(f"Erreur lors de l'envoi de l'email de bienvenue: {e}")
-        
-        return JsonResponse({
-            'success': True,
-            'message': 'Merci pour votre inscription ! Vous recevrez bientôt nos actualités.'
-        })
-    else:
+            print("Autre erreur JSON :", str(e))
+            return JsonResponse({'success': False, 'message': 'Erreur lors du parsing'}, status=400)
+
+    # Tentative 2 : fallback form-urlencoded (au cas où le js n'a pas changé)
+    if email is None:
+        email = request.POST.get('email', '').strip()
+        print("Fallback POST.get('email') :", email)
+
+    if not email:
         return JsonResponse({
             'success': False,
-            'message': 'Une erreur s\'est produite. Veuillez vérifier votre email.'
+            'message': 'Adresse email manquante'
         }, status=400)
 
+    # Validation avec le form
+    form = NewsletterForm({'email': email})
+    if form.is_valid():
+        try:
+            subscriber = form.save()
+            send_welcome_newsletter_email(subscriber)
+            return JsonResponse({
+                'success': True,
+                'message': 'Merci pour votre inscription ! Vous recevrez bientôt nos actualités.'
+            })
+        except Exception as e:
+            print("Erreur sauvegarde / email :", str(e))
+            return JsonResponse({
+                'success': False,
+                'message': 'Inscription enregistrée mais erreur lors de l\'envoi email'
+            }, status=200)  # 200 car l'inscription a marché
+    else:
+        print("Erreurs form :", form.errors.as_json())
+        error_msg = form.errors.get('email', ['Erreur de validation'])[0]
+        return JsonResponse({
+            'success': False,
+            'message': str(error_msg)
+        }, status=400)
 
 def send_welcome_newsletter_email(subscriber):
     """
@@ -287,28 +322,43 @@ def send_welcome_newsletter_email(subscriber):
     
     html_content = f"""
     <html>
-        <body style="font-family: Arial, sans-serif; color: #2c3e50;">
-            <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-                <h1 style="color: #2ecc71; text-align: center;">Bienvenue chez RAJAPI-COP Africa ! 🌍</h1>
+        <body style="font-family: Arial, sans-serif; color: #2c3e50; line-height: 1.6;">
+            <div style="max-width: 600px; margin: 0 auto; padding: 30px 20px;">
+                <h1 style="color: #2ecc71; text-align: center; margin-bottom: 30px;">Welcome to RAJAPI-COP Africa! 🌍</h1>
                 
-                <p>Merci de vous être inscrit(e) à notre newsletter !</p>
+                <p>Dear Subscriber,</p>
                 
-                <p>Vous recevrez désormais régulièrement :</p>
-                <ul>
-                    <li>📰 Nos actualités et dernières actions</li>
-                    <li>🎓 Des opportunités de formation et de financement</li>
-                    <li>🌱 Des invitations à nos événements</li>
-                    <li>📚 Des ressources exclusives sur le climat et la biodiversité</li>
+                <p>Thank you very much for subscribing to the RAJAPI-COP Africa newsletter.</p>
+                
+                <p>By joining our community, you become part of a pan-African youth network, present in around thirty African countries, actively working to deliver innovative, inclusive, and locally driven solutions to challenges related to climate change, biodiversity, desertification, pollution, and social and gender justice.</p>
+                
+                <p>RAJAPI-COP Africa (<strong>Network of Young Africans Bringing Innovative Projects to the Climate, Biodiversity, and Desertification COPs</strong>) mobilizes and empowers young African leaders to make their voices heard in international decision-making spaces, particularly within the United Nations, and to translate global commitments into concrete action on the ground.</p>
+                
+                <p>Through this newsletter, you will receive:</p>
+                <ul style="padding-left: 20px;">
+                    <li>Updates on our key initiatives and activities</li>
+                    <li>International opportunities</li>
+                    <li>Strategic insights and analyses</li>
+                    <li>Actions led by African youth for a sustainable future</li>
                 </ul>
                 
-                <div style="text-align: center; margin: 30px 0;">
-                    <a href="https://www.rajapi-cop.org" style="background: #2ecc71; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; display: inline-block;">
-                        Visiter notre site
+                <p>We are honored to have you join us and look forward to building together a more just, resilient, and sustainable future for Africa and the world.</p>
+                
+                <p style="margin-top: 40px;">With our highest regards,</p>
+                <p style="font-weight: bold; margin: 5px 0;">The RAJAPI-COP Africa Team</p>
+                <p style="color: #7f8c8d; font-size: 15px; margin: 5px 0;">
+                    Network of Young Africans Bringing Innovative Projects to the COPs<br>
+                    Climate • Biodiversity • Desertification • Social & Gender Justice
+                </p>
+                
+                <div style="text-align: center; margin: 40px 0;">
+                    <a href="https://www.rajapi-cop.org" style="background: #2ecc71; color: white; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block; font-size: 16px;">
+                        Visit our website
                     </a>
                 </div>
                 
-                <p style="text-align: center; color: #7f8c8d; font-size: 12px; margin-top: 30px;">
-                    Si vous souhaitez vous désabonner, cliquez <a href="#">ici</a>
+                <p style="text-align: center; color: #7f8c8d; font-size: 12px; margin-top: 40px;">
+                    If you wish to unsubscribe, click <a href="#" style="color: #7f8c8d;">here</a>
                 </p>
             </div>
         </body>

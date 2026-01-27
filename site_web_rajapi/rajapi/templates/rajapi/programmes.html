@@ -392,6 +392,94 @@
                 padding: 40px 20px;
             }
         }
+
+        /* === BASE MOBILE (tout ce qui est par défaut) === */
+body {
+    font-size: 16px;          /* base confortable mobile */
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Grilles et cartes en colonne par défaut */
+.blog-grid,
+.gallery-grid,
+.press-grid,
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr;     /* 1 colonne sur mobile */
+    gap: 20px;
+}
+
+.featured-content,
+.timeline-item,
+.press-item {
+    grid-template-columns: 1fr;     /* tout en colonne */
+}
+
+/* Navigation mobile : cacher les liens et montrer hamburger (à implémenter) */
+.nav-links {
+    display: none;   /* à activer via JS + media query */
+}
+
+/* === TABLETTES & plus (768px et +) === */
+@media (min-width: 768px) {
+    .container {
+        max-width: 960px;
+        padding: 0 30px;
+    }
+
+    .blog-grid,
+    .gallery-grid,
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);   /* 2 colonnes */
+    }
+
+    .featured-content {
+        grid-template-columns: 1fr 1fr;          /* image + texte côte à côte */
+    }
+
+    .timeline-item {
+        grid-template-columns: 140px 1fr;
+    }
+
+    .press-item {
+        grid-template-columns: 120px 1fr auto;
+    }
+
+    /* Afficher menu normal */
+    .nav-links {
+        display: flex;
+    }
+}
+
+/* === DESKTOP LARGE (1024px et +) === */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .blog-grid,
+    .gallery-grid,
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);   /* 3 colonnes */
+    }
+
+    .featured-content {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+/* === Très grands écrans (optionnel) === */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+}
     </style>
 </head>
 <body>
