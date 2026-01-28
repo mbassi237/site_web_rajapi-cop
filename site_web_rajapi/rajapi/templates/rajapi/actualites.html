@@ -1,27 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualités & Médias - RAJAPI-COP Africa</title>
+    <title>News & Media - RAJAPI-COP Africa</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+   
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
+   
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* LE CSS EST INCHANGÉ – COPIÉ TEL QUEL */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         :root {
             --primary-blue: #2ecc71;
             --primary-blue: #3498db;
@@ -31,18 +31,15 @@
             --bg-light: #ecf0f1;
             --white: #ffffff;
         }
-
         body {
             font-family: 'Lato', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
         }
-
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
         }
-
         /* Header */
         .top-bar {
             background: var(--text-dark);
@@ -50,7 +47,6 @@
             padding: 10px 0;
             font-size: 14px;
         }
-
         .top-bar .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -58,7 +54,6 @@
             display: flex;
             justify-content: space-between;
         }
-
         header {
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -66,7 +61,6 @@
             top: 0;
             z-index: 1000;
         }
-
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -75,7 +69,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
     display: flex;
     align-items: center;
@@ -84,50 +77,41 @@
     font-size: 18px;
     color: var(--color-vert); /* couleur de ta charte */
 }
-
 .logo-img {
-    width: 60px;   /* taille similaire à l’icône FontAwesome */
+    width: 60px; /* taille similaire à l’icône FontAwesome */
     height: 60px;
     margin-right: 8px; /* espace entre l’image et le texte */
 }
-
         .nav-links {
             display: flex;
             list-style: none;
             gap: 30px;
         }
-
         .nav-links a {
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-
         .nav-links a:hover {
             color: var(--primary-blue);
         }
-
         /* Page Header */
-
         .page-header h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
-
         .page-header p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto;
         }
-
         /* Filter Tabs */
         .filter-section {
             background: var(--white);
             padding: 30px 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
         .filter-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -136,7 +120,6 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-
         .filter-btn {
             padding: 12px 30px;
             border: 2px solid var(--primary-blue);
@@ -148,39 +131,32 @@
             transition: all 0.3s;
             font-size: 15px;
         }
-
         .filter-btn:hover,
         .filter-btn.active {
             background: var(--primary-blue);
             color: var(--white);
         }
-
         section {
             padding: 80px 20px;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .section-title {
             font-size: 36px;
             margin-bottom: 15px;
             color: var(--text-dark);
         }
-
         .section-subtitle {
             font-size: 18px;
             color: var(--text-light);
             margin-bottom: 50px;
         }
-
         /* Featured Article */
         .featured-article {
             background: var(--white);
         }
-
         .featured-content {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
@@ -190,7 +166,6 @@
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
-
         .featured-image {
             height: 500px;
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue));
@@ -200,14 +175,12 @@
             color: var(--white);
             font-size: 120px;
         }
-
         .featured-text {
             padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
         .featured-badge {
             display: inline-block;
             background: var(--primary-blue);
@@ -219,19 +192,16 @@
             margin-bottom: 20px;
             width: fit-content;
         }
-
         .featured-text h2 {
             font-size: 32px;
             margin-bottom: 20px;
             color: var(--primary-blue);
         }
-
         .featured-text p {
             color: var(--text-light);
             margin-bottom: 20px;
             line-height: 1.8;
         }
-
         .article-meta {
             display: flex;
             gap: 25px;
@@ -239,24 +209,20 @@
             font-size: 14px;
             margin-bottom: 25px;
         }
-
         .article-meta i {
             color: var(--primary-blue);
             margin-right: 8px;
         }
-
  /* Blog Grid */
 .blog-section {
     background: var(--bg-light);
     padding: 80px 0;
 }
-
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
 }
-
 .blog-card {
     background: var(--white);
     border-radius: 15px;
@@ -266,12 +232,10 @@
     display: flex;
     flex-direction: column;
 }
-
 .blog-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
-
 /* Style pour founder-image (utilisé dans le HTML) */
 .founder-image {
     width: 100%;
@@ -283,18 +247,15 @@
     position: relative;
     overflow: hidden;
 }
-
 .founder-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
 .blog-card:hover .founder-image img {
     transform: scale(1.1);
 }
-
 /* Style alternatif pour blog-image (au cas où) */
 .blog-image {
     width: 100%;
@@ -306,18 +267,15 @@
     position: relative;
     overflow: hidden;
 }
-
 .blog-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
 .blog-card:hover .blog-image img {
     transform: scale(1.1);
 }
-
 .blog-category {
     position: absolute;
     top: 15px;
@@ -331,14 +289,12 @@
     z-index: 2;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-
 .blog-content {
     padding: 25px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
 .blog-date {
     color: var(--text-light);
     font-size: 14px;
@@ -348,12 +304,10 @@
     gap: 6px;
     font-weight: 500;
 }
-
 .blog-date i {
     font-size: 12px;
     color: var(--primary-blue);
 }
-
 .blog-content h3 {
     font-size: 18px;
     margin-bottom: 15px;
@@ -361,14 +315,12 @@
     line-height: 1.5;
     font-weight: 600;
 }
-
 .blog-content p {
     color: var(--text-light);
     margin-bottom: 20px;
     line-height: 1.7;
     flex: 1;
 }
-
 .read-more {
     color: var(--primary-blue);
     text-decoration: none;
@@ -379,32 +331,26 @@
     transition: all 0.3s;
     align-self: flex-start;
 }
-
 .read-more:hover {
     gap: 12px;
     color: var(--dark-green);
 }
-
 .read-more i {
     font-size: 14px;
     transition: transform 0.3s;
 }
-
 .read-more:hover i {
     transform: translateX(3px);
 }
-
 /* COP & Conferences */
 .conferences-section {
     background: var(--white);
     padding: 80px 0;
 }
-
 .conference-timeline {
     position: relative;
     padding: 40px 0;
 }
-
 /* Ligne verticale de la timeline */
 .conference-timeline::before {
     content: '';
@@ -415,7 +361,6 @@
     width: 2px;
     background: linear-gradient(to bottom, var(--primary-blue), rgba(2, 149, 210, 0.3));
 }
-
 .timeline-item {
     display: grid;
     grid-template-columns: 120px 1fr;
@@ -423,7 +368,6 @@
     margin-bottom: 50px;
     position: relative;
 }
-
 /* Point sur la timeline */
 .timeline-item::before {
     content: '';
@@ -438,26 +382,22 @@
     box-shadow: 0 0 0 4px rgba(2, 149, 210, 0.2);
     z-index: 2;
 }
-
 .timeline-date {
     text-align: right;
     padding-top: 10px;
 }
-
 .timeline-date .month {
     font-size: 24px;
     font-weight: 700;
     color: var(--primary-blue);
     letter-spacing: 1px;
 }
-
 .timeline-date .year {
     color: var(--text-light);
     font-size: 14px;
     font-weight: 500;
     margin-top: 4px;
 }
-
 .timeline-content {
     background: var(--bg-light);
     padding: 30px;
@@ -466,20 +406,17 @@
     transition: all 0.3s;
     box-shadow: 0 3px 15px rgba(0,0,0,0.05);
 }
-
 .timeline-content:hover {
     box-shadow: 0 8px 30px rgba(2, 149, 210, 0.2);
     transform: translateX(5px);
     border-left-width: 6px;
 }
-
 .timeline-content h3 {
     color: var(--primary-blue);
     margin-bottom: 12px;
     font-size: 20px;
     font-weight: 700;
 }
-
 .timeline-content .location {
     color: var(--primary-blue);
     font-weight: 600;
@@ -489,22 +426,18 @@
     gap: 8px;
     font-size: 15px;
 }
-
 .timeline-content .location i {
     font-size: 14px;
 }
-
 .timeline-content p {
     color: var(--text-light);
     line-height: 1.7;
     margin-bottom: 10px;
 }
-
 .timeline-content p strong {
     color: var(--text-dark);
     font-weight: 600;
 }
-
 /* Image optionnelle dans timeline */
 .timeline-image {
     width: 100%;
@@ -514,91 +447,84 @@
     margin-top: 15px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
-
 .timeline-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
 .timeline-content:hover .timeline-image img {
     transform: scale(1.05);
 }
-
 /* Responsive */
 @media (max-width: 768px) {
     .blog-grid {
         grid-template-columns: 1fr;
     }
-    
+   
     .blog-content h3 {
         font-size: 17px;
     }
-    
+   
     .founder-image,
     .blog-image {
         height: 220px;
     }
-    
+   
     .timeline-item {
         grid-template-columns: 90px 1fr;
         gap: 20px;
         margin-bottom: 40px;
     }
-    
+   
     .conference-timeline::before {
         left: 90px;
     }
-    
+   
     .timeline-item::before {
         left: 81px;
     }
-    
+   
     .timeline-date .month {
         font-size: 20px;
     }
-    
+   
     .timeline-content {
         padding: 20px;
     }
-    
+   
     .timeline-content h3 {
         font-size: 18px;
     }
 }
-
 @media (max-width: 480px) {
     .timeline-item {
         grid-template-columns: 70px 1fr;
         gap: 15px;
     }
-    
+   
     .conference-timeline::before {
         left: 70px;
     }
-    
+   
     .timeline-item::before {
         left: 61px;
         width: 18px;
         height: 18px;
     }
-    
+   
     .timeline-date .month {
         font-size: 18px;
     }
 }
-
 /* COP & Conferences */
 .conferences-section {
     background: var(--white);
 }
-
 .conference-timeline {
     position: relative;
     padding: 40px 0;
 }
-
 .timeline-item {
     display: grid;
     grid-template-columns: 120px 1fr;
@@ -606,23 +532,19 @@
     margin-bottom: 40px;
     position: relative;
 }
-
 .timeline-date {
     text-align: right;
     padding-top: 10px;
 }
-
 .timeline-date .month {
     font-size: 24px;
     font-weight: 700;
     color: var(--primary-blue);
 }
-
 .timeline-date .year {
     color: var(--text-light);
     font-size: 14px;
 }
-
 .timeline-content {
     background: var(--bg-light);
     padding: 30px;
@@ -630,17 +552,14 @@
     border-left: 4px solid var(--primary-blue);
     transition: all 0.3s;
 }
-
 .timeline-content:hover {
     box-shadow: 0 5px 20px rgba(2, 149, 210, 0.15);
     transform: translateX(5px);
 }
-
 .timeline-content h3 {
     color: var(--primary-blue);
     margin-bottom: 10px;
 }
-
 .timeline-content .location {
     color: var(--primary-blue);
     font-weight: 600;
@@ -649,7 +568,6 @@
     align-items: center;
     gap: 8px;
 }
-
 /* Image dans timeline si besoin */
 .timeline-image {
     width: 100%;
@@ -658,23 +576,19 @@
     overflow: hidden;
     margin-top: 15px;
 }
-
 .timeline-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 /* Press Releases */
 .press-section {
     background: var(--bg-light);
 }
-
 .press-grid {
     display: grid;
     gap: 20px;
 }
-
 .press-item {
     background: var(--white);
     padding: 30px;
@@ -686,12 +600,10 @@
     box-shadow: 0 3px 15px rgba(0,0,0,0.08);
     transition: all 0.3s;
 }
-
 .press-item:hover {
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     transform: translateX(5px);
 }
-
 .press-icon {
     width: 100px;
     height: 100px;
@@ -703,7 +615,6 @@
     overflow: hidden;
     padding: 10px;
 }
-
 /* Image dans press-icon */
 .press-icon img {
     width: 100%;
@@ -711,24 +622,20 @@
     object-fit: contain;
     transition: transform 0.3s ease;
 }
-
 .press-item:hover .press-icon img {
     transform: scale(1.1);
 }
-
 /* Icône Font Awesome si pas d'image */
 .press-icon i {
     font-size: 40px;
     color: var(--primary-blue);
 }
-
 .press-content h4 {
     color: var(--text-dark);
     margin-bottom: 8px;
     font-size: 18px;
     line-height: 1.4;
 }
-
 .press-content .date {
     color: var(--text-light);
     font-size: 14px;
@@ -736,14 +643,12 @@
     align-items: center;
     gap: 6px;
 }
-
 .press-content p {
     color: var(--text-light);
     font-size: 14px;
     margin-top: 8px;
     line-height: 1.5;
 }
-
 .press-download {
     padding: 12px 28px;
     background: var(--primary-blue);
@@ -757,39 +662,35 @@
     gap: 8px;
     white-space: nowrap;
 }
-
 .press-download:hover {
     background: var(--dark-green);
     transform: scale(1.05);
 }
-
 .press-download i {
     font-size: 14px;
 }
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .press-item {
         grid-template-columns: 80px 1fr;
         gap: 20px;
     }
-    
+   
     .press-icon {
         width: 80px;
         height: 80px;
     }
-    
+   
     .press-download {
         grid-column: 1 / -1;
         justify-self: start;
     }
-    
+   
     .timeline-item {
         grid-template-columns: 100px 1fr;
         gap: 20px;
     }
 }
-
         /* Video Preview Styles */
 .video-preview {
     width: 100%;
@@ -797,12 +698,10 @@
     object-fit: cover;
     display: block;
 }
-
 .video-thumbnail {
     position: relative;
     cursor: pointer;
 }
-
 /* Video Modal */
 .video-modal {
     display: none;
@@ -815,20 +714,17 @@
     background-color: rgba(0, 0, 0, 0.95);
     animation: fadeIn 0.3s ease;
 }
-
 .video-modal-content {
     position: relative;
     margin: 5% auto;
     width: 90%;
     max-width: 1200px;
 }
-
 .video-modal-content video {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
-
 .video-modal-close {
     position: absolute;
     top: -40px;
@@ -839,12 +735,10 @@
     cursor: pointer;
     transition: all 0.3s;
 }
-
 .video-modal-close:hover {
     color: var(--primary-orange);
     transform: scale(1.2);
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -853,13 +747,11 @@
         opacity: 1;
     }
 }
-
 @media (max-width: 768px) {
     .video-modal-content {
         margin: 20% auto;
         width: 95%;
     }
-
     .video-modal-close {
         top: -30px;
         font-size: 30px;
@@ -870,19 +762,16 @@
             padding: 80px 20px;
             background: var(--white);
         }
-
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
-
         .section-title {
             font-size: 42px;
             margin-bottom: 15px;
             color: var(--text-dark);
             text-align: center;
         }
-
         .section-subtitle {
             font-size: 18px;
             color: var(--text-light);
@@ -892,7 +781,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         /* Gallery Tabs */
         .gallery-tabs {
             display: flex;
@@ -901,7 +789,6 @@
             flex-wrap: wrap;
             margin-bottom: 50px;
         }
-
         .gallery-tab {
             padding: 12px 30px;
             border: 2px solid var(--primary-green);
@@ -914,7 +801,6 @@
             font-size: 15px;
             font-family: 'Lato', sans-serif;
         }
-
         .gallery-tab:hover,
         .gallery-tab.active {
             background: var(--primary-green);
@@ -922,7 +808,6 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
         }
-
         /* Gallery Grid - Masonry Layout */
         .gallery-grid {
             display: grid;
@@ -930,7 +815,6 @@
             gap: 25px;
             margin-bottom: 50px;
         }
-
         .gallery-item {
             position: relative;
             border-radius: 15px;
@@ -940,12 +824,10 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .gallery-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
-
         .gallery-item img {
             width: 100%;
             height: 300px;
@@ -953,11 +835,9 @@
             display: block;
             transition: transform 0.5s ease;
         }
-
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-
         /* Overlay Effect */
         .gallery-item::before {
             content: '';
@@ -976,11 +856,9 @@
             transition: opacity 0.4s ease;
             z-index: 1;
         }
-
         .gallery-item:hover::before {
             opacity: 1;
         }
-
         /* Caption */
         .gallery-caption {
             position: absolute;
@@ -993,11 +871,9 @@
             transition: transform 0.4s ease;
             z-index: 2;
         }
-
         .gallery-item:hover .gallery-caption {
             transform: translateY(0);
         }
-
         .gallery-caption strong {
             display: block;
             font-size: 18px;
@@ -1005,13 +881,11 @@
             margin-bottom: 8px;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
-
         .gallery-caption p {
             font-size: 14px;
             opacity: 0.95;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
-
         /* Zoom Icon */
         .gallery-zoom-icon {
             position: absolute;
@@ -1031,16 +905,13 @@
             z-index: 3;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-
         .gallery-item:hover .gallery-zoom-icon {
             transform: translate(-50%, -50%) scale(1);
         }
-
         /* Hidden Class */
         .gallery-item.hidden {
             display: none;
         }
-
         /* Gallery Modal Lightbox */
         .gallery-modal {
             display: none;
@@ -1054,7 +925,6 @@
             background-color: rgba(0, 0, 0, 0.95);
             animation: fadeIn 0.3s ease;
         }
-
         .gallery-modal-content {
             position: relative;
             margin: 50px auto;
@@ -1067,7 +937,6 @@
             animation: zoomIn 0.3s ease;
             box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
         }
-
         #modalCaption {
             margin: 20px auto;
             display: block;
@@ -1081,14 +950,12 @@
             border-radius: 10px;
             backdrop-filter: blur(10px);
         }
-
         #modalCaption strong {
             display: block;
             font-size: 24px;
             margin-bottom: 10px;
             color: var(--primary-green);
         }
-
         /* Close Button */
         .gallery-modal-close {
             position: absolute;
@@ -1109,12 +976,10 @@
             border-radius: 50%;
             backdrop-filter: blur(10px);
         }
-
         .gallery-modal-close:hover {
             background: var(--primary-green);
             transform: rotate(90deg);
         }
-
         /* Navigation Arrows */
         .gallery-prev,
         .gallery-next {
@@ -1137,21 +1002,17 @@
             align-items: center;
             justify-content: center;
         }
-
         .gallery-next {
             right: 30px;
         }
-
         .gallery-prev {
             left: 30px;
         }
-
         .gallery-prev:hover,
         .gallery-next:hover {
             background-color: var(--primary-green);
             transform: scale(1.1);
         }
-
         /* View All Button */
         .view-all-btn {
             display: inline-flex;
@@ -1167,12 +1028,10 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(46, 204, 113, 0.3);
         }
-
         .view-all-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 30px rgba(46, 204, 113, 0.4);
         }
-
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -1182,7 +1041,6 @@
                 opacity: 1;
             }
         }
-
         @keyframes zoomIn {
             from {
                 transform: scale(0.8);
@@ -1193,70 +1051,57 @@
                 opacity: 1;
             }
         }
-
         /* Responsive Design */
         @media (max-width: 1200px) {
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
-
         @media (max-width: 768px) {
             .section-title {
                 font-size: 32px;
             }
-
             .gallery-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-
             .gallery-item img {
                 height: 250px;
             }
-
             .gallery-tabs {
                 gap: 10px;
             }
-
             .gallery-tab {
                 padding: 10px 20px;
                 font-size: 14px;
             }
-
             .gallery-modal-content {
                 width: 95%;
                 margin: 30px auto;
             }
-
             #modalCaption {
                 width: 95%;
                 font-size: 16px;
                 padding: 15px;
             }
-
             .gallery-prev,
             .gallery-next {
                 width: 50px;
                 height: 50px;
                 font-size: 24px;
             }
-
             .gallery-prev {
                 left: 10px;
             }
-
             .gallery-next {
                 right: 10px;
             }
-
             .gallery-modal-close {
                 top: 10px;
                 right: 10px;
                 font-size: 40px;
             }
         }
-
         /* Newsletter Section */
         .newsletter-section {
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue));
@@ -1264,12 +1109,10 @@
             text-align: center;
             padding: 100px 20px;
         }
-
         .newsletter-section h2 {
             font-size: 42px;
             margin-bottom: 20px;
         }
-
         .newsletter-section p {
             font-size: 20px;
             margin-bottom: 40px;
@@ -1277,14 +1120,12 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .newsletter-form {
             max-width: 600px;
             margin: 0 auto;
             display: flex;
             gap: 15px;
         }
-
         .newsletter-form input {
             flex: 1;
             padding: 18px 25px;
@@ -1293,7 +1134,6 @@
             font-size: 16px;
             font-family: 'Lato', sans-serif;
         }
-
         .newsletter-form button {
             padding: 18px 40px;
             background: var(--primary-blue);
@@ -1305,12 +1145,10 @@
             transition: all 0.3s;
             font-size: 16px;
         }
-
         .newsletter-form button:hover {
             background: #d35400;
             transform: scale(1.05);
         }
-
         .newsletter-benefits {
             display: flex;
             justify-content: center;
@@ -1318,61 +1156,49 @@
             margin-top: 40px;
             flex-wrap: wrap;
         }
-
         .benefit-item {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         .benefit-item i {
             font-size: 24px;
         }
-
         footer {
             background: var(--text-dark);
             color: var(--white);
             padding: 40px 20px;
             text-align: center;
         }
-
         @media (max-width: 768px) {
             .featured-content {
                 grid-template-columns: 1fr;
             }
-
             .featured-image {
                 height: 300px;
                 font-size: 80px;
             }
-
             .featured-text {
                 padding: 30px;
             }
-
             .blog-grid,
             .video-grid,
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-
             .timeline-item {
                 grid-template-columns: 1fr;
             }
-
             .timeline-date {
                 text-align: left;
             }
-
             .press-item {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
             .newsletter-form {
                 flex-direction: column;
             }
-
             .page-header h1 {
                 font-size: 32px;
             }
@@ -1382,95 +1208,79 @@
     height: 500px; /* ajuste la hauteur selon ton besoin */
     overflow: hidden;
 }
-
 .page-header img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* l’image remplit le cadre sans se déformer */
     display: block;
 }
-
 /* === BASE MOBILE (tout ce qui est par défaut) === */
 body {
-    font-size: 16px;          /* base confortable mobile */
+    font-size: 16px; /* base confortable mobile */
     line-height: 1.5;
 }
-
 .container {
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
 }
-
 /* Grilles et cartes en colonne par défaut */
 .blog-grid,
 .gallery-grid,
 .press-grid,
 .video-grid {
     display: grid;
-    grid-template-columns: 1fr;     /* 1 colonne sur mobile */
+    grid-template-columns: 1fr; /* 1 colonne sur mobile */
     gap: 20px;
 }
-
 .featured-content,
 .timeline-item,
 .press-item {
-    grid-template-columns: 1fr;     /* tout en colonne */
+    grid-template-columns: 1fr; /* tout en colonne */
 }
-
 /* Navigation mobile : cacher les liens et montrer hamburger (à implémenter) */
 .nav-links {
-    display: none;   /* à activer via JS + media query */
+    display: none; /* à activer via JS + media query */
 }
-
 /* === TABLETTES & plus (768px et +) === */
 @media (min-width: 768px) {
     .container {
         max-width: 960px;
         padding: 0 30px;
     }
-
     .blog-grid,
     .gallery-grid,
     .video-grid {
-        grid-template-columns: repeat(2, 1fr);   /* 2 colonnes */
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
     }
-
     .featured-content {
-        grid-template-columns: 1fr 1fr;          /* image + texte côte à côte */
+        grid-template-columns: 1fr 1fr; /* image + texte côte à côte */
     }
-
     .timeline-item {
         grid-template-columns: 140px 1fr;
     }
-
     .press-item {
         grid-template-columns: 120px 1fr auto;
     }
-
     /* Afficher menu normal */
     .nav-links {
         display: flex;
     }
 }
-
 /* === DESKTOP LARGE (1024px et +) === */
 @media (min-width: 1024px) {
     .container {
         max-width: 1200px;
     }
-
     .blog-grid,
     .gallery-grid,
     .video-grid {
-        grid-template-columns: repeat(3, 1fr);   /* 3 colonnes */
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
     }
-
     .featured-content {
         grid-template-columns: 1.5fr 1fr;
     }
 }
-
 /* === Très grands écrans (optionnel) === */
 @media (min-width: 1400px) {
     .container {
@@ -1483,11 +1293,10 @@ body {
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
-            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun</div>
+            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroon</div>
             <div><i class="fas fa-envelope"></i> fonder.rajapicop@gmail.com</div>
         </div>
     </div>
-
     <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -1502,16 +1311,16 @@ body {
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home-page' %}">Accueil</a>
+                    <a class="nav-link" href="{% url 'home-page' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'programmes-page' %}">Programmes</a>
+                    <a class="nav-link" href="{% url 'programmes-page' %}">Programs</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'apropos-page' %}">À Propos</a>
+                    <a class="nav-link" href="{% url 'apropos-page' %}">About</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'actualites-page' %}">Actualités</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'actualites-page' %}">News</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="{% url 'noscontacts-page' %}">Contact</a>
@@ -1521,299 +1330,276 @@ body {
             </div>
         </nav>
     </header>
-
     <!-- Page Header -->
     <div class="page-header">
-        <img src="{% static 'rajapi/images/actuallite2.jpeg' %}" alt="Nos Programmes Phares">
+        <img src="{% static 'rajapi/images/actuallite2.jpeg' %}" alt="Our Flagship Programs">
     </div>
-
     <!-- Filter Section -->
     <div class="filter-section">
         <div class="filter-container">
-            <button class="filter-btn active">Tous</button>
-            <button class="filter-btn">Articles Blog</button>
-            <button class="filter-btn">COP & Conférences</button>
-            <button class="filter-btn">Communiqués</button>
-            <button class="filter-btn">Vidéos</button>
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Blog Articles</button>
+            <button class="filter-btn">COP & Conferences</button>
+            <button class="filter-btn">Press Releases</button>
+            <button class="filter-btn">Videos</button>
             <button class="filter-btn">Photos</button>
         </div>
     </div>
-
     <!-- Featured Article -->
     <section class="featured-article">
         <div class="container">
             <div class="featured-content">
                 <div class="founder-image">
-                    <img src="{% static 'rajapi/images/AfficheCop30.jpeg' %}" alt="Fondateur de l'ONG">
+                    <img src="{% static 'rajapi/images/AfficheCop30.jpeg' %}" alt="Featured event">
                 </div>
                 <div class="featured-text">
-                    <span class="featured-badge">À LA UNE</span>
-                    <h2>La jeunesse africaine de RAJAPI-COP Africa, en collaboration avec les jeunes de l’Amazonie et de l’Asie du Sud-Est, milite pour un financement équitable en faveur du Bassin du Congo à la COP30 a Belém au Brésil</h2>
+                    <span class="featured-badge">FEATURED</span>
+                    <h2>African youth from RAJAPI-COP Africa, in collaboration with youth from the Amazon and Southeast Asia, advocate for equitable funding for the Congo Basin at COP30 in Belém, Brazil</h2>
                     <div class="article-meta">
-                        <span><i class="fas fa-calendar"></i> 11-21 Novembre 2025</span>
+                        <span><i class="fas fa-calendar"></i> November 11-21, 2025</span>
                         <span><i class="fas fa-user"></i> Edgard R. MVONDO</span>
                         <span><i class="fas fa-tag"></i> COP30</span>
                     </div>
-                    <p>Notre délégation de 25 jeunes leaders africains a participé activement aux négociations de la COP29 à Bakou, portant la voix de la jeunesse africaine sur les enjeux de financement climatique et d'adaptation.</p>
+                    <p>Our delegation of 25 African young leaders actively participated in the COP29 negotiations in Baku, carrying the voice of African youth on climate finance and adaptation issues.</p>
                     <a href="#" class="read-more">
-                        Lire l'article complet <i class="fas fa-arrow-right"></i>
+                        Read full article <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Blog Section -->
     <section class="blog-section">
         <div class="container">
-            <h2 class="section-title">Blog Thématique</h2>
-            <p class="section-subtitle">Articles, analyses et perspectives sur le climat et la biodiversité en Afrique</p>
-
+            <h2 class="section-title">Thematic Blog</h2>
+            <p class="section-subtitle">Articles, analyses and perspectives on climate and biodiversity in Africa</p>
             <div class="blog-grid">
                 <div class="blog-card">
                     <div class="founder-image">
-                        <img src="{% static 'rajapi/images/unea.jpeg' %}" alt="Fondateur de l'ONG">
+                        <img src="{% static 'rajapi/images/unea.jpeg' %}" alt="UNEA-7">
                     </div>
                     <div class="blog-content">
-                        <p class="blog-date"><i class="fas fa-calendar"></i> 01-12 Décembre 2025</p>
-                        <h3>La jeunesse africaine de RAJAPI-COP Africa, en collaboration avec les jeunes de l’Amazonie et de l’Asie du Sud-Est, milite pour un financement équitable en faveur du Bassin du Congo à la COP30 a Belém au Brésil</h3>
-                        <p>RAJAPI-COP Africa a participé activement à la 7ᵉ session de l’Assemblée des Nations Unies pour l’Environnement (UNEA-7), tenue à Nairobi, au Kenya. Cette participation a permis à notre organisation de représenter la jeunesse africaine, d’échanger avec des décideurs, experts et organisations internationales, et de plaider pour des politiques environnementales inclusives et durables. Nous avons mis en avant des solutions concrètes pour la protection des écosystèmes côtiers et marins africains, tout en renforçant les partenariats internationaux pour une action climatique et environnementale plus équitable.</p>
+                        <p class="blog-date"><i class="fas fa-calendar"></i> December 01-12, 2025</p>
+                        <h3>African youth from RAJAPI-COP Africa, in collaboration with youth from the Amazon and Southeast Asia, advocate for equitable funding for the Congo Basin at COP30 in Belém, Brazil</h3>
+                        <p>RAJAPI-COP Africa actively participated in the 7th session of the United Nations Environment Assembly (UNEA-7) held in Nairobi, Kenya. This participation enabled our organization to represent African youth, engage with policymakers, experts and international organizations, and advocate for inclusive and sustainable environmental policies. We highlighted concrete solutions for the protection of African coastal and marine ecosystems while strengthening international partnerships for more equitable climate and environmental action.</p>
                         <a href="#" class="read-more">
-                            Lire plus <i class="fas fa-arrow-right"></i>
+                            Read more <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="blog-card">
                     <div class="founder-image">
-                        <img src="{% static 'rajapi/images/cric.jpeg' %}" alt="Fondateur de l'ONG">
+                        <img src="{% static 'rajapi/images/cric.jpeg' %}" alt="CRIC23">
                     </div>
                     <div class="blog-content">
-                        <p class="blog-date"><i class="fas fa-calendar"></i> 01-05 Décembre 2025</p>
-                        <h3>Participation de RAJAPI-COP Africa au CRIC23 Suivi de la Convention des Nations Unies sur la Désertification</h3>
-                        <p>RAJAPI-COP Africa a pris part activement au 23ᵉ Comité de suivi et de mise en œuvre de la Convention sur la lutte contre la désertification (CRIC23). Cette participation a offert à notre organisation l’opportunité de représenter la jeunesse africaine, de partager des expériences et bonnes pratiques sur la gestion durable des terres, et de plaider pour l’intégration des jeunes et des communautés locales dans les stratégies de lutte contre la désertification. Notre engagement a renforcé les partenariats internationaux et contribué à promouvoir des solutions durables pour la résilience des écosystèmes et des populations vulnérables en Afrique.</p>
+                        <p class="blog-date"><i class="fas fa-calendar"></i> December 01-05, 2025</p>
+                        <h3>RAJAPI-COP Africa participation at CRIC23 – Follow-up of the United Nations Convention to Combat Desertification</h3>
+                        <p>RAJAPI-COP Africa actively took part in the 23rd Committee for the Review of the Implementation of the Convention (CRIC23). This participation provided our organization the opportunity to represent African youth, share experiences and good practices on sustainable land management, and advocate for the integration of youth and local communities in strategies to combat desertification. Our engagement strengthened international partnerships and contributed to promoting sustainable solutions for ecosystem and vulnerable population resilience in Africa.</p>
                         <a href="#" class="read-more">
-                            Lire plus <i class="fas fa-arrow-right"></i>
+                            Read more <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="blog-card">
                     <div class="founder-image">
-                        <img src="{% static 'rajapi/images/doha.jpeg' %}" alt="Fondateur de l'ONG">
+                        <img src="{% static 'rajapi/images/doha.jpeg' %}" alt="Doha Summit">
                     </div>
                     <div class="blog-content">
-                        <p class="blog-date"><i class="fas fa-calendar"></i> 02-06 Novembre 2025</p>
-                        <h3>Participation de RAJAPI-COP Africa au Deuxième Sommet mondial pour le développement social Doha, Qatar</h3>
-                        <p>RAJAPI-COP Africa a représenté la jeunesse africaine lors du Deuxième Sommet mondial pour le développement social à Doha, au Qatar. Cette participation a permis de mettre en lumière les enjeux et les solutions locales innovantes pour le développement social, tout en favorisant le dialogue entre les pays du Sud et du Nord. Notre organisation a plaidé pour une coopération internationale équitable, le renforcement des capacités des jeunes et l’intégration des initiatives locales dans les stratégies globales de développement durable. Ce sommet a constitué une plateforme stratégique pour renforcer les partenariats internationaux et partager des expériences concrètes en matière de justice sociale et d’inclusion.</p>
+                        <p class="blog-date"><i class="fas fa-calendar"></i> November 02-06, 2025</p>
+                        <h3>RAJAPI-COP Africa participation at the 2nd World Summit for Social Development – Doha, Qatar</h3>
+                        <p>RAJAPI-COP Africa represented African youth at the 2nd World Summit for Social Development in Doha, Qatar. This participation highlighted issues and innovative local solutions for social development while fostering dialogue between Southern and Northern countries. Our organization advocated for equitable international cooperation, youth capacity building and the integration of local initiatives into global sustainable development strategies. This summit served as a strategic platform to strengthen international partnerships and share concrete experiences in social justice and inclusion.</p>
                         <a href="#" class="read-more">
-                            Lire plus <i class="fas fa-arrow-right"></i>
+                            Read more <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="blog-card">
                     <div class="founder-image">
-                        <img src="{% static 'rajapi/images/ISP-CWP.jpg' %}" alt="Fondateur de l'ONG">
+                        <img src="{% static 'rajapi/images/ISP-CWP.jpg' %}" alt="Chemicals and Waste">
                     </div>
                     <div class="blog-content">
-                        <p class="blog-date"><i class="fas fa-calendar"></i> 01-06 Fevrier 2026</p>
-                        <h3>Participation de RAJAPI-COP Africa à la Première Session Plénière Intergouvernementale sur les Produits Chimiques, les Déchets et la Pollution Genève, Suisse</h3>
-                        <p>RAJAPI-COP Africa participera activement à la Première Session Plénière Intergouvernementale sur les Produits Chimiques, les Déchets et la Pollution, qui se tiendra à Genève du 1er au 6 février. Cette session offre une plateforme unique pour échanger avec des décideurs, experts et représentants d’organisations internationales sur la gestion sûre et durable des produits chimiques et déchets, et sur la réduction de la pollution mondiale. Notre organisation représentera la jeunesse africaine, mettant en avant des solutions innovantes et locales pour la protection de l’environnement et la promotion de pratiques durables, tout en renforçant la coopération internationale sur ces enjeux critiques.</p>
+                        <p class="blog-date"><i class="fas fa-calendar"></i> February 01-06, 2026</p>
+                        <h3>RAJAPI-COP Africa participation at the First Intergovernmental Plenary Session on Chemicals, Waste and Pollution – Geneva, Switzerland</h3>
+                        <p>RAJAPI-COP Africa will actively participate in the First Intergovernmental Plenary Session on Chemicals, Waste and Pollution, to be held in Geneva from February 1 to 6. This session offers a unique platform to engage with policymakers, experts and representatives of international organizations on the safe and sustainable management of chemicals and waste, and on reducing global pollution. Our organization will represent African youth, highlighting innovative and local solutions for environmental protection and the promotion of sustainable practices, while strengthening international cooperation on these critical issues.</p>
                         <a href="#" class="read-more">
-                            Lire plus <i class="fas fa-arrow-right"></i>
+                            Read more <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="blog-card">
                     <div class="founder-image">
-                        <img src="{% static 'rajapi/images/WUF13png' %}" alt="Fondateur de l'ONG">
+                        <img src="{% static 'rajapi/images/WUF13png' %}" alt="WUF13">
                     </div>
                     <div class="blog-content">
-                        <p class="blog-date"><i class="fas fa-calendar"></i> 18-22 Mai 2026</p>
-                        <h3>Participation de RAJAPI-COP Africa au 13ᵉ Forum Urbain Mondial (WUF13)</h3>
-                        <p>RAJAPI-COP Africa a participé au 13ᵉ Forum Urbain Mondial (WUF13), organisé par ONU-Habitat, afin de représenter la jeunesse africaine et partager des solutions innovantes pour un développement urbain durable et inclusif. Cette rencontre internationale a permis d’échanger avec des gouvernements, organisations internationales, urbanistes et acteurs de la société civile, et de plaider pour l’intégration des jeunes dans la planification urbaine, la résilience climatique et l’aménagement durable des villes africaines. RAJAPI-COP Africa a ainsi contribué à renforcer les partenariats internationaux et à promouvoir des politiques urbaines équitables et durables pour les communautés locales.</p>
+                        <p class="blog-date"><i class="fas fa-calendar"></i> May 18-22, 2026</p>
+                        <h3>RAJAPI-COP Africa participation at the 13th World Urban Forum (WUF13)</h3>
+                        <p>RAJAPI-COP Africa participated in the 13th World Urban Forum (WUF13), organized by UN-Habitat, to represent African youth and share innovative solutions for sustainable and inclusive urban development. This international meeting enabled exchanges with governments, international organizations, urban planners and civil society actors, and advocacy for the integration of youth in urban planning, climate resilience and sustainable development of African cities. RAJAPI-COP Africa thus contributed to strengthening international partnerships and promoting equitable and sustainable urban policies for local communities.</p>
                         <a href="#" class="read-more">
-                            Lire plus <i class="fas fa-arrow-right"></i>
+                            Read more <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="blog-card">
                     <div class="founder-image">
-                        <img src="{% static 'rajapi/images/imagesCOP17UNCCD.png' %}" alt="Fondateur de l'ONG">
+                        <img src="{% static 'rajapi/images/imagesCOP17UNCCD.png' %}" alt="COP17 UNCCD">
                     </div>
                     <div class="blog-content">
-                        <p class="blog-date"><i class="fas fa-calendar"></i> 17-28 Aout 2026</p>
-                        <h3>Participation de RAJAPI-COP Africa à la 17ᵉ Conférence des Parties sur la Désertification (COP17)</h3>
-                        <p>RAJAPI-COP Africa a participé à la 17ᵉ Conférence des Parties (COP17) de la Convention des Nations Unies sur la Lutte contre la Désertification (UNCCD) afin de représenter la jeunesse africaine et de partager des solutions innovantes pour la gestion durable des terres et la résilience des communautés vulnérables. Notre organisation a plaidé pour l’intégration des jeunes dans les stratégies de lutte contre la désertification, le renforcement des capacités locales et la promotion d’une coopération internationale équitable. Cette participation a permis d’échanger avec des experts, décideurs et partenaires internationaux et de contribuer activement à la mise en œuvre des objectifs de neutralité en matière de dégradation des terres.</p>
+                        <p class="blog-date"><i class="fas fa-calendar"></i> August 17-28, 2026</p>
+                        <h3>RAJAPI-COP Africa participation at the 17th Conference of the Parties on Desertification (COP17)</h3>
+                        <p>RAJAPI-COP Africa participated in the 17th Conference of the Parties (COP17) of the United Nations Convention to Combat Desertification (UNCCD) to represent African youth and share innovative solutions for sustainable land management and resilience of vulnerable communities. Our organization advocated for the integration of youth in desertification control strategies, local capacity building and the promotion of equitable international cooperation. This participation enabled exchanges with experts, policymakers and international partners and actively contributed to the implementation of land degradation neutrality goals.</p>
                         <a href="#" class="read-more">
-                            Lire plus <i class="fas fa-arrow-right"></i>
+                            Read more <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- COP & Conferences -->
     <section class="conferences-section">
         <div class="container">
-            <h2 class="section-title">COP & Conférences Internationales</h2>
-            <p class="section-subtitle">Notre participation aux grands rendez-vous climatiques mondiaux</p>
-
+            <h2 class="section-title">COP & International Conferences</h2>
+            <p class="section-subtitle">Our participation in major global climate events</p>
             <div class="conference-timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">
-                        <div class="month">DÉC</div>
+                        <div class="month">DEC</div>
                         <div class="year">2024</div>
                     </div>
                     <div class="timeline-content">
-                        <h3>COP29 - Bakou, Azerbaïdjan</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Bakou, Azerbaïdjan</p>
-                        <p>Participation active de notre délégation de 25 jeunes aux négociations sur le financement climatique. Organisation de 3 side events sur la jeunesse africaine et présentation de 5 projets innovants.</p>
-                        <p style="margin-top: 15px;"><strong>Résultats clés :</strong> Engagement de 3 nouveaux partenaires financiers, signature de 2 MoU avec des organisations internationales.</p>
+                        <h3>COP29 - Baku, Azerbaijan</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Baku, Azerbaijan</p>
+                        <p>Active participation of our delegation of 25 youth in negotiations on climate finance. Organization of 3 side events on African youth and presentation of 5 innovative projects.</p>
+                        <p style="margin-top: 15px;"><strong>Key outcomes:</strong> Commitment from 3 new financial partners, signing of 2 MoUs with international organizations.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">
                         <div class="month">NOV</div>
                         <div class="year">2024</div>
                     </div>
                     <div class="timeline-content">
-                        <h3>Sommet Africain sur le Climat</h3>
+                        <h3>African Climate Summit</h3>
                         <p class="location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
-                        <p>Co-organisation du forum de la jeunesse africaine avec l'Union Africaine. Plus de 500 jeunes leaders réunis pour définir une position commune africaine.</p>
+                        <p>Co-organization of the African youth forum with the African Union. More than 500 young leaders gathered to define a common African position.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">
                         <div class="month">SEPT</div>
                         <div class="year">2024</div>
                     </div>
                     <div class="timeline-content">
-                        <h3>Semaine du Climat de New York</h3>
+                        <h3>New York Climate Week</h3>
                         <p class="location"><i class="fas fa-map-marker-alt"></i> New York, USA</p>
-                        <p>Présentation de nos programmes d'innovation climatique lors de plusieurs événements parallèles à l'Assemblée Générale de l'ONU.</p>
+                        <p>Presentation of our climate innovation programs during several side events at the UN General Assembly.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">
-                        <div class="month">JUIN</div>
+                        <div class="month">JUN</div>
                         <div class="year">2024</div>
                     </div>
                     <div class="timeline-content">
-                        <h3>Conférence sur la Biodiversité - CBD COP16</h3>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Cali, Colombie</p>
-                        <p>Mobilisation pour la protection du Bassin du Congo. Lancement officiel du programme CongoBotanika à l'échelle internationale.</p>
+                        <h3>Biodiversity Conference - CBD COP16</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Cali, Colombia</p>
+                        <p>Mobilization for the protection of the Congo Basin. Official international launch of the CongoBotanika program.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Press Releases -->
     <section class="press-section">
         <div class="container">
-            <h2 class="section-title">Communiqués de Presse</h2>
-            <p class="section-subtitle">Nos annonces officielles et prises de position</p>
-
+            <h2 class="section-title">Press Releases</h2>
+            <p class="section-subtitle">Our official announcements and position statements</p>
             <div class="press-grid">
                 <div class="press-item">
                     <div class="press-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <div class="press-content">
-                        <h4>Rapport 2024 du lancement des activites</h4>
-                        <p class="date">15 Décembre 2024</p>
+                        <h4>2024 Activity Launch Report</h4>
+                        <p class="date">December 15, 2024</p>
                     </div>
-                    <a href="{% static 'documents/RAJAPI-COP 2025 ACTIVITY REPORT (1) (1).pdf' %}" 
-                    class="press-download" 
-                    download="Lancement-Plateforme-RAJAPI-COP.pdf">
-                        <i class="fas fa-download"></i> Télécharger
+                    <a href="{% static 'documents/RAJAPI-COP 2025 ACTIVITY REPORT (1) (1).pdf' %}"
+                    class="press-download"
+                    download="Launch-RAJAPI-COP-Platform.pdf">
+                        <i class="fas fa-download"></i> Download
                     </a>
                 </div>
-
                 <div class="press-item">
                     <div class="press-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
                     <div class="press-content">
-                        <h4>Article sur la participation de RAJAPI-COP au WUF12 au Caire en Égypte du 4 au Novembre 2024</h4>
-                        <p class="date">1 Décembre 2024</p>
+                        <h4>Article on RAJAPI-COP participation at WUF12 in Cairo, Egypt from November 4 to 8, 2024</h4>
+                        <p class="date">December 1, 2024</p>
                     </div>
-                    <a href="{% static 'documents/Article sur la participation de RAJAPI-COP au WUF12 au Caire en Egypte du 4 au 8 Novembre 2024 (2).pdf' %}" 
-                    class="press-download" 
-                    download="Position-RAJAPI-COP-COP29-Financement-Climatique.pdf">
-                        <i class="fas fa-download"></i> Télécharger
+                    <a href="{% static 'documents/Article sur la participation de RAJAPI-COP au WUF12 au Caire en Egypte du 4 au 8 Novembre 2024 (2).pdf' %}"
+                    class="press-download"
+                    download="RAJAPI-COP-Position-COP29-Climate-Finance.pdf">
+                        <i class="fas fa-download"></i> Download
                     </a>
                 </div>
-
                 <div class="press-item">
                     <div class="press-icon">
                         <i class="fas fa-award"></i>
                     </div>
                     <div class="press-content">
-                        <h4>RAJAPI-COP remporte le Prix de l'Innovation Climatique 2024</h4>
-                        <p class="date">20 Novembre 2024</p>
+                        <h4>RAJAPI-COP wins the 2024 Climate Innovation Award</h4>
+                        <p class="date">November 20, 2024</p>
                     </div>
-                    <a href="pdfs/prix-innovation-climatique-2024.pdf" 
-                    class="press-download" 
-                    download="Prix-Innovation-Climatique-RAJAPI-COP-2024.pdf">
-                        <i class="fas fa-download"></i> Télécharger
+                    <a href="pdfs/prix-innovation-climatique-2024.pdf"
+                    class="press-download"
+                    download="Climate-Innovation-Award-RAJAPI-COP-2024.pdf">
+                        <i class="fas fa-download"></i> Download
                     </a>
                 </div>
-
                 <div class="press-item">
                     <div class="press-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <div class="press-content">
-                        <h4>Nouveau partenariat stratégique avec l'UNEP</h4>
-                        <p class="date">10 Novembre 2024</p>
+                        <h4>New strategic partnership with UNEP</h4>
+                        <p class="date">November 10, 2024</p>
                     </div>
-                    <a href="pdfs/partenariat-unep-rajapi-cop.pdf" 
-                    class="press-download" 
-                    download="Partenariat-Stratégique-UNEP-RAJAPI-COP.pdf">
-                        <i class="fas fa-download"></i> Télécharger
+                    <a href="pdfs/partenariat-unep-rajapi-cop.pdf"
+                    class="press-download"
+                    download="Strategic-Partnership-UNEP-RAJAPI-COP.pdf">
+                        <i class="fas fa-download"></i> Download
                     </a>
                 </div>
-
                 <div class="press-item">
                     <div class="press-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <div class="press-content">
-                        <h4>Expansion de RAJAPI-COP dans 10 nouveaux pays africains</h4>
-                        <p class="date">25 Octobre 2024</p>
+                        <h4>RAJAPI-COP expansion into 10 new African countries</h4>
+                        <p class="date">October 25, 2024</p>
                     </div>
-                    <a href="pdfs/expansion-10-pays-rajapi-cop.pdf" 
-                    class="press-download" 
-                    download="Expansion-RAJAPI-COP-10-Nouveaux-Pays.pdf">
-                        <i class="fas fa-download"></i> Télécharger
+                    <a href="pdfs/expansion-10-pays-rajapi-cop.pdf"
+                    class="press-download"
+                    download="RAJAPI-COP-Expansion-10-New-Countries.pdf">
+                        <i class="fas fa-download"></i> Download
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
 <!-- Web TV Section -->
 <section class="webtv-section">
     <div class="container">
-        <h2 class="section-title">Web TV RAJAPI-COP</h2>
-        <p class="section-subtitle">Nos reportages, interviews et documentaires sur l'action climatique en Afrique</p>
-
+        <h2 class="section-title">RAJAPI-COP Web TV</h2>
+        <p class="section-subtitle">Our reports, interviews and documentaries on climate action in Africa</p>
         <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-top: 40px;">
             <!-- Video 1 -->
             <div class="video-card">
                 <div class="video-thumbnail" data-video="video1" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
                     <video class="video-preview" poster="{% static 'rajapi/images/presentation_rajapi-cop.png' %}" style="width: 100%; height: 220px; object-fit: cover;">
                         <source src="{% static 'rajapi/videos/video_presentation _rajapi.mp4' %}" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture de vidéos.
+                        Your browser does not support video playback.
                     </video>
                     <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
                         <i class="fas fa-play"></i>
@@ -1821,15 +1607,14 @@ body {
                     <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">01:03</span>
                 </div>
                 <div class="video-info" style="padding: 20px 0;">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Documentaire : Les gardiens du Bassin du Congo</h4>
-                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Découvrez le travail des jeunes pour protéger la forêt tropicale</p>
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Documentary: Guardians of the Congo Basin</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Discover the work of youth to protect the tropical forest</p>
                     <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
-                        <span><i class="fas fa-eye"></i> 12,450 vues</span>
-                        <span><i class="fas fa-calendar"></i> 8 Déc 2024</span>
+                        <span><i class="fas fa-eye"></i> 12,450 views</span>
+                        <span><i class="fas fa-calendar"></i> Dec 8, 2024</span>
                     </div>
                 </div>
             </div>
-
             <!-- Video 2 -->
             <div class="video-card">
                 <div class="video-thumbnail" data-video="video2" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
@@ -1842,15 +1627,14 @@ body {
                     <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">04:02</span>
                 </div>
                 <div class="video-info" style="padding: 20px 0;">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Reportage COP29 : La voix de la jeunesse africaine</h4>
-                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Notre délégation raconte son expérience à Bakou</p>
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">COP29 Report: The voice of African youth</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Our delegation shares its experience in Baku</p>
                     <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
-                        <span><i class="fas fa-eye"></i> 8,920 vues</span>
-                        <span><i class="fas fa-calendar"></i> 5 Déc 2024</span>
+                        <span><i class="fas fa-eye"></i> 8,920 views</span>
+                        <span><i class="fas fa-calendar"></i> Dec 5, 2024</span>
                     </div>
                 </div>
             </div>
-
             <!-- Video 3 -->
             <div class="video-card">
                 <div class="video-thumbnail" data-video="video3" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
@@ -1863,15 +1647,14 @@ body {
                     <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">01:05</span>
                 </div>
                 <div class="video-info" style="padding: 20px 0;">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Interview : Le fondateur de RAJAPI-COP</h4>
-                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Edgard R. MVONDO partage sa vision pour l'Afrique</p>
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Interview: RAJAPI-COP Founder</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Edgard R. MVONDO shares his vision for Africa</p>
                     <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
                         <span><i class="fas fa-eye"></i></span>
-                        <span><i class="fas fa-calendar"></i> 1 Déc 2024</span>
+                        <span><i class="fas fa-calendar"></i> Dec 1, 2024</span>
                     </div>
                 </div>
             </div>
-
             <!-- Video 4 -->
             <div class="video-card">
                 <div class="video-thumbnail" data-video="video4" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
@@ -1884,15 +1667,14 @@ body {
                     <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">04:42</span>
                 </div>
                 <div class="video-info" style="padding: 20px 0;">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Vidéo de Présentation du Fond d'investissement des jeunes africains de RAJAPI-COP Africa.</h4>
-                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Comment nous construisons un habitat durable pour tous</p>
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Video Presentation of the RAJAPI-COP Africa African Youth Investment Fund</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">How we are building sustainable habitat for all</p>
                     <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
                         <span><i class="fas fa-eye"></i></span>
-                        <span><i class="fas fa-calendar"></i> 28 Nov 2024</span>
+                        <span><i class="fas fa-calendar"></i> Nov 28, 2024</span>
                     </div>
                 </div>
             </div>
-
             <!-- Video 5 -->
             <div class="video-card">
                 <div class="video-thumbnail" data-video="video5" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
@@ -1905,15 +1687,14 @@ body {
                     <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">00:40</span>
                 </div>
                 <div class="video-info" style="padding: 20px 0;">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Presentation RAJAPI-COP Nigeria</h4>
-                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Comment accéder aux fonds climatiques internationaux</p>
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">RAJAPI-COP Nigeria Presentation</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">How to access international climate funds</p>
                     <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
                         <span><i class="fas fa-eye"></i></span>
-                        <span><i class="fas fa-calendar"></i> 25 Nov 2024</span>
+                        <span><i class="fas fa-calendar"></i> Nov 25, 2024</span>
                     </div>
                 </div>
             </div>
-
             <!-- Video 6 -->
             <div class="video-card">
                 <div class="video-thumbnail" data-video="video6" style="position: relative; border-radius: 15px; overflow: hidden; background: #000; cursor: pointer;">
@@ -1926,212 +1707,195 @@ body {
                     <span class="video-duration" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 15px; font-size: 13px;">00:18</span>
                 </div>
                 <div class="video-info" style="padding: 20px 0;">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Atelier de formation et de sensibilisation sur les déchets chimiques dangereux et le mercure  Kribi Sud, Cameroun</h4>
-                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Nos actions pour la préservation des écosystèmes marins</p>
+                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Training and awareness workshop on hazardous chemical waste and mercury - Kribi South, Cameroon</h4>
+                    <p style="color: var(--text-light); font-size: 14px; margin-bottom: 12px;">Our actions to preserve marine ecosystems</p>
                     <div class="video-stats" style="display: flex; gap: 20px; color: var(--text-light); font-size: 14px;">
                         <span><i class="fas fa-eye"></i></span>
-                        <span><i class="fas fa-calendar"></i> 20 Nov 2024</span>
+                        <span><i class="fas fa-calendar"></i> Nov 20, 2024</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Modal Video Player -->
 <div id="videoModal" class="video-modal">
     <div class="video-modal-content">
-        <span class="video-modal-close">&times;</span>
+        <span class="video-modal-close">×</span>
         <video id="modalVideo" controls>
             <source id="modalVideoSource" src="" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture de vidéos.
+            Your browser does not support video playback.
         </video>
     </div>
 </div>
-
     <!-- Gallery Section -->
 <section class="gallery-section">
     <div class="container">
-        <h2 class="section-title">Galerie Photos & Vidéos</h2>
-        <p class="section-subtitle">Revivez en images nos moments forts et nos actions sur le terrain</p>
-
+        <h2 class="section-title">Photo & Video Gallery</h2>
+        <p class="section-subtitle">Relive our highlights and field actions through images</p>
         <div class="gallery-tabs">
-            <button class="gallery-tab active" data-category="all">Toutes</button>
-            <button class="gallery-tab" data-category="cop">COP & Événements</button>
-            <button class="gallery-tab" data-category="terrain">Projets Terrain</button>
-            <button class="gallery-tab" data-category="formation">Formation</button>
-            <button class="gallery-tab" data-category="equipe">Équipe</button>
+            <button class="gallery-tab active" data-category="all">All</button>
+            <button class="gallery-tab" data-category="cop">COP & Events</button>
+            <button class="gallery-tab" data-category="terrain">Field Projects</button>
+            <button class="gallery-tab" data-category="formation">Training</button>
+            <button class="gallery-tab" data-category="equipe">Team</button>
         </div>
-
         <div class="gallery-grid">
             <!-- Image 1 -->
             <div class="gallery-item" data-category="cop">
-                <img src="{% static 'rajapi/images/galerie1.jpeg' %}" alt="COP29 Bakou 2024">
+                <img src="{% static 'rajapi/images/galerie1.jpeg' %}" alt="COP29 Baku 2024">
                 <div class="gallery-caption">
-                    <strong>COP29 Bakou 2024</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Notre délégation à la conférence</p>
+                    <strong>COP29 Baku 2024</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Our delegation at the conference</p>
                 </div>
             </div>
-
             <!-- Image 2 -->
             <div class="gallery-item" data-category="terrain">
-                <img src="{% static 'rajapi/images/galerie2.jpeg' %}" alt="Plantation d'arbres - Cameroun">
+                <img src="{% static 'rajapi/images/galerie2.jpeg' %}" alt="Tree planting - Cameroon">
                 <div class="gallery-caption">
-                    <strong>Plantation d'arbres - Cameroun</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">1000 arbres plantés en une journée</p>
+                    <strong>Tree planting - Cameroon</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">1000 trees planted in one day</p>
                 </div>
             </div>
-
             <!-- Image 3 -->
             <div class="gallery-item" data-category="formation">
-                <img src="{% static 'rajapi/images/galerie3.jpeg' %}" alt="Formation Leadership Climatique">
+                <img src="{% static 'rajapi/images/galerie3.jpeg' %}" alt="Climate Leadership Training">
                 <div class="gallery-caption">
-                    <strong>Formation Leadership Climatique</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">50 jeunes formés à Yaoundé</p>
+                    <strong>Climate Leadership Training</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">50 young people trained in Yaoundé</p>
                 </div>
             </div>
-
             <!-- Image 4 -->
             <div class="gallery-item" data-category="terrain">
-                <img src="{% static 'rajapi/images/galerie4.jpeg' %}" alt="BlueGuard - Nettoyage des plages">
+                <img src="{% static 'rajapi/images/galerie4.jpeg' %}" alt="BlueGuard - Beach cleanup">
                 <div class="gallery-caption">
-                    <strong>BlueGuard - Nettoyage des plages</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Action à Kribi, Cameroun</p>
+                    <strong>BlueGuard - Beach cleanup</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Action in Kribi, Cameroon</p>
                 </div>
             </div>
-
             <!-- Image 5 -->
             <div class="gallery-item" data-category="cop">
-                <img src="{% static 'rajapi/images/galerie5.jpeg' %}" alt="Sommet de la Jeunesse Africaine">
+                <img src="{% static 'rajapi/images/galerie5.jpeg' %}" alt="African Youth Summit">
                 <div class="gallery-caption">
-                    <strong>Sommet de la Jeunesse Africaine</strong>
+                    <strong>African Youth Summit</strong>
                     <p style="font-size: 14px; margin-top: 5px;">Nairobi, Kenya 2024</p>
                 </div>
             </div>
-
             <!-- Image 6 -->
             <div class="gallery-item" data-category="terrain">
-                <img src="{% static 'rajapi/images/galerie6.jpeg' %}" alt="Éco-Habitats en construction">
+                <img src="{% static 'rajapi/images/galerie6.jpeg' %}" alt="Eco-Habitats under construction">
                 <div class="gallery-caption">
-                    <strong>Éco-Habitats en construction</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Projet pilote à Bafoussam</p>
+                    <strong>Eco-Habitats under construction</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Pilot project in Bafoussam</p>
                 </div>
             </div>
-
             <!-- Image 7 -->
             <div class="gallery-item" data-category="terrain">
-                <img src="{% static 'rajapi/images/galerie7.jpeg' %}" alt="Expédition CongoBotanika">
+                <img src="{% static 'rajapi/images/galerie7.jpeg' %}" alt="CongoBotanika Expedition">
                 <div class="gallery-caption">
-                    <strong>Expédition CongoBotanika</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Recherche dans le Bassin du Congo</p>
+                    <strong>CongoBotanika Expedition</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Research in the Congo Basin</p>
                 </div>
             </div>
-
             <!-- Image 8 -->
             <div class="gallery-item" data-category="cop">
-                <img src="{% static 'rajapi/images/galerie8.jpeg' %}" alt="Remise de Prix Innovation">
+                <img src="{% static 'rajapi/images/galerie8.jpeg' %}" alt="Innovation Award Ceremony">
                 <div class="gallery-caption">
-                    <strong>Remise de Prix Innovation</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Biodiversité Challenge 2024</p>
+                    <strong>Innovation Award Ceremony</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Biodiversity Challenge 2024</p>
                 </div>
             </div>
-
             <!-- Image 9 -->
             <div class="gallery-item" data-category="equipe">
-                <img src="{% static 'rajapi/images/galerie9.jpeg' %}" alt="Équipe RAJAPI-COP">
+                <img src="{% static 'rajapi/images/galerie9.jpeg' %}" alt="RAJAPI-COP Team">
                 <div class="gallery-caption">
-                    <strong>Équipe RAJAPI-COP</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Réunion stratégique 2024</p>
+                    <strong>RAJAPI-COP Team</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Strategic meeting 2024</p>
                 </div>
             </div>
             <!-- Image 10 -->
             <div class="gallery-item" data-category="equipe">
-                <img src="{% static 'rajapi/images/Benin1.jpeg' %}" alt="Équipe RAJAPI-COP">
+                <img src="{% static 'rajapi/images/Benin1.jpeg' %}" alt="RAJAPI-COP Team">
                 <div class="gallery-caption">
-                    <strong>Équipe RAJAPI-COP</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Réunion stratégique 2024</p>
+                    <strong>RAJAPI-COP Team</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Strategic meeting 2024</p>
                 </div>
             </div>
             <!-- Image 11 -->
             <div class="gallery-item" data-category="equipe">
-                <img src="{% static 'rajapi/images/Benin2.jpeg' %}" alt="Équipe RAJAPI-COP">
+                <img src="{% static 'rajapi/images/Benin2.jpeg' %}" alt="RAJAPI-COP Team">
                 <div class="gallery-caption">
-                    <strong>Équipe RAJAPI-COP</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Réunion stratégique 2024</p>
+                    <strong>RAJAPI-COP Team</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Strategic meeting 2024</p>
                 </div>
             </div>
             <!-- Image 12 -->
             <div class="gallery-item" data-category="equipe">
-                <img src="{% static 'rajapi/images/Benin3.jpeg' %}" alt="Équipe RAJAPI-COP">
+                <img src="{% static 'rajapi/images/Benin3.jpeg' %}" alt="RAJAPI-COP Team">
                 <div class="gallery-caption">
-                    <strong>Équipe RAJAPI-COP</strong>
-                    <p style="font-size: 14px; margin-top: 5px;">Réunion stratégique 2024</p>
+                    <strong>RAJAPI-COP Team</strong>
+                    <p style="font-size: 14px; margin-top: 5px;">Strategic meeting 2024</p>
                 </div>
             </div>
         </div>
-
         <div style="text-align: center; margin-top: 40px;">
             <a href="#" class="btn" style="display: inline-block; padding: 15px 40px; background: var(--primary-green); color: var(--white); text-decoration: none; border-radius: 50px; font-weight: 600;">
-                Voir toute la galerie <i class="fas fa-images"></i>
+                View full gallery <i class="fas fa-images"></i>
             </a>
         </div>
     </div>
 </section>
-
 <!-- Modal Lightbox pour les images -->
 <div id="galleryModal" class="gallery-modal">
-    <span class="gallery-modal-close">&times;</span>
+    <span class="gallery-modal-close">×</span>
     <img class="gallery-modal-content" id="modalImage">
     <div id="modalCaption"></div>
-    <a class="gallery-prev">&#10094;</a>
-    <a class="gallery-next">&#10095;</a>
+    <a class="gallery-prev">❮</a>
+    <a class="gallery-next">❯</a>
 </div>
-
    <!-- Newsletter Section -->
 <section class="newsletter-section">
     <div class="container">
-        <h2>Restez Connectés !</h2>
-        <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités, opportunités et événements directement dans votre boîte mail</p>
-        
-        <!-- Messages de succès/erreur -->
+        <h2>Stay Connected!</h2>
+        <p>Subscribe to our newsletter to receive our news, opportunities and events directly in your inbox</p>
+       
+        <!-- Success/error messages -->
         <div id="newsletter-message" style="margin-bottom: 20px; display: none;">
             <div id="newsletter-alert" style="max-width: 600px; margin: 0 auto; padding: 15px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;"></div>
         </div>
-        
+       
         <form class="newsletter-form" id="newsletter-form" method="post">
             {% csrf_token %}
-            <input type="email" name="email" id="newsletter-email" placeholder="Votre adresse email" required>
+            <input type="email" name="email" id="newsletter-email" placeholder="Your email address" required>
             <button type="submit" id="newsletter-btn">
-                <i class="fas fa-paper-plane"></i> S'abonner
+                <i class="fas fa-paper-plane"></i> Subscribe
             </button>
         </form>
-
         <div class="newsletter-benefits">
             <div class="benefit-item">
                 <i class="fas fa-check-circle"></i>
-                <span>Actualités hebdomadaires</span>
+                <span>Weekly news</span>
             </div>
             <div class="benefit-item">
                 <i class="fas fa-check-circle"></i>
-                <span>Opportunités exclusives</span>
+                <span>Exclusive opportunities</span>
             </div>
             <div class="benefit-item">
                 <i class="fas fa-check-circle"></i>
-                <span>Invitations événements</span>
+                <span>Event invitations</span>
             </div>
             <div class="benefit-item">
                 <i class="fas fa-check-circle"></i>
-                <span>Ressources gratuites</span>
+                <span>Free resources</span>
             </div>
         </div>
     </div>
 </section>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
-        <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+        <p>© 2026 RAJAPI-COP Africa. All rights reserved.</p>
+        <p>Promoting youth innovation for climate justice and biodiversity</p>
     </footer>
-
     <script>
     // Filter buttons functionality
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -2140,7 +1904,6 @@ body {
             this.classList.add('active');
         });
     });
-
     // Gallery tabs functionality
     document.querySelectorAll('.gallery-tab').forEach(tab => {
         tab.addEventListener('click', function() {
@@ -2148,29 +1911,28 @@ body {
             this.classList.add('active');
         });
     });
-
     // Newsletter form submission with AJAX
-    
+   
 document.getElementById('newsletter-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+   
     const form = this;
     const email = document.getElementById('newsletter-email').value;
     const btn = document.getElementById('newsletter-btn');
     const messageDiv = document.getElementById('newsletter-message');
     const alertDiv = document.getElementById('newsletter-alert');
-    
-    // Désactiver le bouton pendant l'envoi
+   
+    // Disable button during submission
     btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
-    
-    // Récupérer le token CSRF
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+   
+    // Get CSRF token
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-    
-    // Créer les données du formulaire en format URL-encoded
+   
+    // Create form data in URL-encoded format
     const formData = new URLSearchParams();
     formData.append('email', email);
-    
+   
     fetch("{% url 'newsletter-subscribe' %}", {
         method: 'POST',
         body: formData,
@@ -2182,24 +1944,24 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
         credentials: 'same-origin'
     })
     .then(response => {
-        // Vérifier le statut de la réponse
+        // Check response status
         if (!response.ok && response.status !== 400) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
     })
     .then(data => {
-        // Afficher le message
+        // Display message
         messageDiv.style.display = 'block';
-        
+       
         if (data.success) {
             alertDiv.style.background = '#d4edda';
             alertDiv.style.color = '#155724';
             alertDiv.style.border = '2px solid #28a745';
             alertDiv.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
             form.reset();
-            
-            // Masquer le message après 5 secondes
+           
+            // Hide message after 5 seconds
             setTimeout(() => {
                 messageDiv.style.display = 'none';
             }, 5000);
@@ -2211,17 +1973,17 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
         }
     })
     .catch(error => {
-        console.error('Erreur:', error);
+        console.error('Error:', error);
         messageDiv.style.display = 'block';
         alertDiv.style.background = '#f8d7da';
         alertDiv.style.color = '#721c24';
         alertDiv.style.border = '2px solid #dc3545';
-        alertDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Une erreur s\'est produite. Veuillez réessayer.';
+        alertDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> An error occurred. Please try again.';
     })
     .finally(() => {
-        // Réactiver le bouton
+        // Re-enable button
         btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> S\'abonner';
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Subscribe';
     });
 });
     // Video Modal Functionality
@@ -2229,34 +1991,31 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
     const modalVideo = document.getElementById('modalVideo');
     const modalVideoSource = document.getElementById('modalVideoSource');
     const modalClose = document.querySelector('.video-modal-close');
-
-    // Ouvrir la modal avec la vidéo
+    // Open modal with video
     document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
             const videoCard = this.closest('.video-card');
             const videoElement = this.querySelector('.video-preview');
             const videoSrc = videoElement.querySelector('source').src;
-            
-            // Charger la vidéo dans la modal
+           
+            // Load video in modal
             modalVideoSource.src = videoSrc;
             modalVideo.load();
-            
-            // Afficher la modal
+           
+            // Show modal
             videoModal.style.display = 'block';
-            
-            // Démarrer la lecture
+           
+            // Start playback
             modalVideo.play();
         });
     });
-
-    // Fermer la modal
+    // Close modal
     modalClose.addEventListener('click', function() {
         videoModal.style.display = 'none';
         modalVideo.pause();
         modalVideo.currentTime = 0;
     });
-
-    // Fermer en cliquant en dehors de la vidéo
+    // Close when clicking outside video
     videoModal.addEventListener('click', function(e) {
         if (e.target === videoModal) {
             videoModal.style.display = 'none';
@@ -2264,8 +2023,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             modalVideo.currentTime = 0;
         }
     });
-
-    // Fermer avec la touche Échap
+    // Close with Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && videoModal.style.display === 'block') {
             videoModal.style.display = 'none';
@@ -2280,16 +2038,13 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
     const closeBtn = document.querySelector('.gallery-modal-close');
     const prevBtn = document.querySelector('.gallery-prev');
     const nextBtn = document.querySelector('.gallery-next');
-
     let currentImageIndex = 0;
     let galleryImages = [];
-
-    // Charger toutes les images de la galerie
+    // Load all gallery images
     function loadGalleryImages() {
         galleryImages = Array.from(document.querySelectorAll('.gallery-item:not(.hidden)'));
     }
-
-    // Ouvrir la modal
+    // Open modal
     document.querySelectorAll('.gallery-item').forEach((item, index) => {
         item.addEventListener('click', function() {
             loadGalleryImages();
@@ -2298,41 +2053,35 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             galleryModal.style.display = 'block';
         });
     });
-
-    // Afficher l'image
+    // Show image
     function showImage(index) {
         const item = galleryImages[index];
         const img = item.querySelector('img');
         const caption = item.querySelector('.gallery-caption');
-        
+       
         modalImg.src = img.src;
         modalImg.alt = img.alt;
         modalCaption.innerHTML = caption.innerHTML;
     }
-
     // Navigation
     prevBtn.addEventListener('click', function() {
         currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
         showImage(currentImageIndex);
     });
-
     nextBtn.addEventListener('click', function() {
         currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
         showImage(currentImageIndex);
     });
-
-    // Fermer la modal
+    // Close modal
     closeBtn.addEventListener('click', function() {
         galleryModal.style.display = 'none';
     });
-
     galleryModal.addEventListener('click', function(e) {
         if (e.target === galleryModal) {
             galleryModal.style.display = 'none';
         }
     });
-
-    // Navigation clavier
+    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (galleryModal.style.display === 'block') {
             if (e.key === 'Escape') {
@@ -2344,17 +2093,16 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
             }
         }
     });
-
     // Gallery Tabs Filtering
     document.querySelectorAll('.gallery-tab').forEach(tab => {
         tab.addEventListener('click', function() {
             // Remove active class from all tabs
             document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
             this.classList.add('active');
-            
+           
             const category = this.getAttribute('data-category');
             const items = document.querySelectorAll('.gallery-item');
-            
+           
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
                     item.classList.remove('hidden');
@@ -2362,16 +2110,14 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
                     item.classList.add('hidden');
                 }
             });
-            
-            // Recharger la liste des images après le filtrage
+           
+            // Reload image list after filtering
             loadGalleryImages();
         });
     });
-
-    // Initialiser la liste des images au chargement
+    // Initialize image list on load
     loadGalleryImages();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 </html>

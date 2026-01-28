@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* LE CSS EST INCHANGÉ – COPIÉ TEL QUEL */
         * {
             margin: 0;
             padding: 0;
@@ -590,7 +591,7 @@ body {
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
-            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun</div>
+            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroon</div>
             <div><i class="fas fa-phone"></i> +237 696 967 609</div>
         </div>
     </div>
@@ -609,16 +610,16 @@ body {
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home-page' %}">Accueil</a>
+                    <a class="nav-link" href="{% url 'home-page' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'programmes-page' %}">Programmes</a>
+                    <a class="nav-link" href="{% url 'programmes-page' %}">Programs</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'apropos-page' %}">À Propos</a>
+                    <a class="nav-link" href="{% url 'apropos-page' %}">About</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'actualites-page' %}">Actualités</a>
+                    <a class="nav-link" href="{% url 'actualites-page' %}">News</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'noscontacts-page' %}">Contact</a>
@@ -631,7 +632,7 @@ body {
 
     <!-- Page Header -->
     <div class="page-header">
-        <img src="{% static 'rajapi/images/contacts.jpeg' %}" alt="Nos Programmes Phares">
+        <img src="{% static 'rajapi/images/contacts.jpeg' %}" alt="Contact us">
     </div>
 
     <!-- Contact Info -->
@@ -640,17 +641,17 @@ body {
             <div class="info-grid">
                 <div class="info-card">
                     <i class="fas fa-map-marker-alt"></i>
-                    <h3>Adresse Siège Social</h3>
-                    <p>Bastos, Yaoundé<br>Cameroun</p>
-                    <p style="margin-top: 15px;"><strong>Récépissé:</strong><br>N° 00001891/RDA/J06/SAAJP/BAPP<br>du 14 NOV. 2022</p>
+                    <h3>Headquarters Address</h3>
+                    <p>Bastos, Yaoundé<br>Cameroon</p>
+                    <p style="margin-top: 15px;"><strong>Registration:</strong><br>No. 00001891/RDA/J06/SAAJP/BAPP<br>dated November 14, 2022</p>
                 </div>
 
                 <div class="info-card">
                     <i class="fas fa-phone"></i>
-                    <h3>Téléphone</h3>
+                    <h3>Phone</h3>
                     <p><a href="tel:+237696967609">+237 696 967 609</a></p>
                     <p><a href="tel:+237676922282">+237 676 922 282</a></p>
-                    <p style="margin-top: 15px; color: var(--text-light);">Lun - Ven: 8h00 - 17h00 (GMT+1)</p>
+                    <p style="margin-top: 15px; color: var(--text-light);">Mon - Fri: 8:00 AM - 5:00 PM (GMT+1)</p>
                 </div>
 
                 <div class="info-card">
@@ -658,14 +659,14 @@ body {
                     <h3>Email</h3>
                     <p><a href="mailto:fonder.rajapicop@gmail.com">fonder.rajapicop@gmail.com</a></p>
                     <p><a href="mailto:joepelking@gmail.com">rajapicop.dev.africa@gmail.com</a></p>
-                    <p style="margin-top: 15px; color: var(--text-light);">Réponse sous 24-48h</p>
+                    <p style="margin-top: 15px; color: var(--text-light);">Response within 24-48 hours</p>
                 </div>
 
                 <div class="info-card">
                     <i class="fas fa-globe"></i>
-                    <h3>Site Web</h3>
+                    <h3>Website</h3>
                     <p><a href="http://www.rajapi-cop.org" target="_blank">www.rajapi-cop.org</a></p>
-                    <p style="margin-top: 15px; color: var(--text-light);">Plateforme collaborative en ligne</p>
+                    <p style="margin-top: 15px; color: var(--text-light);">Online collaborative platform</p>
                 </div>
             </div>
         </div>
@@ -676,21 +677,21 @@ body {
     <div class="container">
         <div class="form-container">
             <div class="form-intro">
-                <h2>Envoyez-nous un Message</h2>
-                <p>Que vous soyez un jeune porteur de projet, une organisation partenaire, un financeur ou simplement intéressé par notre mission, nous serions ravis d'échanger avec vous.</p>
-                <p>Remplissez le formulaire ci-contre et notre équipe vous répondra dans les plus brefs délais.</p>
+                <h2>Send us a Message</h2>
+                <p>Whether you are a young project leader, a partner organization, a funder, or simply interested in our mission, we would be delighted to connect with you.</p>
+                <p>Fill out the form opposite and our team will get back to you as soon as possible.</p>
                 
                 <div class="response-time">
                     <i class="fas fa-clock"></i>
-                    <h4>Temps de Réponse</h4>
-                    <p>Nous nous engageons à répondre à tous les messages sous 24 à 48 heures ouvrables.</p>
+                    <h4>Response Time</h4>
+                    <p>We commit to replying to all messages within 24 to 48 business hours.</p>
                 </div>
             </div>
 
             <form class="contact-form" method="post" action="{% url 'noscontacts-page' %}">
                 {% csrf_token %}
                 
-                <!-- Messages de succès/erreur -->
+                <!-- Success/error messages -->
                 {% if messages %}
                     <div class="messages-container" style="margin-bottom: 25px;">
                         {% for message in messages %}
@@ -702,18 +703,18 @@ body {
                     </div>
                 {% endif %}
 
-                <!-- Affichage des erreurs de formulaire -->
+                <!-- Form errors display -->
                 {% if form.errors %}
                     <div class="alert alert-danger" style="padding: 15px; border-radius: 10px; margin-bottom: 25px; background: #f8d7da; color: #721c24; border-left: 4px solid #dc3545;">
                         <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i>
-                        <strong>Erreur :</strong> Veuillez corriger les erreurs ci-dessous.
+                        <strong>Error:</strong> Please correct the errors below.
                     </div>
                 {% endif %}
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Prénom <span>*</span></label>
-                        <input type="text" name="prenom" required placeholder="Votre prénom" 
+                        <label>First Name <span>*</span></label>
+                        <input type="text" name="prenom" required placeholder="Your first name" 
                                value="{{ form.prenom.value|default:'' }}"
                                {% if form.prenom.errors %}style="border-color: #dc3545;"{% endif %}>
                         {% if form.prenom.errors %}
@@ -723,8 +724,8 @@ body {
                         {% endif %}
                     </div>
                     <div class="form-group">
-                        <label>Nom <span>*</span></label>
-                        <input type="text" name="nom" required placeholder="Votre nom"
+                        <label>Last Name <span>*</span></label>
+                        <input type="text" name="nom" required placeholder="Your last name"
                                value="{{ form.nom.value|default:'' }}"
                                {% if form.nom.errors %}style="border-color: #dc3545;"{% endif %}>
                         {% if form.nom.errors %}
@@ -738,7 +739,7 @@ body {
                 <div class="form-row">
                     <div class="form-group">
                         <label>Email <span>*</span></label>
-                        <input type="email" name="email" required placeholder="votre@email.com"
+                        <input type="email" name="email" required placeholder="your@email.com"
                                value="{{ form.email.value|default:'' }}"
                                {% if form.email.errors %}style="border-color: #dc3545;"{% endif %}>
                         {% if form.email.errors %}
@@ -748,7 +749,7 @@ body {
                         {% endif %}
                     </div>
                     <div class="form-group">
-                        <label>Téléphone</label>
+                        <label>Phone</label>
                         <input type="tel" name="telephone" placeholder="+237 XXX XXX XXX"
                                value="{{ form.telephone.value|default:'' }}">
                     </div>
@@ -756,24 +757,24 @@ body {
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Pays <span>*</span></label>
+                        <label>Country <span>*</span></label>
                         <select name="pays" required {% if form.pays.errors %}style="border-color: #dc3545;"{% endif %}>
-                            <option value="">Sélectionnez votre pays</option>
-                            <option value="cameroun" {% if form.pays.value == 'cameroun' %}selected{% endif %}>Cameroun</option>
+                            <option value="">Select your country</option>
+                            <option value="cameroun" {% if form.pays.value == 'cameroun' %}selected{% endif %}>Cameroon</option>
                             <option value="congo" {% if form.pays.value == 'congo' %}selected{% endif %}>Congo</option>
-                            <option value="rd-congo" {% if form.pays.value == 'rd-congo' %}selected{% endif %}>RD Congo</option>
-                            <option value="senegal" {% if form.pays.value == 'senegal' %}selected{% endif %}>Sénégal</option>
+                            <option value="rd-congo" {% if form.pays.value == 'rd-congo' %}selected{% endif %}>DR Congo</option>
+                            <option value="senegal" {% if form.pays.value == 'senegal' %}selected{% endif %}>Senegal</option>
                             <option value="cote-ivoire" {% if form.pays.value == 'cote-ivoire' %}selected{% endif %}>Côte d'Ivoire</option>
                             <option value="ghana" {% if form.pays.value == 'ghana' %}selected{% endif %}>Ghana</option>
                             <option value="nigeria" {% if form.pays.value == 'nigeria' %}selected{% endif %}>Nigeria</option>
                             <option value="kenya" {% if form.pays.value == 'kenya' %}selected{% endif %}>Kenya</option>
-                            <option value="benin" {% if form.pays.value == 'benin' %}selected{% endif %}>Bénin</option>
-                            <option value="mauritanie" {% if form.pays.value == 'mauritanie' %}selected{% endif %}>Mauritanie</option>
-                            <option value="guinee" {% if form.pays.value == 'guinee' %}selected{% endif %}>Guinée Conakry</option>
-                            <option value="afrique-sud" {% if form.pays.value == 'afrique-sud' %}selected{% endif %}>Afrique du Sud</option>
-                            <option value="somalie" {% if form.pays.value == 'somalie' %}selected{% endif %}>Somalie</option>
-                            <option value="egypte" {% if form.pays.value == 'egypte' %}selected{% endif %}>Égypte</option>
-                            <option value="autre" {% if form.pays.value == 'autre' %}selected{% endif %}>Autre pays africain</option>
+                            <option value="benin" {% if form.pays.value == 'benin' %}selected{% endif %}>Benin</option>
+                            <option value="mauritanie" {% if form.pays.value == 'mauritanie' %}selected{% endif %}>Mauritania</option>
+                            <option value="guinee" {% if form.pays.value == 'guinee' %}selected{% endif %}>Guinea Conakry</option>
+                            <option value="afrique-sud" {% if form.pays.value == 'afrique-sud' %}selected{% endif %}>South Africa</option>
+                            <option value="somalie" {% if form.pays.value == 'somalie' %}selected{% endif %}>Somalia</option>
+                            <option value="egypte" {% if form.pays.value == 'egypte' %}selected{% endif %}>Egypt</option>
+                            <option value="autre" {% if form.pays.value == 'autre' %}selected{% endif %}>Other African country</option>
                         </select>
                         {% if form.pays.errors %}
                             <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
@@ -782,17 +783,17 @@ body {
                         {% endif %}
                     </div>
                     <div class="form-group">
-                        <label>Type de Demande <span>*</span></label>
+                        <label>Type of Request <span>*</span></label>
                         <select name="type_demande" required {% if form.type_demande.errors %}style="border-color: #dc3545;"{% endif %}>
-                            <option value="">Choisir...</option>
-                            <option value="projet" {% if form.type_demande.value == 'projet' %}selected{% endif %}>Soumettre un projet</option>
-                            <option value="adhesion" {% if form.type_demande.value == 'adhesion' %}selected{% endif %}>Devenir membre</option>
-                            <option value="partenariat" {% if form.type_demande.value == 'partenariat' %}selected{% endif %}>Proposition de partenariat</option>
-                            <option value="financement" {% if form.type_demande.value == 'financement' %}selected{% endif %}>Opportunité de financement</option>
-                            <option value="media" {% if form.type_demande.value == 'media' %}selected{% endif %}>Demande média/presse</option>
-                            <option value="stage" {% if form.type_demande.value == 'stage' %}selected{% endif %}>Stage/Bénévolat</option>
-                            <option value="information" {% if form.type_demande.value == 'information' %}selected{% endif %}>Demande d'information</option>
-                            <option value="autre" {% if form.type_demande.value == 'autre' %}selected{% endif %}>Autre</option>
+                            <option value="">Choose...</option>
+                            <option value="projet" {% if form.type_demande.value == 'projet' %}selected{% endif %}>Submit a project</option>
+                            <option value="adhesion" {% if form.type_demande.value == 'adhesion' %}selected{% endif %}>Become a member</option>
+                            <option value="partenariat" {% if form.type_demande.value == 'partenariat' %}selected{% endif %}>Partnership proposal</option>
+                            <option value="financement" {% if form.type_demande.value == 'financement' %}selected{% endif %}>Funding opportunity</option>
+                            <option value="media" {% if form.type_demande.value == 'media' %}selected{% endif %}>Media/press request</option>
+                            <option value="stage" {% if form.type_demande.value == 'stage' %}selected{% endif %}>Internship/Volunteering</option>
+                            <option value="information" {% if form.type_demande.value == 'information' %}selected{% endif %}>Request for information</option>
+                            <option value="autre" {% if form.type_demande.value == 'autre' %}selected{% endif %}>Other</option>
                         </select>
                         {% if form.type_demande.errors %}
                             <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
@@ -803,14 +804,14 @@ body {
                 </div>
 
                 <div class="form-group">
-                    <label>Organisation (si applicable)</label>
-                    <input type="text" name="organisation" placeholder="Nom de votre organisation"
+                    <label>Organization (if applicable)</label>
+                    <input type="text" name="organisation" placeholder="Name of your organization"
                            value="{{ form.organisation.value|default:'' }}">
                 </div>
 
                 <div class="form-group">
-                    <label>Sujet <span>*</span></label>
-                    <input type="text" name="sujet" required placeholder="Résumez l'objet de votre message"
+                    <label>Subject <span>*</span></label>
+                    <input type="text" name="sujet" required placeholder="Summarize the purpose of your message"
                            value="{{ form.sujet.value|default:'' }}"
                            {% if form.sujet.errors %}style="border-color: #dc3545;"{% endif %}>
                     {% if form.sujet.errors %}
@@ -822,7 +823,7 @@ body {
 
                 <div class="form-group">
                     <label>Message <span>*</span></label>
-                    <textarea name="message" required placeholder="Décrivez votre demande en détail..."
+                    <textarea name="message" required placeholder="Describe your request in detail..."
                               {% if form.message.errors %}style="border-color: #dc3545;"{% endif %}>{{ form.message.value|default:'' }}</textarea>
                     {% if form.message.errors %}
                         <small style="color: #dc3545; font-size: 13px; margin-top: 5px; display: block;">
@@ -832,7 +833,7 @@ body {
                 </div>
 
                 <button type="submit" class="btn-submit">
-                    <i class="fas fa-paper-plane"></i> Envoyer le Message
+                    <i class="fas fa-paper-plane"></i> Send Message
                 </button>
             </form>
         </div>
@@ -842,64 +843,64 @@ body {
     <!-- National Contacts -->
     <section class="national-contacts">
         <div class="container">
-            <h2 class="section-title">Coordinations Nationales</h2>
-            <p class="section-subtitle">Contactez directement nos représentants dans votre pays</p>
+            <h2 class="section-title">National Coordinations</h2>
+            <p class="section-subtitle">Contact our representatives directly in your country</p>
 
             <div class="countries-grid">
                 <div class="country-card">
                     <h4><i class="fas fa-flag"></i>Egypt</h4>
-                    <p><strong>Coordonnateur:</strong>Aya Salah</p>
-                    <p><i class="fas fa-envelope"></i>rajapicop.rep.egypt@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+20 11 45296335</p>
+                    <p><strong>Coordinator:</strong> Aya Salah</p>
+                    <p><i class="fas fa-envelope"></i> rajapicop.rep.egypt@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +20 11 45296335</p>
                 </div>
 
                 <div class="country-card">
-                    <h4><i class="fas fa-flag"></i>Bénin</h4>
-                    <p><strong>Coordonnateur:</strong>Camille Sousou</p>
-                    <p><i class="fas fa-envelope"></i>rajapicopbenin@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+229 61 75 17 29</p>
+                    <h4><i class="fas fa-flag"></i>Benin</h4>
+                    <p><strong>Coordinator:</strong> Camille Sousou</p>
+                    <p><i class="fas fa-envelope"></i> rajapicopbenin@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +229 61 75 17 29</p>
                 </div>
 
                 <div class="country-card">
-                    <h4><i class="fas fa-flag"></i>Mauritanie</h4>
-                    <p><strong>Coordonnateur:</strong>Fatimetou Abdelahi M’Aillime</p>
-                    <p><i class="fas fa-envelope"></i>rajapicopmauritanie@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+222 41 65 65 24</p>
+                    <h4><i class="fas fa-flag"></i>Mauritania</h4>
+                    <p><strong>Coordinator:</strong> Fatimetou Abdelahi M’Aillime</p>
+                    <p><i class="fas fa-envelope"></i> rajapicopmauritanie@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +222 41 65 65 24</p>
                 </div>
 
                 <div class="country-card">
-                    <h4><i class="fas fa-flag"></i> Sénégal</h4>
-                    <p><strong>Coordonnateur:</strong>Abdourahmane Marena </p>
-                    <p><i class="fas fa-envelope"></i>rajapicopsenegal@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+221 77 384 55 99</p>
+                    <h4><i class="fas fa-flag"></i>Senegal</h4>
+                    <p><strong>Coordinator:</strong> Abdourahmane Marena</p>
+                    <p><i class="fas fa-envelope"></i> rajapicopsenegal@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +221 77 384 55 99</p>
                 </div>
 
                 <div class="country-card">
-                    <h4><i class="fas fa-flag"></i>Guinée Conakry</h4>
-                    <p><strong>Coordonnateur:</strong>Faya Mohamed</p>
-                    <p><i class="fas fa-envelope"></i>rajapicopguinee@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+224 627 45 91 26</p>
+                    <h4><i class="fas fa-flag"></i>Guinea Conakry</h4>
+                    <p><strong>Coordinator:</strong> Faya Mohamed</p>
+                    <p><i class="fas fa-envelope"></i> rajapicopguinee@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +224 627 45 91 26</p>
                 </div>
 
                 <div class="country-card">
-                    <h4><i class="fas fa-flag"></i>Afrique du Sud</h4>
-                    <p><strong>Coordonnateur:</strong>Rutendo Esther Chikowore</p>
-                    <p><i class="fas fa-envelope"></i>rajapicop.southafrica@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+27 81 501 4296</p>
+                    <h4><i class="fas fa-flag"></i>South Africa</h4>
+                    <p><strong>Coordinator:</strong> Rutendo Esther Chikowore</p>
+                    <p><i class="fas fa-envelope"></i> rajapicop.southafrica@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +27 81 501 4296</p>
                 </div>
 
                 <div class="country-card">
-                    <h4><i class="fas fa-flag"></i> Nigeria</h4>
-                    <p><strong>Coordonnateur:</strong>Osayomore Lucky Omorogieva</p>
-                    <p><i class="fas fa-envelope"></i>rajapicopnigeria@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+234 912 450 3168</p>
+                    <h4><i class="fas fa-flag"></i>Nigeria</h4>
+                    <p><strong>Coordinator:</strong> Osayomore Lucky Omorogieva</p>
+                    <p><i class="fas fa-envelope"></i> rajapicopnigeria@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +234 912 450 3168</p>
                 </div>
 
                 <div class="country-card">
-                    <h4><i class="fas fa-flag"></i>Somalie</h4>
-                    <p><strong>Coordonnateur:</strong>Fardowsa Wehliye</p>
+                    <h4><i class="fas fa-flag"></i>Somalia</h4>
+                    <p><strong>Coordinator:</strong> Fardowsa Wehliye</p>
                     <p><i class="fas fa-envelope"></i> rajapicopsomalia@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>+252 61 5108668</p>
+                    <p><i class="fas fa-phone"></i> +252 61 5108668</p>
                 </div>
             </div>
         </div>
@@ -908,8 +909,8 @@ body {
     <!-- Social Media -->
     <section class="social-section">
         <div class="container">
-            <h2>Suivez-nous sur les Réseaux Sociaux</h2>
-            <p>Restez connectés avec la communauté RAJAPI-COP Africa</p>
+            <h2>Follow us on Social Media</h2>
+            <p>Stay connected with the RAJAPI-COP Africa community</p>
             
             <div class="social-links">
                 <a href="https://www.facebook.com/profile.php?id=61571915817660" class="social-link" title="Facebook">
@@ -937,15 +938,15 @@ body {
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
-            <h2 class="section-title">Notre Localisation</h2>
-            <p class="section-subtitle">Siège social à Yaoundé, Cameroun</p>
+            <h2 class="section-title">Our Location</h2>
+            <p class="section-subtitle">Headquarters in Yaoundé, Cameroon</p>
             
             <div class="map-container">
-                <!-- Google Maps intégré -->
+                <!-- Embedded Google Maps -->
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.6514933687617!2d11.506130575474385!3d3.8846667960891117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcfd6fd21a861%3A0xf284ccaf8e1b6a8c!2sRAJAPI-COP%20Afrique%20%3A%20R%C3%A9seau%20Panafricain%20des%20jeunes%20pour%20les%20solutions%20environnementales!5e0!3m2!1sfr!2scm!4v1766146748060!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 <p style="margin-top: 20px; color: var(--text-light);">
-                    Bastos, Yaoundé - Cameroun
+                    Bastos, Yaoundé - Cameroon
                 </p>
             </div>
         </div>
@@ -954,10 +955,9 @@ body {
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
-        <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+        <p>© 2026 RAJAPI-COP Africa. All rights reserved.</p>
+        <p>Promoting youth innovation for climate justice and biodiversity</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 </html>

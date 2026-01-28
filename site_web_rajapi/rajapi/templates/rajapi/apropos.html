@@ -1,10 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À Propos - RAJAPI-COP Africa</title>
+    <title>About - RAJAPI-COP Africa</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -16,6 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ──────────────────────────────────────────────── */
+        /* LE CSS RESTE 100 % IDENTIQUE – AUCUNE MODIFICATION */
+        /* ──────────────────────────────────────────────── */
         * {
             margin: 0;
             padding: 0;
@@ -726,7 +729,6 @@ body {
     }
 }
 
-
     </style>
 </head>
 <body>
@@ -734,7 +736,7 @@ body {
     <div class="top-bar">
         <div class="container">
             <div>
-                <i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun
+                <i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroon
                 <a href="tel:+237696967609"><i class="fas fa-phone"></i> +237 696 967 609</a>
             </div>
             <div>
@@ -757,16 +759,16 @@ body {
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home-page' %}">Accueil</a>
+                    <a class="nav-link" href="{% url 'home-page' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'programmes-page' %}">Programmes</a>
+                    <a class="nav-link" href="{% url 'programmes-page' %}">Programs</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'apropos-page' %}">À Propos</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'apropos-page' %}">About</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'actualites-page' %}">Actualités</a>
+                    <a class="nav-link" href="{% url 'actualites-page' %}">News</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="{% url 'noscontacts-page' %}">Contact</a>
@@ -779,30 +781,30 @@ body {
 
     <!-- Page Header -->
     <div class="page-header">
-        <img src="{% static 'rajapi/images/galerie6.jpeg' %}" alt="Nos Programmes Phares">
+        <img src="{% static 'rajapi/images/galerie6.jpeg' %}" alt="Our Flagship Programs">
     </div>
 
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
             <span>/</span>
-            <span>À Propos</span>
+            <span>About</span>
         </div>
     </div>
 
     <!-- Histoire Section -->
     <section class="histoire">
         <div class="container">
-            <h2 class="section-title">Notre Histoire</h2>
-            <p class="section-subtitle">Un parcours d'engagement et d'innovation depuis 2022</p>
+            <h2 class="section-title">Our History</h2>
+            <p class="section-subtitle">A journey of commitment and innovation since 2022</p>
 
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">Novembre 2022</span>
-                        <h3>Création de RAJAPI-COP</h3>
-                        <p>Déclaration officielle de l'association à Yaoundé, Cameroun. Récépissé N° 00001891/RDA/J06/SAAJP/BAPP. Début de la mobilisation des jeunes africains pour la COP27.</p>
+                        <span class="timeline-date">November 2022</span>
+                        <h3>Creation of RAJAPI-COP</h3>
+                        <p>Official registration of the association in Yaoundé, Cameroon. Receipt No. 00001891/RDA/J06/SAAJP/BAPP. Start of youth mobilization for COP27.</p>
                     </div>
                     <div class="timeline-marker"></div>
                 </div>
@@ -810,8 +812,8 @@ body {
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <span class="timeline-date">2023</span>
-                        <h3>Expansion Panafricaine</h3>
-                        <p>Extension du réseau dans plus de 15 pays africains. Lancement des premiers programmes : Éco-Habitats Cameroun et CongoBotanika. Participation active à la COP28.</p>
+                        <h3>Pan-African Expansion</h3>
+                        <p>Network expansion to more than 15 African countries. Launch of initial programs: Eco-Habitats Cameroon and CongoBotanika. Active participation in COP28.</p>
                     </div>
                     <div class="timeline-marker"></div>
                 </div>
@@ -819,8 +821,8 @@ body {
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <span class="timeline-date">2024</span>
-                        <h3>Consolidation et Innovation</h3>
-                        <p>Présence dans 30+ pays africains. Lancement de BlueGuard Africa et du Biodiversité Challenge. Partenariats stratégiques avec UNEP, UN-Habitat et UNFCCC.</p>
+                        <h3>Consolidation and Innovation</h3>
+                        <p>Presence in 30+ African countries. Launch of BlueGuard Africa and the Biodiversity Challenge. Strategic partnerships with UNEP, UN-Habitat and UNFCCC.</p>
                     </div>
                     <div class="timeline-marker"></div>
                 </div>
@@ -828,16 +830,16 @@ body {
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <span class="timeline-date">2025</span>
-                        <h3>2ème Sommet mondial pour le développement social Doha Qatar</h3>
-                        <p>Le projet vise à organiser un Sommet international sous l’égide des Nations Unies, réunissant les Pays du Sud et les Pays du Nord afin de renforcer la coopération pour le développement social durable.
+                        <h3>2nd World Summit for Social Development – Doha, Qatar</h3>
+                        <p>The project aims to organize an international summit under the auspices of the United Nations, bringing together Southern and Northern countries to strengthen cooperation for sustainable social development.
 
-L’objectif principal est de créer une plateforme de dialogue équitable et inclusive, permettant :
+The main objective is to create an equitable and inclusive dialogue platform, enabling:
 
-d’identifier les défis communs et spécifiques auxquels sont confrontés les pays du Sud et du Nord,
+to identify common and specific challenges faced by Southern and Northern countries,
 
-de mettre en lumière les expériences réussies, les bonnes pratiques et les solutions locales innovantes,
+to highlight successful experiences, good practices and innovative local solutions,
 
-de favoriser des partenariats concrets pour la réalisation des Objectifs de Développement Durable (ODD).</p>
+to foster concrete partnerships for the achievement of the Sustainable Development Goals (SDGs).</p>
                     </div>
                     <div class="timeline-marker"></div>
                 </div>
@@ -849,35 +851,35 @@ de favoriser des partenariats concrets pour la réalisation des Objectifs de Dé
     <section class="mission-vision">
         <div class="container">
             <h2 class="section-title">Mission & Vision</h2>
-            <p class="section-subtitle">Notre raison d'être et notre ambition pour l'Afrique</p>
+            <p class="section-subtitle">Our purpose and ambition for Africa</p>
 
             <div class="mv-grid">
                 <div class="mv-card">
                     <i class="fas fa-bullseye"></i>
-                    <h3>Notre Mission</h3>
-                    <p>Mobiliser, former et accompagner les jeunes africains dans le développement de solutions innovantes pour la résilience climatique, la conservation de la biodiversité et la justice environnementale.</p>
+                    <h3>Our Mission</h3>
+                    <p>Mobilize, train and support African youth in developing innovative solutions for climate resilience, biodiversity conservation and environmental justice.</p>
                     <ul>
-                        <li>Incuber des projets innovants portés par les jeunes</li>
-                        <li>Faciliter l'accès au financement climatique</li>
-                        <li>Renforcer les capacités des jeunes leaders</li>
-                        <li>Promouvoir la participation aux COP et espaces internationaux</li>
-                        <li>Créer des ponts entre projets locaux et partenaires globaux</li>
+                        <li>Incubate innovative youth-led projects</li>
+                        <li>Facilitate access to climate finance</li>
+                        <li>Build the capacity of young leaders</li>
+                        <li>Promote participation in COPs and international spaces</li>
+                        <li>Create bridges between local projects and global partners</li>
                     </ul>
                 </div>
 
                 <div class="mv-card">
                     <i class="fas fa-eye"></i>
-                    <h3>Notre Vision</h3>
-                    <p>La jeunesse africaine doit  porté la clé de l'avenir durable, juste et résilient. En valorisant son engagement, sa créativité, son leadership et étant le pont entre les ambitions mondiales et l’action locale Africaine.
+                    <h3>Our Vision</h3>
+                    <p>African youth must hold the key to a sustainable, just and resilient future. By valuing their commitment, creativity, leadership and serving as a bridge between global ambitions and local African action.
 
-RAJAPI-COP : Est une plateforme panafricaine. Catalysant les synergies Climat-ODD par l’innovation jeunesse.
+RAJAPI-COP is a pan-African platform catalyzing synergies between Climate and SDGs through youth innovation.
 
-Notre réseau s’appuie sur une plateforme digitale collaborative innovante, conçue comme un levier stratégique pour :</p>
+Our network relies on an innovative collaborative digital platform, designed as a strategic lever to:</p>
                     <ul>
-                        <li>Identifier, structurer et accompagner les projets portés par les jeunes dans les domaines du climat, de la biodiversité, de la lutte contre la désertification, en intégrant une approche transversale genre et justice sociale.</li>
-                        <li>Aligner les initiatives locales sur les Contributions Déterminées au niveau National (CDN) et les ODD prioritaires dans chaque pays africain.</li>
-                        <li>Fédérer les parties prenantes (gouvernements, secteur privé, société civile, institutions internationales) autour de projets jeunesse à fort impact transformateur.</li>
-                        <li>Produire des données empiriques pour éclairer les politiques publiques, renforcer la participation des jeunes dans les processus décisionnels, et contribuer à une meilleure redevabilité.</li>
+                        <li>Identify, structure and support youth-led projects in the fields of climate, biodiversity, desertification control, integrating a cross-cutting gender and social justice approach.</li>
+                        <li>Align local initiatives with Nationally Determined Contributions (NDCs) and priority SDGs in each African country.</li>
+                        <li>Bring together stakeholders (governments, private sector, civil society, international institutions) around high-impact transformative youth projects.</li>
+                        <li>Produce empirical data to inform public policies, strengthen youth participation in decision-making processes, and contribute to greater accountability.</li>
                     </ul>
                 </div>
             </div>
@@ -887,32 +889,32 @@ Notre réseau s’appuie sur une plateforme digitale collaborative innovante, co
     <!-- Governance -->
     <section class="governance">
         <div class="container">
-            <h2 class="section-title">Gouvernance & Structure</h2>
-            <p class="section-subtitle">Une organisation panafricaine structurée et transparente</p>
+            <h2 class="section-title">Governance & Structure</h2>
+            <p class="section-subtitle">A structured and transparent pan-African organization</p>
 
             <div class="governance-grid">
                 <div class="governance-card">
                     <i class="fas fa-users-cog"></i>
-                    <h3>Bureau Exécutif</h3>
-                    <p>Coordination stratégique et opérationnelle du réseau à l'échelle panafricaine</p>
+                    <h3>Executive Board</h3>
+                    <p>Strategic and operational coordination of the network at pan-African level</p>
                 </div>
 
                 <div class="governance-card">
                     <i class="fas fa-globe-africa"></i>
-                    <h3>Coordinations Nationales</h3>
-                    <p>Ambassadeurs et points focaux dans 30+ pays africains</p>
+                    <h3>National Coordinations</h3>
+                    <p>Ambassadors and focal points in 30+ African countries</p>
                 </div>
 
                 <div class="governance-card">
                     <i class="fas fa-handshake"></i>
-                    <h3>Conseil Consultatif</h3>
-                    <p>Experts, mentors et partenaires techniques internationaux</p>
+                    <h3>Advisory Council</h3>
+                    <p>International experts, mentors and technical partners</p>
                 </div>
 
                 <div class="governance-card">
                     <i class="fas fa-project-diagram"></i>
-                    <h3>Comités Thématiques</h3>
-                    <p>Climat, Biodiversité, DRR, Genre, Innovation, Financement</p>
+                    <h3>Thematic Committees</h3>
+                    <p>Climate, Biodiversity, DRR, Gender, Innovation, Finance</p>
                 </div>
             </div>
         </div>
@@ -921,33 +923,33 @@ Notre réseau s’appuie sur une plateforme digitale collaborative innovante, co
     <!-- Founder Section -->
     <section class="founder">
         <div class="container">
-            <h2 class="section-title">Le Fondateur</h2>
-            <p class="section-subtitle">Vision et leadership pour une Afrique résiliente</p>
+            <h2 class="section-title">The Founder</h2>
+            <p class="section-subtitle">Vision and leadership for a resilient Africa</p>
 
             <div class="founder-content">
                 <div class="founder-image">
-                    <img src="{% static 'rajapi/images/fondateur1.jpeg' %}" alt="Fondateur de l'ONG">
+                    <img src="{% static 'rajapi/images/fondateur1.jpeg' %}" alt="Founder of the organization">
                 </div>
 
                 <div class="founder-bio">
                     <h3>Edgard Rodrigue MVONDO</h3>
-                    <p class="title">Fondateur & Directeur Exécutif de RAJAPI-COP Africa</p>
+                    <p class="title">Founder & Executive Director of RAJAPI-COP Africa</p>
 
-                    <p>Climate Governance & International Environmental Law Specialist, Edgard Rodrigue MVONDO est un jeune leader panafricain reconnu pour son engagement exceptionnel dans la mobilisation de la jeunesse africaine pour le developpement social et la justice climatique.</p>
+                    <p>Climate Governance & International Environmental Law Specialist, Edgard Rodrigue MVONDO is a recognized pan-African youth leader for his exceptional commitment to mobilizing African youth for social development and climate justice.</p>
 
-                    <p>Ingenieur, chercheur en sciences, Gouvernance environnementales et politiques internationale, il a participé à de nombreuses COP (Conférences des Parties) de l'UNFCCC, représentant la voix des jeunes africains dans les négociations climatiques mondiales.</p>
+                    <p>Engineer, researcher in sciences, environmental governance and international policies, he has participated in numerous COPs (Conferences of the Parties) of the UNFCCC, representing the voice of African youth in global climate negotiations.</p>
 
-                    <p>Sa vision : transformer chaque jeune africain en acteur du changement, capable de porter des solutions innovantes depuis leurs communautés jusqu'aux instances internationales.</p>
+                    <p>His vision: transform every African young person into an agent of change, capable of carrying innovative solutions from their communities to international bodies.</p>
 
                     <div class="achievements">
-                        <h4>Distinctions & Engagements Internationaux</h4>
+                        <h4>Awards & International Engagements</h4>
                         <ul>
-                            <li>Délégué officiel aux COP Climat (UNFCCC)</li>
-                            <li>Expert-conseil auprès de l'UNEP pour la jeunesse</li>
-                            <li>Membre du UN-Habitat Youth Advisory Board</li>
-                            <li>Lauréat de plusieurs prix d'innovation climatique</li>
-                            <li>Conférencier international sur la justice climatique</li>
-                            <li>Formateur certifié en leadership et entrepreneuriat vert</li>
+                            <li>Official delegate to Climate COPs (UNFCCC)</li>
+                            <li>Expert-advisor to UNEP on youth issues</li>
+                            <li>Member of the UN-Habitat Youth Advisory Board</li>
+                            <li>Winner of several climate innovation awards</li>
+                            <li>International speaker on climate justice</li>
+                            <li>Certified trainer in leadership and green entrepreneurship</li>
                         </ul>
                     </div>
                 </div>
@@ -958,66 +960,66 @@ Notre réseau s’appuie sur une plateforme digitale collaborative innovante, co
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
-            <h2 class="section-title">Notre Présence Panafricaine</h2>
-            <p class="section-subtitle">Un réseau actif dans 30 pays africains</p>
+            <h2 class="section-title">Our Pan-African Presence</h2>
+            <p class="section-subtitle">An active network in 30 African countries</p>
 
             <div class="africa-map">
-                <img src="{% static 'rajapi/images/carte-vierge-gratuite-de-l-afrique.jpg' %}" alt="Carte de l'Afrique">
-                <h3>30 Pays Membres</h3>
-                <p>Des coordinations nationales actives dans toutes les régions d'Afrique</p>
+                <img src="{% static 'rajapi/images/carte-vierge-gratuite-de-l-afrique.jpg' %}" alt="Map of Africa">
+                <h3>30 Member Countries</h3>
+                <p>Active national coordinations across all regions of Africa</p>
             </div>
-
 
             <div class="countries-grid">
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Cameroun.jpeg' %}" alt="Drapeau Cameroun" class="flag-icon">
-                    <strong>Cameroun</strong>
+                    <img src="{% static 'rajapi/images/Cameroun.jpeg' %}" alt="Cameroon Flag" class="flag-icon">
+                    <strong>Cameroon</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Algerie.jpeg' %}" alt="Drapeau Algerie" class="flag-icon">
-                    <strong>Algerie</strong>
+                    <img src="{% static 'rajapi/images/Algerie.jpeg' %}" alt="Algeria Flag" class="flag-icon">
+                    <strong>Algeria</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/South_Africa.jpeg' %}" alt="Drapeau South Africa" class="flag-icon">
-                    <strong>Afrique du Sud</strong>
+                    <img src="{% static 'rajapi/images/South_Africa.jpeg' %}" alt="South Africa Flag" class="flag-icon">
+                    <strong>South Africa</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Tchad.jpeg' %}" alt="Drapeau Tchad.jpeg" class="flag-icon">
-                    <strong>Tchad</strong>
+                    <img src="{% static 'rajapi/images/Tchad.jpeg' %}" alt="Chad Flag" class="flag-icon">
+                    <strong>Chad</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Cote_Ivoire.jpeg' %}" alt="Drapeau Côte d'Ivoire" class="flag-icon">
+                    <img src="{% static 'rajapi/images/Cote_Ivoire.jpeg' %}" alt="Côte d'Ivoire Flag" class="flag-icon">
                     <strong>Côte d'Ivoire</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Senegal.jpeg' %}" alt="Drapeau Senegal" class="flag-icon">
+                    <img src="{% static 'rajapi/images/Senegal.jpeg' %}" alt="Senegal Flag" class="flag-icon">
                     <strong>Senegal</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Nigeria.jpeg' %}" alt="Drapeau Nigeria" class="flag-icon">
+                    <img src="{% static 'rajapi/images/Nigeria.jpeg' %}" alt="Nigeria Flag" class="flag-icon">
                     <strong>Nigeria</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Kenya.jpeg' %}" alt="Drapeau Kenya" class="flag-icon">
+                    <img src="{% static 'rajapi/images/Kenya.jpeg' %}" alt="Kenya Flag" class="flag-icon">
                     <strong>Kenya</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Ouganda.jpeg' %}" alt="Drapeau Ouganda" class="flag-icon">
-                    <strong>Ouganda</strong>
+                    <img src="{% static 'rajapi/images/Ouganda.jpeg' %}" alt="Uganda Flag" class="flag-icon">
+                    <strong>Uganda</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Tanzanie.jpeg' %}" alt="Drapeau Tanzanie" class="flag-icon">
-                    <strong>Tanzanie</strong>
+                    <img src="{% static 'rajapi/images/Tanzanie.jpeg' %}" alt="Tanzania Flag" class="flag-icon">
+                    <strong>Tanzania</strong>
                 </div>
                 <div class="country-badge">
-                    <img src="{% static 'rajapi/images/Ecthopie.jpeg' %}" alt="Drapeau Éthiopie" class="flag-icon">
-                    <strong>Éthiopie</strong>
+                    <img src="{% static 'rajapi/images/Ecthopie.jpeg' %}" alt="Ethiopia Flag" class="flag-icon">
+                    <strong>Ethiopia</strong>
                 </div>
                 <div class="country-badge">
                     <i class="fas fa-plus-circle"></i>
-                    <strong>+ 19 autres pays</strong>
+                    <strong>+ 19 other countries</strong>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -1025,29 +1027,28 @@ Notre réseau s’appuie sur une plateforme digitale collaborative innovante, co
         <div class="footer-grid">
             <div class="footer-section">
                 <h3>RAJAPI-COP Africa</h3>
-                <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+                <p>Promoting youth innovation for climate justice and biodiversity</p>
                 <p style="margin-top: 20px;">
                     <i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé<br>
-                    Cameroun<br>
+                    Cameroon<br>
                     <i class="fas fa-phone"></i> +237 696 967 609<br>
                     <i class="fas fa-envelope"></i> fonder.rajapicop@gmail.com
                 </p>
             </div>
             <div class="footer-section">
-                <h3>Liens Rapides</h3>
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="{% url 'home-page' %}">Accueil</a></li>
-                    <li><a href="{% url 'apropos-page' %}">À Propos</a></li>
-                    <li><a href="{% url 'programmes-page' %}">Programmes</a></li>
-                    <li><a href="{% url 'actualites-page' %}">Actualités</a></li>
+                    <li><a href="{% url 'home-page' %}">Home</a></li>
+                    <li><a href="{% url 'apropos-page' %}">About</a></li>
+                    <li><a href="{% url 'programmes-page' %}">Programs</a></li>
+                    <li><a href="{% url 'actualites-page' %}">News</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
+            <p>© 2026 RAJAPI-COP Africa. All rights reserved.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 </html>

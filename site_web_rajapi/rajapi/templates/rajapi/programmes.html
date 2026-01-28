@@ -1,11 +1,11 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programmes - RAJAPI-COP Africa</title>
+    <title>Programs - RAJAPI-COP Africa</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* LE CSS EST INCHANGÉ – COPIÉ TEL QUEL */
         * {
             margin: 0;
             padding: 0;
@@ -494,7 +495,7 @@ body {
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
-            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun</div>
+            <div><i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroon</div>
             <div><i class="fas fa-envelope"></i> fonder.rajapicop@gmail.com</div>
         </div>
     </div>
@@ -513,16 +514,16 @@ body {
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home-page' %}">Accueil</a>
+                    <a class="nav-link" href="{% url 'home-page' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'programmes-page' %}">Programmes</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'programmes-page' %}">Programs</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'apropos-page' %}">À Propos</a>
+                    <a class="nav-link" href="{% url 'apropos-page' %}">About</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'actualites-page' %}">Actualités</a>
+                    <a class="nav-link" href="{% url 'actualites-page' %}">News</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="{% url 'noscontacts-page' %}">Contact</a>
@@ -535,10 +536,10 @@ body {
 
     <!-- Page Header -->
     <div class="page-header">
-        <img src="{% static 'rajapi/images/Header1.jpeg' %}" alt="Nos Programmes Phares">
+        <img src="{% static 'rajapi/images/Header1.jpeg' %}" alt="Our Flagship Programs">
     </div>
 
-    <!-- Programme 1: Éco-Habitats Cameroun -->
+    <!-- Program 1: Eco-Habitats Cameroon -->
     <section class="program-detail">
         <div class="container">
             <div class="program-header">
@@ -546,49 +547,49 @@ body {
                     <i class="fas fa-home"></i>
                 </div>
                 <div class="program-intro">
-                    <h2>Éco-Habitats Cameroun</h2>
-                    <p class="tagline">Construire un habitat durable et résilient pour tous</p>
-                    <p>Programme innovant de construction et réhabilitation de logements écologiques et résilients face aux changements climatiques, destiné aux communautés vulnérables du Cameroun.</p>
+                    <h2>Eco-Habitats Cameroon</h2>
+                    <p class="tagline">Building sustainable and resilient housing for all</p>
+                    <p>Innovative program for the construction and rehabilitation of eco-friendly and climate-resilient homes for vulnerable communities in Cameroon.</p>
                 </div>
             </div>
 
             <div class="program-stats">
                 <div class="stat-box">
                     <div class="number">500+</div>
-                    <div class="label">Familles Bénéficiaires</div>
+                    <div class="label">Beneficiary Families</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">15</div>
-                    <div class="label">Villes Ciblées</div>
+                    <div class="label">Targeted Cities</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">30%</div>
-                    <div class="label">Réduction Énergétique</div>
+                    <div class="label">Energy Reduction</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">100</div>
-                    <div class="label">Emplois Créés</div>
+                    <div class="label">Jobs Created</div>
                 </div>
             </div>
 
             <div class="program-content">
                 <div class="content-main">
-                    <h3>Objectifs du Programme</h3>
+                    <h3>Program Objectives</h3>
                     <ul>
-                        <li>Construire des habitats écologiques avec des matériaux locaux et durables</li>
-                        <li>Réduire l'empreinte carbone des bâtiments résidentiels</li>
-                        <li>Améliorer la résilience face aux inondations et aux vagues de chaleur</li>
-                        <li>Former les artisans locaux aux techniques de construction verte</li>
-                        <li>Créer des emplois verts dans le secteur du bâtiment</li>
+                        <li>Build eco-friendly homes using local and sustainable materials</li>
+                        <li>Reduce the carbon footprint of residential buildings</li>
+                        <li>Improve resilience to floods and heatwaves</li>
+                        <li>Train local artisans in green building techniques</li>
+                        <li>Create green jobs in the construction sector</li>
                     </ul>
 
-                    <h3>Méthodologie</h3>
-                    <p>Notre approche intègre les meilleures pratiques internationales adaptées au contexte camerounais. Nous utilisons des matériaux biosourcés (terre compressée, bambou, bois certifié), des systèmes de récupération d'eau de pluie, et des dispositifs d'efficacité énergétique (panneaux solaires, ventilation naturelle).</p>
+                    <h3>Methodology</h3>
+                    <p>Our approach integrates international best practices adapted to the Cameroonian context. We use bio-sourced materials (compressed earth, bamboo, certified wood), rainwater harvesting systems, and energy efficiency features (solar panels, natural ventilation).</p>
 
-                    <h3>Impact & Résultats</h3>
-                    <p>Depuis son lancement, le programme a permis de construire plus de 120 logements écologiques, formé 150 artisans, et réduit significativement les coûts énergétiques des ménages bénéficiaires. L'utilisation de matériaux locaux a également stimulé l'économie communautaire.</p>
+                    <h3>Impact & Results</h3>
+                    <p>Since its launch, the program has enabled the construction of over 120 eco-friendly homes, trained 150 artisans, and significantly reduced energy costs for beneficiary households. The use of local materials has also stimulated the community economy.</p>
 
-                    <h3>Galerie Photo</h3>
+                    <h3>Photo Gallery</h3>
                     <div class="gallery">
                         <div class="gallery-item">
                             <img src="{% static 'rajapi/images/galerie6.jpeg' %}" alt="Photo 1">
@@ -607,28 +608,28 @@ body {
 
                 <div class="content-sidebar">
                     <div class="sidebar-section">
-                        <h4>Informations Clés</h4>
+                        <h4>Key Information</h4>
                         <ul>
-                            <li><i class="fas fa-calendar"></i> Lancé en 2023</li>
+                            <li><i class="fas fa-calendar"></i> Launched in 2023</li>
                             <li><i class="fas fa-map-marker-alt"></i> Yaoundé, Douala, Bafoussam</li>
-                            <li><i class="fas fa-users"></i> 500+ bénéficiaires directs</li>
-                            <li><i class="fas fa-clock"></i> Programme en cours</li>
+                            <li><i class="fas fa-users"></i> 500+ direct beneficiaries</li>
+                            <li><i class="fas fa-clock"></i> Ongoing program</li>
                         </ul>
                     </div>
 
                     <div class="sidebar-section">
-                        <h4>Partenaires</h4>
+                        <h4>Partners</h4>
                         <ul>
                             <li><i class="fas fa-handshake"></i> UN-Habitat</li>
-                            <li><i class="fas fa-handshake"></i> Ministère de l'Habitat</li>
-                            <li><i class="fas fa-handshake"></i> ONG Locales</li>
+                            <li><i class="fas fa-handshake"></i> Ministry of Housing</li>
+                            <li><i class="fas fa-handshake"></i> Local NGOs</li>
                         </ul>
                     </div>
 
                     <div class="cta-box">
-                        <h4>Participer au Programme</h4>
-                        <p>Vous êtes une communauté, un artisan ou un partenaire financier ?</p>
-                        <a href="#" class="btn">Nous Contacter</a>
+                        <h4>Join the Program</h4>
+                        <p>Are you a community, artisan, or financial partner?</p>
+                        <a href="#" class="btn">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -637,7 +638,7 @@ body {
 
     <div class="divider"></div>
 
-    <!-- Programme 2: CongoBotanika -->
+    <!-- Program 2: CongoBotanika -->
     <section class="program-detail">
         <div class="container">
             <div class="program-header">
@@ -646,76 +647,76 @@ body {
                 </div>
                 <div class="program-intro">
                     <h2>CongoBotanika</h2>
-                    <p class="tagline">Préserver la biodiversité du Bassin du Congo</p>
-                    <p>Initiative scientifique et citoyenne de recensement, préservation et valorisation de la biodiversité exceptionnelle du Bassin du Congo, le deuxième poumon vert de la planète.</p>
+                    <p class="tagline">Preserving the biodiversity of the Congo Basin</p>
+                    <p>Scientific and citizen initiative for the inventory, preservation, and valorization of the exceptional biodiversity of the Congo Basin, the planet's second green lung.</p>
                 </div>
             </div>
 
             <div class="program-stats">
                 <div class="stat-box">
                     <div class="number">1200+</div>
-                    <div class="label">Espèces Recensées</div>
+                    <div class="label">Species Recorded</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">6</div>
-                    <div class="label">Pays du Bassin</div>
+                    <div class="label">Basin Countries</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">800</div>
-                    <div class="label">Jeunes Formés</div>
+                    <div class="label">Youth Trained</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">50</div>
-                    <div class="label">Zones Protégées</div>
+                    <div class="label">Protected Areas</div>
                 </div>
             </div>
 
             <div class="program-content">
                 <div class="content-main">
-                    <h3>Objectifs du Programme</h3>
+                    <h3>Program Objectives</h3>
                     <ul>
-                        <li>Documenter la biodiversité floristique du Bassin du Congo</li>
-                        <li>Former des jeunes scientifiques et éco-gardes</li>
-                        <li>Créer une base de données numérique accessible</li>
-                        <li>Sensibiliser les communautés à la conservation</li>
-                        <li>Valoriser les savoirs traditionnels liés aux plantes</li>
+                        <li>Document the floristic biodiversity of the Congo Basin</li>
+                        <li>Train young scientists and eco-guards</li>
+                        <li>Create an accessible digital database</li>
+                        <li>Raise community awareness about conservation</li>
+                        <li>Valorize traditional knowledge related to plants</li>
                     </ul>
 
-                    <h3>Actions Concrètes</h3>
-                    <p>CongoBotanika mobilise des jeunes botanistes, écologues et citoyens pour inventorier systématiquement la flore du Bassin du Congo. Nous organisons des expéditions scientifiques, créons des herbiers numériques, et développons des applications mobiles pour la science citoyenne.</p>
+                    <h3>Concrete Actions</h3>
+                    <p>CongoBotanika mobilizes young botanists, ecologists, and citizens to systematically inventory the flora of the Congo Basin. We organize scientific expeditions, create digital herbaria, and develop mobile applications for citizen science.</p>
 
-                    <p>Le programme travaille également avec les communautés autochtones pour documenter l'utilisation traditionnelle des plantes médicinales et alimentaires, assurant ainsi la préservation de ces connaissances ancestrales.</p>
+                    <p>The program also works with indigenous communities to document traditional uses of medicinal and food plants, thus ensuring the preservation of this ancestral knowledge.</p>
 
-                    <h3>Impact & Réalisations</h3>
-                    <p>Plus de 1200 espèces ont été documentées, dont plusieurs nouvelles pour la science. Notre base de données est utilisée par des chercheurs internationaux et sert à la planification de la conservation. 800 jeunes ont été formés aux techniques de recensement botanique.</p>
+                    <h3>Impact & Achievements</h3>
+                    <p>Over 1200 species have been documented, including several new to science. Our database is used by international researchers and supports conservation planning. 800 young people have been trained in botanical inventory techniques.</p>
                 </div>
 
                 <div class="content-sidebar">
                     <div class="sidebar-section">
-                        <h4>Zone d'Intervention</h4>
+                        <h4>Intervention Area</h4>
                         <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> Cameroun</li>
-                            <li><i class="fas fa-map-marker-alt"></i> RD Congo</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Cameroon</li>
+                            <li><i class="fas fa-map-marker-alt"></i> DR Congo</li>
                             <li><i class="fas fa-map-marker-alt"></i> Congo-Brazzaville</li>
                             <li><i class="fas fa-map-marker-alt"></i> Gabon</li>
-                            <li><i class="fas fa-map-marker-alt"></i> RCA</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Guinée Équatoriale</li>
+                            <li><i class="fas fa-map-marker-alt"></i> CAR</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Equatorial Guinea</li>
                         </ul>
                     </div>
 
                     <div class="sidebar-section">
-                        <h4>Partenaires Scientifiques</h4>
+                        <h4>Scientific Partners</h4>
                         <ul>
                             <li><i class="fas fa-university"></i> CIFOR</li>
                             <li><i class="fas fa-university"></i> Kew Gardens</li>
-                            <li><i class="fas fa-university"></i> Universités Locales</li>
+                            <li><i class="fas fa-university"></i> Local Universities</li>
                         </ul>
                     </div>
 
                     <div class="cta-box">
-                        <h4>Devenir Science Citoyen</h4>
-                        <p>Participez aux expéditions botaniques !</p>
-                        <a href="#" class="btn">S'Inscrire</a>
+                        <h4>Become a Citizen Scientist</h4>
+                        <p>Join botanical expeditions!</p>
+                        <a href="#" class="btn">Register</a>
                     </div>
                 </div>
             </div>
@@ -724,7 +725,7 @@ body {
 
     <div class="divider"></div>
 
-    <!-- Programme 3: BlueGuard Africa -->
+    <!-- Program 3: BlueGuard Africa -->
     <section class="program-detail">
         <div class="container">
             <div class="program-header">
@@ -733,62 +734,62 @@ body {
                 </div>
                 <div class="program-intro">
                     <h2>BlueGuard Africa</h2>
-                    <p class="tagline">Protéger nos océans et écosystèmes côtiers</p>
-                    <p>Initiative panafricaine de protection et restauration des écosystèmes marins et côtiers face aux menaces du changement climatique, de la pollution et de la surpêche.</p>
+                    <p class="tagline">Protecting our oceans and coastal ecosystems</p>
+                    <p>Pan-African initiative for the protection and restoration of marine and coastal ecosystems facing threats from climate change, pollution, and overfishing.</p>
                 </div>
             </div>
 
             <div class="program-stats">
                 <div class="stat-box">
                     <div class="number">25</div>
-                    <div class="label">Zones Côtières</div>
+                    <div class="label">Coastal Zones</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">10,000+</div>
-                    <div class="label">Pêcheurs Sensibilisés</div>
+                    <div class="label">Fishermen Sensitized</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">500</div>
-                    <div class="label">Jeunes Éco-Gardes</div>
+                    <div class="label">Young Eco-Guards</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">15</div>
-                    <div class="label">Pays Africains</div>
+                    <div class="label">African Countries</div>
                 </div>
             </div>
 
             <div class="program-content">
                 <div class="content-main">
-                    <h3>Enjeux & Défis</h3>
-                    <p>Les écosystèmes côtiers africains (mangroves, récifs coralliens, herbiers marins) sont essentiels pour la sécurité alimentaire de millions de personnes et constituent des puits de carbone majeurs. Pourtant, ils sont gravement menacés par la montée des eaux, la pollution plastique, la surpêche et l'acidification des océans.</p>
+                    <h3>Challenges & Issues</h3>
+                    <p>African coastal ecosystems (mangroves, coral reefs, seagrass beds) are essential for the food security of millions of people and act as major carbon sinks. Yet they are severely threatened by rising sea levels, plastic pollution, overfishing, and ocean acidification.</p>
 
-                    <h3>Nos Solutions</h3>
+                    <h3>Our Solutions</h3>
                     <ul>
-                        <li>Restauration de mangroves et récifs coralliens</li>
-                        <li>Formation d'éco-gardes marins communautaires</li>
-                        <li>Campagnes de nettoyage des plages et océans</li>
-                        <li>Promotion de la pêche durable et de l'aquaculture responsable</li>
-                        <li>Surveillance participative des zones marines protégées</li>
-                        <li>Éducation environnementale dans les écoles côtières</li>
+                        <li>Restoration of mangroves and coral reefs</li>
+                        <li>Training of community marine eco-guards</li>
+                        <li>Beach and ocean cleanup campaigns</li>
+                        <li>Promotion of sustainable fishing and responsible aquaculture</li>
+                        <li>Participatory monitoring of protected marine areas</li>
+                        <li>Environmental education in coastal schools</li>
                     </ul>
 
-                    <h3>Résultats Tangibles</h3>
-                    <p>BlueGuard Africa a permis de planter 250,000 palétuviers, nettoyer 100 km de côtes, former 500 éco-gardes marins, et sensibiliser plus de 10,000 pêcheurs aux pratiques durables. Nos actions contribuent directement à l'ODD 14 (Vie aquatique) et à la lutte contre le changement climatique.</p>
+                    <h3>Tangible Results</h3>
+                    <p>BlueGuard Africa has enabled the planting of 250,000 mangroves, the cleanup of 100 km of coastline, the training of 500 marine eco-guards, and the sensitization of over 10,000 fishermen to sustainable practices. Our actions directly contribute to SDG 14 (Life Below Water) and the fight against climate change.</p>
                 </div>
 
                 <div class="content-sidebar">
                     <div class="sidebar-section">
-                        <h4>Zones Prioritaires</h4>
+                        <h4>Priority Zones</h4>
                         <ul>
-                            <li><i class="fas fa-anchor"></i> Golfe de Guinée</li>
-                            <li><i class="fas fa-anchor"></i> Côte Est Africaine</li>
-                            <li><i class="fas fa-anchor"></i> Afrique du Nord</li>
-                            <li><i class="fas fa-anchor"></i> Afrique Australe</li>
+                            <li><i class="fas fa-anchor"></i> Gulf of Guinea</li>
+                            <li><i class="fas fa-anchor"></i> East African Coast</li>
+                            <li><i class="fas fa-anchor"></i> North Africa</li>
+                            <li><i class="fas fa-anchor"></i> Southern Africa</li>
                         </ul>
                     </div>
 
                     <div class="sidebar-section">
-                        <h4>Partenaires</h4>
+                        <h4>Partners</h4>
                         <ul>
                             <li><i class="fas fa-handshake"></i> UNEP</li>
                             <li><i class="fas fa-handshake"></i> Ocean Conservancy</li>
@@ -797,9 +798,9 @@ body {
                     </div>
 
                     <div class="cta-box">
-                        <h4>Rejoindre BlueGuard</h4>
-                        <p>Devenez éco-garde marin ou organisez un cleanup !</p>
-                        <a href="#" class="btn">S'Engager</a>
+                        <h4>Join BlueGuard</h4>
+                        <p>Become a marine eco-guard or organize a cleanup!</p>
+                        <a href="#" class="btn">Get Involved</a>
                     </div>
                 </div>
             </div>
@@ -808,10 +809,9 @@ body {
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
-        <p>Promouvoir l'innovation des jeunes pour la justice climatique et la biodiversité</p>
+        <p>© 2026 RAJAPI-COP Africa. All rights reserved.</p>
+        <p>Promoting youth innovation for climate justice and biodiversity</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 </html>

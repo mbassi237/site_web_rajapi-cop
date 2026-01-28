@@ -1,11 +1,11 @@
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAJAPI-COP Africa - Réseau des Jeunes Africains pour la Justice Climatique</title>
+    <title>RAJAPI-COP Africa - African Youth Network for Climate Justice</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -18,6 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ──────────────────────────────────────────────── */
+        /* TOUT LE CSS EST INCHANGÉ – COPIÉ TEL QUEL         */
+        /* ──────────────────────────────────────────────── */
         * {
             margin: 0;
             padding: 0;
@@ -91,7 +94,6 @@
 
         header {
             background: var(--white);
-            
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -158,7 +160,6 @@
         .carousel {
             position: relative;
             height: 650px;
-            
         }
 
         .carousel-container {
@@ -409,85 +410,84 @@
         }
 
         /* Programs Section */
-.programs {
-    background: var(--bg-light);
-}
+        .programs {
+            background: var(--bg-light);
+        }
 
-.programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-.program-card {
-    background: var(--white);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(2, 149, 210, 0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+        .program-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(2, 149, 210, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(2, 149, 210, 0.2);
-}
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(2, 149, 210, 0.2);
+        }
 
-/* Nouveau style pour le conteneur d'icône/image */
-.program-icon {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(2, 149, 210, 0.05), rgba(2, 149, 210, 0.15));
-    padding: 20px;
-    overflow: hidden;
-}
+        .program-icon {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(2, 149, 210, 0.05), rgba(2, 149, 210, 0.15));
+            padding: 20px;
+            overflow: hidden;
+        }
 
-.program-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
+        .program-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
 
-.program-card:hover .program-icon img {
-    transform: scale(1.05);
-}
+        .program-card:hover .program-icon img {
+            transform: scale(1.05);
+        }
 
-.program-content {
-    padding: 30px;
-}
+        .program-content {
+            padding: 30px;
+        }
 
-.program-content h3 {
-    margin-bottom: 15px;
-    color: var(--primary-blue);
-    font-size: 1.3rem;
-}
+        .program-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+        }
 
-.program-content p {
-    color: var(--text-light);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
+        .program-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
 
-.program-link {
-    color: var(--primary-blue);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    transition: gap 0.3s;
-}
+        .program-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
 
-.program-link:hover {
-    gap: 10px;
-}
+        .program-link:hover {
+            gap: 10px;
+        }
 
-.program-link i {
-    font-size: 0.9rem;
-}
+        .program-link i {
+            font-size: 0.9rem;
+        }
 
         /* Platform Section */
         .platform {
@@ -891,185 +891,176 @@
             }
         }
 
-        /* === BASE MOBILE (tout ce qui est par défaut) === */
-body {
-    font-size: 16px;          /* base confortable mobile */
-    line-height: 1.5;
-}
+        body {
+            font-size: 16px;
+            line-height: 1.5;
+        }
 
-.container {
-    width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
-}
+        .container {
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
 
-/* Grilles et cartes en colonne par défaut */
-.blog-grid,
-.gallery-grid,
-.press-grid,
-.video-grid {
-    display: grid;
-    grid-template-columns: 1fr;     /* 1 colonne sur mobile */
-    gap: 20px;
-}
+        .blog-grid,
+        .gallery-grid,
+        .press-grid,
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
 
-.featured-content,
-.timeline-item,
-.press-item {
-    grid-template-columns: 1fr;     /* tout en colonne */
-}
+        .featured-content,
+        .timeline-item,
+        .press-item {
+            grid-template-columns: 1fr;
+        }
 
-/* Navigation mobile : cacher les liens et montrer hamburger (à implémenter) */
-.nav-links {
-    display: none;   /* à activer via JS + media query */
-}
+        .nav-links {
+            display: none;
+        }
 
-/* === TABLETTES & plus (768px et +) === */
-@media (min-width: 768px) {
-    .container {
-        max-width: 960px;
-        padding: 0 30px;
-    }
+        @media (min-width: 768px) {
+            .container {
+                max-width: 960px;
+                padding: 0 30px;
+            }
 
-    .blog-grid,
-    .gallery-grid,
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);   /* 2 colonnes */
-    }
+            .blog-grid,
+            .gallery-grid,
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-    .featured-content {
-        grid-template-columns: 1fr 1fr;          /* image + texte côte à côte */
-    }
+            .featured-content {
+                grid-template-columns: 1fr 1fr;
+            }
 
-    .timeline-item {
-        grid-template-columns: 140px 1fr;
-    }
+            .timeline-item {
+                grid-template-columns: 140px 1fr;
+            }
 
-    .press-item {
-        grid-template-columns: 120px 1fr auto;
-    }
+            .press-item {
+                grid-template-columns: 120px 1fr auto;
+            }
 
-    /* Afficher menu normal */
-    .nav-links {
-        display: flex;
-    }
-}
+            .nav-links {
+                display: flex;
+            }
+        }
 
-/* === DESKTOP LARGE (1024px et +) === */
-@media (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
-    }
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1200px;
+            }
 
-    .blog-grid,
-    .gallery-grid,
-    .video-grid {
-        grid-template-columns: repeat(3, 1fr);   /* 3 colonnes */
-    }
+            .blog-grid,
+            .gallery-grid,
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
 
-    .featured-content {
-        grid-template-columns: 1.5fr 1fr;
-    }
-}
+            .featured-content {
+                grid-template-columns: 1.5fr 1fr;
+            }
+        }
 
-/* === Très grands écrans (optionnel) === */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1400px;
-    }
-}
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+        }
 
-/* Newsletter Section */
-.newsletter-section {
-    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-    color: var(--white);
-    text-align: center;
-    padding: 100px 20px;
-}
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
 
-.newsletter-section h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
+        .newsletter-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
 
-.newsletter-section p {
-    font-size: 20px;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .newsletter-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.newsletter-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    gap: 15px;
-}
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+        }
 
-.newsletter-form input {
-    flex: 1;
-    padding: 18px 25px;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
-}
+        .newsletter-form input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+        }
 
-.newsletter-form button {
-    padding: 18px 40px;
-    background: var(--white);
-    color: var(--primary-blue);
-    border: none;
-    border-radius: 50px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 16px;
-}
+        .newsletter-form button {
+            padding: 18px 40px;
+            background: var(--white);
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
 
-.newsletter-form button:hover {
-    background: var(--bg-light);
-    transform: scale(1.05);
-}
+        .newsletter-form button:hover {
+            background: var(--bg-light);
+            transform: scale(1.05);
+        }
 
-.newsletter-benefits {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
+        .newsletter-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
 
-.benefit-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--white);
-}
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+        }
 
-.benefit-item i {
-    font-size: 24px;
-}
+        .benefit-item i {
+            font-size: 24px;
+        }
 
-/* Responsive Newsletter */
-@media (max-width: 768px) {
-    .newsletter-section h2 {
-        font-size: 32px;
-    }
-    
-    .newsletter-section p {
-        font-size: 16px;
-    }
-    
-    .newsletter-form {
-        flex-direction: column;
-    }
-    
-    .newsletter-benefits {
-        gap: 20px;
-    }
-}
+        @media (max-width: 768px) {
+            .newsletter-section h2 {
+                font-size: 32px;
+            }
+            
+            .newsletter-section p {
+                font-size: 16px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-benefits {
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1077,7 +1068,7 @@ body {
     <div class="top-bar">
         <div class="container">
             <div>
-                <i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroun
+                <i class="fas fa-map-marker-alt"></i> Bastos, Yaoundé - Cameroon
                 <a href="tel:+237696967609"><i class="fas fa-phone"></i> +237 696 967 609</a>
             </div>
             <div>
@@ -1100,16 +1091,16 @@ body {
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}">Accueil</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'programmes-page' %}">Programmes</a>
+                    <a class="nav-link" href="{% url 'programmes-page' %}">Programs</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'apropos-page' %}">À Propos</a>
+                    <a class="nav-link" href="{% url 'apropos-page' %}">About</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'actualites-page' %}">Actualités</a>
+                    <a class="nav-link" href="{% url 'actualites-page' %}">News</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="{% url 'noscontacts-page' %}">Contact</a>
@@ -1124,32 +1115,32 @@ body {
     <section class="carousel" id="accueil">
         <div class="carousel-container">
             <div class="carousel-slide active">
-                <img src="{% static 'rajapi/images/Rajapi1_carroussel.jpeg' %}" alt="Promouvoir l'innovation des jeunes">
+                <img src="{% static 'rajapi/images/Rajapi1_carroussel.jpeg' %}" alt="Promoting youth innovation">
                 <div class="carousel-caption">
-                    <h1>La jeunesse africaine au cœur des décisions mondiales</h1>
-                    <p>RAJAPI-COP Africa mobilise la jeunesse africaine pour transformer les défis climatiques, environnementaux et sociaux en solutions concrètes, portées jusqu’aux Nations Unies et aux COP internationales.</p>
+                    <h1>African youth at the heart of global decisions</h1>
+                    <p>RAJAPI-COP Africa mobilizes African youth to turn climate, environmental and social challenges into concrete solutions, carried to the United Nations and international COPs.</p>
                 </div>
             </div>
 
             <div class="carousel-slide">
-                <img src="{% static 'rajapi/images/image2.jpeg' %}" alt="Réseau panafricain">
+                <img src="{% static 'rajapi/images/image2.jpeg' %}" alt="Pan-African network">
                 <div class="carousel-caption">
-                    <h1>Un réseau panafricain, une action globale</h1>
-                    <p>Présente dans une trentaine de pays africains, RAJAPI-COP Africa connecte les jeunes, les communautés et les partenaires pour agir localement et influencer globalement en faveur de la justice climatique et environnementale.</p>
+                    <h1>A pan-African network, global action</h1>
+                    <p>Present in around thirty African countries, RAJAPI-COP Africa connects youth, communities and partners to act locally and influence globally for climate and environmental justice.</p>
                 </div>
             </div>
 
             <div class="carousel-slide">
-                <img src="{% static 'rajapi/images/Carroussel1.jpeg' %}" alt="Solutions innovantes">
+                <img src="{% static 'rajapi/images/Carroussel1.jpeg' %}" alt="Innovative solutions">
                 <div class="carousel-caption">
-                    <h1>Des idées locales aux solutions mondiales</h1>
-                    <p>De l’Afrique aux grandes conférences internationales, nous accompagnons les jeunes à innover, plaider et agir pour un avenir durable, inclusif et équitable.</p>
+                    <h1>From local ideas to global solutions</h1>
+                    <p>From Africa to major international conferences, we support young people to innovate, advocate and act for a sustainable, inclusive and equitable future.</p>
                 </div>
             </div>
         </div>
 
-        <button class="carousel-btn prev" aria-label="Slide précédent">&#10094;</button>
-        <button class="carousel-btn next" aria-label="Slide suivant">&#10095;</button>
+        <button class="carousel-btn prev" aria-label="Previous slide">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Next slide">&#10095;</button>
 
         <div class="carousel-indicators">
             <span class="carousel-indicator active" data-slide="0"></span>
@@ -1163,19 +1154,19 @@ body {
         <div class="stats-container">
             <div class="stat-item">
                 <div class="stat-number">30</div>
-                <div class="stat-label">Pays Africains</div>
+                <div class="stat-label">African Countries</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">5000+</div>
-                <div class="stat-label">Jeunes Mobilisés</div>
+                <div class="stat-label">Young People Mobilized</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">30</div>
-                <div class="stat-label">Projets Incubés</div>
+                <div class="stat-label">Projects Incubated</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">10</div>
-                <div class="stat-label">Partenaires</div>
+                <div class="stat-label">Partners</div>
             </div>
         </div>
     </div>
@@ -1183,36 +1174,36 @@ body {
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">À Propos de RAJAPI-COP Africa</h2>
-            <p class="section-subtitle">Un réseau panafricain au service de la jeunesse et du climat</p>
+            <h2 class="section-title">About RAJAPI-COP Africa</h2>
+            <p class="section-subtitle">A pan-African network serving youth and climate</p>
             
             <div class="about-grid">
                 <div class="about-content">
-                    <h3>Notre Mission</h3>
-                    <p>RAJAPI-COP Africa est le Réseau des Jeunes Africains Apporteurs de Projets Innovants aux COP Climat, Biodiversité et Désertification pour la justice sociale et le genre.</p>
-                    <p>Notre mission est de mobiliser, accompagner et connecter les jeunes qui conçoivent et portent des solutions concrètes, intégrées et transformatrices face aux défis du changement climatique, de l’érosion de la biodiversité, de la désertification, et des inégalités sociales et de genre, en parfaite cohérence avec les Objectifs de Développement Durable (ODD) et les engagements de l’Accord de Paris.</p>
-                    <a href="{% url 'apropos-page' %}" class="btn btn-primary">Découvrir notre histoire</a>
+                    <h3>Our Mission</h3>
+                    <p>RAJAPI-COP Africa is the Network of African Youth Bringing Innovative Projects to the Climate, Biodiversity and Desertification COPs for social justice and gender equality.</p>
+                    <p>Our mission is to mobilize, support and connect young people who design and carry concrete, integrated and transformative solutions to the challenges of climate change, biodiversity erosion, desertification, and social and gender inequalities, in full coherence with the Sustainable Development Goals (SDGs) and the commitments of the Paris Agreement.</p>
+                    <a href="{% url 'apropos-page' %}" class="btn btn-primary">Discover our story</a>
                 </div>
                 <div class="about-values">
                     <div class="value-item">
                         <i class="fas fa-lightbulb"></i>
                         <h4>Innovation</h4>
-                        <p>Solutions créatives pour les défis climatiques</p>
+                        <p>Creative solutions for climate challenges</p>
                     </div>
                     <div class="value-item">
                         <i class="fas fa-users"></i>
                         <h4>Inclusion</h4>
-                        <p>Justice sociale et égalité des genres</p>
+                        <p>Social justice and gender equality</p>
                     </div>
                     <div class="value-item">
                         <i class="fas fa-globe-africa"></i>
-                        <h4>Panafricanisme</h4>
-                        <p>Présence dans plus de 30 pays</p>
+                        <h4>Pan-Africanism</h4>
+                        <p>Presence in more than 30 countries</p>
                     </div>
                     <div class="value-item">
                         <i class="fas fa-hands-helping"></i>
                         <h4>Collaboration</h4>
-                        <p>Partenariats stratégiques globaux</p>
+                        <p>Strategic global partnerships</p>
                     </div>
                 </div>
             </div>
@@ -1222,81 +1213,81 @@ body {
     <!-- Programs Section -->
     <section class="programs" id="programmes">
         <div class="container">
-            <h2 class="section-title">Nos Programmes Phares</h2>
-            <p class="section-subtitle">Des initiatives concrètes pour un impact durable</p>
+            <h2 class="section-title">Our Flagship Programs</h2>
+            <p class="section-subtitle">Concrete initiatives for lasting impact</p>
             
             <div class="programs-grid">
                 <div class="program-card">
                     <div class="program-icon">
-                        <img src="{% static 'rajapi/images/COP30.jpeg' %}" alt="COP Climat">
+                        <img src="{% static 'rajapi/images/COP30.jpeg' %}" alt="Climate COP">
                     </div>
                     <div class="program-content">
-                        <h3>COP Climat – UNFCCC</h3>
-                        <p>est la Conférence des Parties à la Convention-cadre des Nations Unies sur les changements climatiques (CCNUCC / UNFCCC).
-Elle réunit chaque année les États signataires, ainsi que des observateurs (organisations internationales, société civile, scientifiques, jeunes, secteur privé), afin de négocier, adopter et évaluer les politiques internationales de lutte contre le changement climatique</p>
-                        <a href="#" class="program-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <h3>Climate COP – UNFCCC</h3>
+                        <p>is the Conference of the Parties to the United Nations Framework Convention on Climate Change (UNFCCC / UNFCCC).
+It brings together each year the signatory States, as well as observers (international organizations, civil society, scientists, youth, private sector), to negotiate, adopt and evaluate international policies to combat climate change.</p>
+                        <a href="#" class="program-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="program-card">
                     <div class="program-icon">
-                        <img src="{% static 'rajapi/images/cop16.jpg' %}" alt="COP Climat">
+                        <img src="{% static 'rajapi/images/cop16.jpg' %}" alt="Biodiversity COP">
                     </div>
                     <div class="program-content">
-                        <h3>COP Biodiversité</h3>
-                        <p>La COP Biodiversité (Conference of the Parties) est la Conférence des Parties à la Convention sur la diversité biologique (CDB / CBD), adoptée lors du Sommet de la Terre de Rio en 1992.
-Elle réunit régulièrement les États parties, ainsi que des organisations internationales, scientifiques, peuples autochtones, jeunes et acteurs de la société civile, afin de décider des orientations mondiales pour la conservation et l’utilisation durable de la biodiversité.</p>
-                        <a href="#" class="program-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <h3>Biodiversity COP</h3>
+                        <p>The Biodiversity COP (Conference of the Parties) is the Conference of the Parties to the Convention on Biological Diversity (CBD), adopted at the Rio Earth Summit in 1992.
+It regularly brings together States parties, as well as international organizations, scientists, indigenous peoples, youth and civil society actors, to decide on global directions for the conservation and sustainable use of biodiversity.</p>
+                        <a href="#" class="program-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="program-card">
                     <div class="program-icon">
-                        <img src="{% static 'rajapi/images/cop17_desertification.jpeg' %}" alt="COP Climat">
+                        <img src="{% static 'rajapi/images/cop17_desertification.jpeg' %}" alt="Desertification COP">
                     </div>
                     <div class="program-content">
-                        <h3>COP Désertification</h3>
-                        <p>La COP Désertification (Conference of the Parties) est la Conférence des Parties à la Convention des Nations Unies sur la lutte contre la désertification (CNULCD / UNCCD), adoptée en 1994.
-Elle rassemble périodiquement les États parties, ainsi que des organisations internationales, scientifiques, communautés locales, jeunes et acteurs de la société civile, afin de coordonner l’action mondiale contre la désertification, la dégradation des terres et les effets de la sécheresse, en particulier dans les zones arides, semi-arides et subhumides sèches.</p>
-                        <a href="#" class="program-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <h3>Desertification COP</h3>
+                        <p>The Desertification COP (Conference of the Parties) is the Conference of the Parties to the United Nations Convention to Combat Desertification (UNCCD), adopted in 1994.
+It periodically brings together States parties, as well as international organizations, scientists, local communities, youth and civil society actors, to coordinate global action against desertification, land degradation and the effects of drought, particularly in arid, semi-arid and dry sub-humid areas.</p>
+                        <a href="#" class="program-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="program-card">
                     <div class="program-icon">
-                        <img src="{% static 'rajapi/images/BRS-logo.png' %}" alt="COP Climat">
+                        <img src="{% static 'rajapi/images/BRS-logo.png' %}" alt="BRS COPs">
                     </div>
                     <div class="program-content">
                         <h3>BRS COPs</h3>
-                        <p>La COP sur les produits chimiques et déchets, communément appelée BRS COPs, désigne les Conférences des Parties conjointes aux Conventions de Bâle, de Rotterdam et de Stockholm, trois accords internationaux juridiquement contraignants visant à protéger la santé humaine et l’environnement contre les effets nocifs des produits chimiques dangereux et des déchets.</p>
-                        <a href="#" class="program-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <p>The COP on chemicals and waste, commonly called BRS COPs, refers to the Conferences of the Parties to the Basel, Rotterdam and Stockholm Conventions, three legally binding international agreements aimed at protecting human health and the environment from the harmful effects of hazardous chemicals and wastes.</p>
+                        <a href="#" class="program-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="program-card">
                     <div class="program-icon">
-                        <img src="{% static 'rajapi/images/logo_wuf.png' %}" alt="COP Climat">
+                        <img src="{% static 'rajapi/images/logo_wuf.png' %}" alt="World Urban Forum">
                     </div>
                     <div class="program-content">
                         <h3>WUF – World Urban Forum</h3>
-                        <p>Le World Urban Forum (WUF) est la principale conférence mondiale sur l’urbanisation durable, organisée par ONU-Habitat tous les deux ans.
-Il rassemble des gouvernements nationaux et locaux, des agences des Nations Unies, des organisations de la société civile, des jeunes, des chercheurs, des urbanistes, des acteurs du secteur privé et des bailleurs, afin de discuter des défis et des opportunités liés au développement urbain durable.</p>
-                        <a href="#" class="program-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <p>The World Urban Forum (WUF) is the main global conference on sustainable urbanization, organized by UN-Habitat every two years.
+It brings together national and local governments, United Nations agencies, civil society organizations, youth, researchers, urban planners, private sector actors and donors to discuss the challenges and opportunities related to sustainable urban development.</p>
+                        <a href="#" class="program-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="program-card">
                     <div class="program-icon">
-                        <img src="{% static 'rajapi/images/25Nov25-UNEA7.png' %}" alt="COP Climat">
+                        <img src="{% static 'rajapi/images/25Nov25-UNEA7.png' %}" alt="UN Environment Assembly">
                     </div>
                     <div class="program-content">
                         <h3>UNEA – United Nations Environment Assembly</h3>
-                        <p>L’UNEA est le principal organe mondial décisionnel des Nations Unies sur les questions environnementales, créé en 2012 dans le cadre du Programme des Nations Unies pour l’Environnement (PNUE / UNEP).
-Elle réunit :
-les États membres de l’ONU,
-des organisations internationales,
-des scientifiques, ONG, jeunes et acteurs de la société civile.</p>
-                        <a href="#" class="program-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <p>UNEA is the world's leading decision-making body on environmental issues within the United Nations, created in 2012 under the United Nations Environment Programme (UNEP).
+It brings together:
+UN Member States,
+international organizations,
+scientists, NGOs, youth and civil society actors.</p>
+                        <a href="#" class="program-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1306,74 +1297,73 @@ des scientifiques, ONG, jeunes et acteurs de la société civile.</p>
     <!-- Platform Section -->
     <section class="platform" id="plateforme">
         <div class="container">
-            <h2 class="section-title">Plateforme Collaborative</h2>
-            <p class="section-subtitle">Un espace digital pour incuber, financer et accompagner vos projets</p>
+            <h2 class="section-title">Collaborative Platform</h2>
+            <p class="section-subtitle">A digital space to incubate, fund and support your projects</p>
             
             <div class="platform-features">
                 <div class="feature-card">
                     <i class="fas fa-rocket"></i>
-                    <h3>Soumission de Projets</h3>
-                    <p>Proposez vos idées innovantes pour le climat et la biodiversité</p>
+                    <h3>Project Submission</h3>
+                    <p>Submit your innovative ideas for climate and biodiversity</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-graduation-cap"></i>
-                    <h3>Incubation & Mentorat</h3>
-                    <p>Bénéficiez d'un accompagnement personnalisé par des experts</p>
+                    <h3>Incubation & Mentoring</h3>
+                    <p>Benefit from personalized support by experts</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-hand-holding-usd"></i>
-                    <h3>Financement</h3>
-                    <p>Accédez à des opportunités de financement pour vos projets</p>
+                    <h3>Funding</h3>
+                    <p>Access funding opportunities for your projects</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-users"></i>
-                    <h3>Réseau</h3>
-                    <p>Connectez-vous avec des jeunes leaders à travers l'Afrique</p>
+                    <h3>Network</h3>
+                    <p>Connect with young leaders across Africa</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-book"></i>
-                    <h3>Ressources</h3>
-                    <p>Accédez à une bibliothèque de ressources et formations</p>
+                    <h3>Resources</h3>
+                    <p>Access a library of resources and training materials</p>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- Newsletter Section -->
+    <!-- Newsletter Section -->
     <section class="newsletter-section">
         <div class="container">
-            <h2>Restez Connectés !</h2>
-            <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités, opportunités et événements directement dans votre boîte mail</p>
+            <h2>Stay Connected!</h2>
+            <p>Subscribe to our newsletter to receive our news, opportunities and events directly in your inbox</p>
             
-            <!-- Messages de succès/erreur -->
             <div id="newsletter-message" style="margin-bottom: 20px; display: none;">
                 <div id="newsletter-alert" style="max-width: 600px; margin: 0 auto; padding: 15px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;"></div>
             </div>
             
             <form class="newsletter-form" id="newsletter-form" method="post">
                 {% csrf_token %}
-                <input type="email" name="email" id="newsletter-email" placeholder="Votre adresse email" required>
+                <input type="email" name="email" id="newsletter-email" placeholder="Your email address" required>
                 <button type="submit" id="newsletter-btn">
-                    <i class="fas fa-paper-plane"></i> S'abonner
+                    <i class="fas fa-paper-plane"></i> Subscribe
                 </button>
             </form>
 
             <div class="newsletter-benefits">
                 <div class="benefit-item">
                     <i class="fas fa-check-circle"></i>
-                    <span>Actualités hebdomadaires</span>
+                    <span>Weekly updates</span>
                 </div>
                 <div class="benefit-item">
                     <i class="fas fa-check-circle"></i>
-                    <span>Opportunités exclusives</span>
+                    <span>Exclusive opportunities</span>
                 </div>
                 <div class="benefit-item">
                     <i class="fas fa-check-circle"></i>
-                    <span>Invitations événements</span>
+                    <span>Event invitations</span>
                 </div>
                 <div class="benefit-item">
                     <i class="fas fa-check-circle"></i>
-                    <span>Ressources gratuites</span>
+                    <span>Free resources</span>
                 </div>
             </div>
         </div>
@@ -1384,7 +1374,7 @@ des scientifiques, ONG, jeunes et acteurs de la société civile.</p>
         <div class="footer-grid">
             <div class="footer-section">
                 <h3>RAJAPI-COP Africa</h3>
-                <p>Réseau des Jeunes Africains pour la Justice Climatique et la Biodiversité</p>
+                <p>African Youth Network for Climate Justice and Biodiversity</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61571915817660"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1393,19 +1383,19 @@ des scientifiques, ONG, jeunes et acteurs de la société civile.</p>
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Liens Rapides</h3>
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="{% url 'home-page' %}">Accueil</a></li>
-                    <li><a href="{% url 'apropos-page' %}">À Propos</a></li>
-                    <li><a href="{% url 'programmes-page' %}">Programmes</a></li>
-                    <li><a href="{% url 'plateforme-page' %}">Plateforme</a></li>
+                    <li><a href="{% url 'home-page' %}">Home</a></li>
+                    <li><a href="{% url 'apropos-page' %}">About</a></li>
+                    <li><a href="{% url 'programmes-page' %}">Programs</a></li>
+                    <li><a href="{% url 'plateforme-page' %}">Platform</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Ressources</h3>
+                <h3>Resources</h3>
                 <ul>
                     <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Rapports Annuels</a></li>
+                    <li><a href="#">Annual Reports</a></li>
                     <li><a href="#">Publications</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>
@@ -1420,7 +1410,7 @@ des scientifiques, ONG, jeunes et acteurs de la société civile.</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 RAJAPI-COP Africa. Tous droits réservés.</p>
+            <p>© 2026 RAJAPI-COP Africa. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1511,84 +1501,74 @@ des scientifiques, ONG, jeunes et acteurs de la société civile.</p>
 
         startAutoSlide();
 
-
-       // Newsletter form submission with AJAX
-    
-document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const form = this;
-    const email = document.getElementById('newsletter-email').value;
-    const btn = document.getElementById('newsletter-btn');
-    const messageDiv = document.getElementById('newsletter-message');
-    const alertDiv = document.getElementById('newsletter-alert');
-    
-    // Désactiver le bouton pendant l'envoi
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
-    
-    // Récupérer le token CSRF
-    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-    
-    // Créer les données du formulaire en format URL-encoded
-    const formData = new URLSearchParams();
-    formData.append('email', email);
-    
-    fetch("{% url 'newsletter-subscribe' %}", {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'X-CSRFToken': csrftoken,
-            'X-Requested-With': 'XMLHttpRequest'
-        },
-        credentials: 'same-origin'
-    })
-    .then(response => {
-        // Vérifier le statut de la réponse
-        if (!response.ok && response.status !== 400) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Afficher le message
-        messageDiv.style.display = 'block';
-        
-        if (data.success) {
-            alertDiv.style.background = '#d4edda';
-            alertDiv.style.color = '#155724';
-            alertDiv.style.border = '2px solid #28a745';
-            alertDiv.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
-            form.reset();
+        // Newsletter form submission with AJAX
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Masquer le message après 5 secondes
-            setTimeout(() => {
-                messageDiv.style.display = 'none';
-            }, 5000);
-        } else {
-            alertDiv.style.background = '#f8d7da';
-            alertDiv.style.color = '#721c24';
-            alertDiv.style.border = '2px solid #dc3545';
-            alertDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message;
-        }
-    })
-    .catch(error => {
-        console.error('Erreur:', error);
-        messageDiv.style.display = 'block';
-        alertDiv.style.background = '#f8d7da';
-        alertDiv.style.color = '#721c24';
-        alertDiv.style.border = '2px solid #dc3545';
-        alertDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Une erreur s\'est produite. Veuillez réessayer.';
-    })
-    .finally(() => {
-        // Réactiver le bouton
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> S\'abonner';
-    });
-});
+            const form = this;
+            const email = document.getElementById('newsletter-email').value;
+            const btn = document.getElementById('newsletter-btn');
+            const messageDiv = document.getElementById('newsletter-message');
+            const alertDiv = document.getElementById('newsletter-alert');
+            
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            
+            const formData = new URLSearchParams();
+            formData.append('email', email);
+            
+            fetch("{% url 'newsletter-subscribe' %}", {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': csrftoken,
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                if (!response.ok && response.status !== 400) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                messageDiv.style.display = 'block';
+                
+                if (data.success) {
+                    alertDiv.style.background = '#d4edda';
+                    alertDiv.style.color = '#155724';
+                    alertDiv.style.border = '2px solid #28a745';
+                    alertDiv.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                } else {
+                    alertDiv.style.background = '#f8d7da';
+                    alertDiv.style.color = '#721c24';
+                    alertDiv.style.border = '2px solid #dc3545';
+                    alertDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                messageDiv.style.display = 'block';
+                alertDiv.style.background = '#f8d7da';
+                alertDiv.style.color = '#721c24';
+                alertDiv.style.border = '2px solid #dc3545';
+                alertDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> An error occurred. Please try again.';
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Subscribe';
+            });
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 </html>
