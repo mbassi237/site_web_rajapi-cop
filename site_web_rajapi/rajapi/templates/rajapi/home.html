@@ -6,6 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAJAPI-COP Africa - Réseau des Jeunes Africains pour la Justice Climatique</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -969,6 +978,98 @@ body {
         max-width: 1400px;
     }
 }
+
+/* Newsletter Section */
+.newsletter-section {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.newsletter-section h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.newsletter-section p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 15px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 18px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+.newsletter-form button {
+    padding: 18px 40px;
+    background: var(--white);
+    color: var(--primary-blue);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.newsletter-form button:hover {
+    background: var(--bg-light);
+    transform: scale(1.05);
+}
+
+.newsletter-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+}
+
+.benefit-item i {
+    font-size: 24px;
+}
+
+/* Responsive Newsletter */
+@media (max-width: 768px) {
+    .newsletter-section h2 {
+        font-size: 32px;
+    }
+    
+    .newsletter-section p {
+        font-size: 16px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-benefits {
+        gap: 20px;
+    }
+}
     </style>
 </head>
 <body>
@@ -987,28 +1088,34 @@ body {
 
     <!-- Header -->
     <header>
-        <nav>
-            <a href="#" class="logo">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a href="#" class="logo">
                 <img src="{% static 'rajapi/images/rajapi-cop_logo.ico' %}" alt="RAJAPI-COP Logo" class="logo-img">
                 RAJAPI-COP Africa
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="{% url 'home-page' %}">Accueil</a></li>
-                <li><a href="{% url 'plateforme-page' %}">Plateforme</a></li>
-                <li><a href="{% url 'programmes-page' %}">Programmes</a></li>
-                <li><a href="{% url 'apropos-page' %}">À Propos</a></li>
-                <li><a href="{% url 'actualites-page' %}">Actualités</a></li>
-                <li><a href="{% url 'noscontacts-page' %}">Contact</a></li>
-            </ul>
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="changeLanguage('fr')">FR</button>
-                <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn" onclick="changeLanguage('ar')">AR</button>
-                <button class="lang-btn" onclick="changeLanguage('es')">ES</button>
-            </div>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'programmes-page' %}">Programmes</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'apropos-page' %}">À Propos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'actualites-page' %}">Actualités</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'noscontacts-page' %}">Contact</a>
+                    </li>
+                </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -1017,7 +1124,7 @@ body {
     <section class="carousel" id="accueil">
         <div class="carousel-container">
             <div class="carousel-slide active">
-                <img src="{% static 'rajapi/images/pays.jpeg' %}" alt="Promouvoir l'innovation des jeunes">
+                <img src="{% static 'rajapi/images/Rajapi1_carroussel.jpeg' %}" alt="Promouvoir l'innovation des jeunes">
                 <div class="carousel-caption">
                     <h1>La jeunesse africaine au cœur des décisions mondiales</h1>
                     <p>RAJAPI-COP Africa mobilise la jeunesse africaine pour transformer les défis climatiques, environnementaux et sociaux en solutions concrètes, portées jusqu’aux Nations Unies et aux COP internationales.</p>
@@ -1232,6 +1339,46 @@ des scientifiques, ONG, jeunes et acteurs de la société civile.</p>
         </div>
     </section>
 
+     <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Restez Connectés !</h2>
+            <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités, opportunités et événements directement dans votre boîte mail</p>
+            
+            <!-- Messages de succès/erreur -->
+            <div id="newsletter-message" style="margin-bottom: 20px; display: none;">
+                <div id="newsletter-alert" style="max-width: 600px; margin: 0 auto; padding: 15px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;"></div>
+            </div>
+            
+            <form class="newsletter-form" id="newsletter-form" method="post">
+                {% csrf_token %}
+                <input type="email" name="email" id="newsletter-email" placeholder="Votre adresse email" required>
+                <button type="submit" id="newsletter-btn">
+                    <i class="fas fa-paper-plane"></i> S'abonner
+                </button>
+            </form>
+
+            <div class="newsletter-benefits">
+                <div class="benefit-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Actualités hebdomadaires</span>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Opportunités exclusives</span>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Invitations événements</span>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Ressources gratuites</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-grid">
@@ -1363,6 +1510,85 @@ des scientifiques, ONG, jeunes et acteurs de la société civile.</p>
         });
 
         startAutoSlide();
+
+
+       // Newsletter form submission with AJAX
+    
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const email = document.getElementById('newsletter-email').value;
+    const btn = document.getElementById('newsletter-btn');
+    const messageDiv = document.getElementById('newsletter-message');
+    const alertDiv = document.getElementById('newsletter-alert');
+    
+    // Désactiver le bouton pendant l'envoi
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+    
+    // Récupérer le token CSRF
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    
+    // Créer les données du formulaire en format URL-encoded
+    const formData = new URLSearchParams();
+    formData.append('email', email);
+    
+    fetch("{% url 'newsletter-subscribe' %}", {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': csrftoken,
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        credentials: 'same-origin'
+    })
+    .then(response => {
+        // Vérifier le statut de la réponse
+        if (!response.ok && response.status !== 400) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Afficher le message
+        messageDiv.style.display = 'block';
+        
+        if (data.success) {
+            alertDiv.style.background = '#d4edda';
+            alertDiv.style.color = '#155724';
+            alertDiv.style.border = '2px solid #28a745';
+            alertDiv.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+            form.reset();
+            
+            // Masquer le message après 5 secondes
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        } else {
+            alertDiv.style.background = '#f8d7da';
+            alertDiv.style.color = '#721c24';
+            alertDiv.style.border = '2px solid #dc3545';
+            alertDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message;
+        }
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+        messageDiv.style.display = 'block';
+        alertDiv.style.background = '#f8d7da';
+        alertDiv.style.color = '#721c24';
+        alertDiv.style.border = '2px solid #dc3545';
+        alertDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Une erreur s\'est produite. Veuillez réessayer.';
+    })
+    .finally(() => {
+        // Réactiver le bouton
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> S\'abonner';
+    });
+});
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </body>
 </html>
