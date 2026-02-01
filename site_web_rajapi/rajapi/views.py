@@ -373,3 +373,25 @@ def send_welcome_newsletter_email(subscriber):
     )
     email.attach_alternative(html_content, "text/html")
     email.send()
+    
+    
+    
+    
+    
+    
+    
+
+
+import os
+from django.conf import settings
+from django.http import FileResponse, Http404
+
+def download_document(request, filename):
+    # Chemin vers ton dossier static/documents
+    documents_dir = os.path.join(settings.BASE_DIR, 'static', 'documents')
+    file_path = os.path.join(documents_dir, filename)
+
+    if not os.path.exists(file_path):
+        raise Http404("Document introuvable")
+
+    return FileResponse(open(file_path, 'rb'), as_attachment=True)

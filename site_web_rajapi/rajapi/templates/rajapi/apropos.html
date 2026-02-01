@@ -729,6 +729,122 @@ body {
     }
 }
 
+/* Section Équipe */
+.team-section {
+    margin-top: 40px;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.team-section h4 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.team-subtitle {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.team-member {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+    border-color: var(--primary-blue);
+    background: var(--white);
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.member-role {
+    font-size: 13px;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .member-photo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .team-section {
+        padding: 25px;
+    }
+}
+
+/* Responsive pour mobile */
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .team-member {
+        padding: 15px;
+    }
+    
+    .member-photo {
+        width: 80px;
+        height: 80px;
+        border: 3px solid var(--primary-blue);
+    }
+    
+    .member-info h5 {
+        font-size: 14px;
+    }
+    
+    .member-role {
+        font-size: 12px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -941,16 +1057,314 @@ Our network relies on an innovative collaborative digital platform, designed as 
 
                     <p>His vision: transform every African young person into an agent of change, capable of carrying innovative solutions from their communities to international bodies.</p>
 
-                    <div class="achievements">
-                        <h4>Awards & International Engagements</h4>
-                        <ul>
-                            <li>Official delegate to Climate COPs (UNFCCC)</li>
-                            <li>Expert-advisor to UNEP on youth issues</li>
-                            <li>Member of the UN-Habitat Youth Advisory Board</li>
-                            <li>Winner of several climate innovation awards</li>
-                            <li>International speaker on climate justice</li>
-                            <li>Certified trainer in leadership and green entrepreneurship</li>
-                        </ul>
+                    <!-- Section Membres de l'équipe -->
+                    <div class="team-section">
+                        <h4>Our Team Members</h4>
+                        <p class="team-subtitle">26 dedicated leaders driving change across Africa</p>
+                        
+                        <div class="team-grid" id="team-grid">
+                            <!-- Membre 1 -->
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="{% static 'rajapi/images/MOUSSATEMBEDOUNO .jpeg' %}" alt="MOUSSATEMBEDOUNO">
+                                </div>
+                                <div class="member-info">
+                                    <h5>MOUSSATEMBEDOUNO</h5>
+                                    <p class="member-role">République de Guinée</p>
+                                </div>
+                            </div>
+
+                            <!-- Membre 2 -->
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="{% static 'rajapi/images/NDAYISHIMIYE Emile .jpeg' %}" alt="NDAYISHIMIYE Emile">
+                                </div>
+                                <div class="member-info">
+                                    <h5>NDAYISHIMIYE Emile</h5>
+                                    <p class="member-role">Burundi</p>
+                                </div>
+                            </div>
+
+                            <!-- Membre 3 -->
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="{% static 'rajapi/images/SOSSOU Camille.jpeg' %}" alt="SOSSOU Camille">
+                                </div>
+                                <div class="member-info">
+                                    <h5>SOSSOU Camille</h5>
+                                    <p class="member-role">Bénin</p>
+                                </div>
+                            </div>
+
+                            <!-- Membre 4 -->
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="{% static 'rajapi/images/Abdourahmane Marena.jpeg' %}" alt="Abdourahmane Marena">
+                                </div>
+                                <div class="member-info">
+                                    <h5>Abdourahmane Marena</h5>
+                                    <p class="member-role">Sénégal</p>
+                                </div>
+                            </div>
+
+                            <!-- Membre 5 -->
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="{% static 'rajapi/images/Mahfouz Ben Ali Saindoune.jpeg' %}" alt="Mahfouz Ben Ali Saindoune">
+                                </div>
+                                <div class="member-info">
+                                    <h5>Mahfouz Ben Ali Saindoune</h5>
+                                    <p class="member-role">Union des Comores</p>
+                                </div>
+                            </div>
+
+                            <!-- Tuile cliquable "Voir plus" (6ème position) -->
+                            <div class="team-member team-toggle" id="team-toggle" style="cursor: pointer;">
+                                <div class="member-photo toggle-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="member-info">
+                                    <h5 id="toggle-text">+ 20 other members</h5>
+                                    <p class="member-role">Click to view all</p>
+                                </div>
+                            </div>
+
+                            <!-- Les 20 membres cachés -->
+                            <div id="hidden-members" style="display: none; grid-column: 1 / -1;">
+                                <div class="team-grid" style="margin-top: 20px;">
+                                    <!-- Membre 6 -->
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/DANZI Divine Charlène.jpeg' %}" alt="DANZI Divine Charlène">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>DANZI Divine Charlène</h5>
+                                            <p class="member-role">République centrafricaine</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Membre 7 -->
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Osayomore Lucky Omorogieva.jpeg' %}" alt="Member 7">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Osayomore Lucky Omorogieva</h5>
+                                            <p class="member-role">Nigeria</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Membre 8 -->
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/ONGOUYA GRÂCE SALOMON.jpeg' %}" alt="Member 8">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>ONGOUYA GRÂCE SALOMON</h5>
+                                            <p class="member-role">Republic of congo</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Membre 9 -->
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Aya Salah Mahmoud Mohamed.jpeg' %}" alt="Member 9">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Aya Salah Mahmoud Mohamed</h5>
+                                            <p class="member-role">Egypt</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Membre 10 -->
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/RANIRINA Nantenaina Phidèle.jpeg' %}" alt="Member 10">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>RANIRINA Nantenaina Phidèle </h5>
+                                            <p class="member-role">Madagascar</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Continuez pour les membres 11-26 -->
+                                    <!-- Ajoutez 15 autres blocs similaires -->
+                                    
+                                    <!-- Exemple pour les derniers membres -->
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Gaoussou TOGOLA,.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Gaoussou TOGOLA</h5>
+                                            <p class="member-role">Mali</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Salissou HAMÉ BARMOU .jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Salissou HAMÉ BARMOU</h5>
+                                            <p class="member-role">Niger</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Fardowso ahmed wehiye.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Fardowso ahmed wehiye</h5>
+                                            <p class="member-role">Somalia</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Fatimetou Abdellahi MAilim.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Fatimetou Abdellahi M'Ailim</h5>
+                                            <p class="member-role">Mauritanie</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/WOMAS Edo Kwasi.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>WOMAS Edo Kwasi</h5>
+                                            <p class="member-role">Togo</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Jeanau Gerald Yembi Pambou.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Jeanau Gerald Yembi Pambou</h5>
+                                            <p class="member-role">Gabon</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Bubacarr Baldeh.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Bubacarr Baldeh</h5>
+                                            <p class="member-role">Gambia</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Sarah Simo.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Sarah Simo</h5>
+                                            <p class="member-role">Cameroun</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Rutendo Chikowore .jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Rutendo Chikowore</h5>
+                                            <p class="member-role">South Africa</p>
+                                        </div>
+                                    </div>
+                                     <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Crispin Ngakani.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Gaoussou TOGOLA</h5>
+                                            <p class="member-role">Crispin Ngakani</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Vanny Kasajhi .jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Vanny Kasajhi</h5>
+                                            <p class="member-role">Zambia</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Hilary Tsitsi Chikunguru.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Hilary Tsitsi Chikunguru</h5>
+                                            <p class="member-role">Zimbabwe</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/OUHMAMI YACINE.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>OUHMAMI YACINE</h5>
+                                            <p class="member-role">Marocco</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Justine Akpene Egbenya.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Justine Akpene Egbenya</h5>
+                                            <p class="member-role">Ghana</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Talih Osman Khalifa.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Talih Osman Khalifa</h5>
+                                            <p class="member-role">Soudan</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Annael Bidima Ahanda.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Annael Bidima Ahanda</h5>
+                                            <p class="member-role">Secretary for Projects, Programs, and Innovations</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Kazong Miriam Kumbong.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Kazong Miriam Kumbong</h5>
+                                            <p class="member-role">Secretary general for communication mobilisation, and advocacy</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Wubnyonga Albertine Kaba.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Wubnyonga Albertine Kaba</h5>
+                                            <p class="member-role">Secretary for monitoring and evaluation partnerships, and Funding</p>
+                                        </div>
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="member-photo">
+                                            <img src="{% static 'rajapi/images/Ange Raphaëlle MBENGUE.jpeg' %}" alt="Member 26">
+                                        </div>
+                                        <div class="member-info">
+                                            <h5>Ange Raphaëlle MBENGUE</h5>
+                                            <p class="member-role">Secretary General for Administrative and Institutional Coordination</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1138,6 +1552,35 @@ Our network relies on an innovative collaborative digital platform, designed as 
                     hiddenCountries.style.display = 'none';
                     toggleText.textContent = '+ 19 other countries';
                     toggle.querySelector('i').classList.replace('fa-minus-circle', 'fa-plus-circle');
+                }
+            });
+        }
+    });
+</script>
+<script>
+    // Script pour dérouler/réduire les membres de l'équipe
+    document.addEventListener('DOMContentLoaded', function () {
+        const teamToggle = document.getElementById('team-toggle');
+        const hiddenMembers = document.getElementById('hidden-members');
+        const toggleText = document.getElementById('toggle-text');
+
+        if (teamToggle && hiddenMembers && toggleText) {
+            teamToggle.addEventListener('click', function () {
+                if (hiddenMembers.style.display === 'none' || hiddenMembers.style.display === '') {
+                    // Dérouler
+                    hiddenMembers.style.display = 'block';
+                    toggleText.textContent = 'Show less';
+                    teamToggle.querySelector('i').classList.replace('fa-users', 'fa-minus-circle');
+                    teamToggle.querySelector('.member-role').textContent = 'Click to collapse';
+                } else {
+                    // Réduire
+                    hiddenMembers.style.display = 'none';
+                    toggleText.textContent = '+ 20 other members';
+                    teamToggle.querySelector('i').classList.replace('fa-minus-circle', 'fa-users');
+                    teamToggle.querySelector('.member-role').textContent = 'Click to view all';
+                    
+                    // Scroll vers la section team pour une meilleure UX
+                    teamToggle.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
             });
         }
