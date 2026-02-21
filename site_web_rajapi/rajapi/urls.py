@@ -17,4 +17,5 @@ urlpatterns = [
     path('contact/', views.noscontacts_page, name='noscontacts-page'),
     path('newsletter/subscribe/', views.newsletter_subscribe, name='newsletter-subscribe'),
     path('download/<path:filename>/', views.download_document, name='download-doc'),
+    path('donation/submit/', views.donation_submit, name='donation-submit'),
 ]

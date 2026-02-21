@@ -114,3 +114,24 @@ class NewsletterSubscriber(models.Model):
         self.actif = False
         self.date_desabonnement = timezone.now()
         self.save()
+
+
+
+
+
+class Donation(models.Model):
+    full_name = models.CharField(max_length=200)
+    email = models.EmailField()
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    country = models.CharField(max_length=100)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    payment_method = models.CharField(max_length=100)
+    transaction_reference = models.CharField(max_length=200, blank=True, null=True)
+    purpose = models.CharField(max_length=200, blank=True, null=True)
+    message = models.TextField(blank=True, null=True)
+    anonymous = models.BooleanField(default=False)
+    newsletter = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.full_name} - {self.amount} FCFA"

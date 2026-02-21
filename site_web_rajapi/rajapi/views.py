@@ -38,8 +38,10 @@ from django.views.decorators.http import require_http_methods
 from .models import ContactMessage, NewsletterSubscriber
 from .forms import ContactForm, NewsletterForm
 import json
+from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
+from .models import Donation
 
 def get_client_ip(request):
     """Récupère l'adresse IP du client"""
@@ -395,3 +397,55 @@ def download_document(request, filename):
         raise Http404("Document introuvable")
 
     return FileResponse(open(file_path, 'rb'), as_attachment=True)
+
+
+
+
+
+
+
+
+@require_POST
+def donation_submit(request):
+    try:
+        donation = Donation.objects.create(
+            full_name=request.POST.get('full_name'),
+            email=request.POST.get('email'),
+            phone=request.POST.get('phone', ''),
+            country=request.POST.get('country'),
+            amount=request.POST.get('amount'),
+            payment_method=request.POST.get('payment_method'),
+            transaction_reference=request.POST.get('transaction_reference', ''),
+            purpose=request.POST.get('purpose', ''),
+            message=request.POST.get('message', ''),
+            anonymous=request.POST.get('anonymous') == 'on',
+            newsletter=request.POST.get('newsletter') == 'on'
+        )
+        
+        # Send confirmation email to donor
+        send_mail(
+            'Thank You for Your Donation to RAJAPI-COP Africa',
+            f'Dear {donation.full_name},\n\nThank you for your generous donation of {donation.amount} FCFA...',
+            'fonder.rajapicop@gmail.com',
+            [donation.email],
+            fail_silently=False,
+        )
+        
+        # Send notification to admin
+        send_mail(
+            f'New Donation: {donation.amount} FCFA',
+            f'Name: {donation.full_name}\nAmount: {donation.amount} FCFA\n...',
+            'fonder.rajapicop@gmail.com',
+            ['fonder.rajapicop@gmail.com'],
+            fail_silently=False,
+        )
+        
+        return JsonResponse({
+            'success': True,
+            'message': 'Thank you! We have received your donation notification. You will receive a confirmation email shortly.'
+        })
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'message': 'An error occurred. Please try again or contact us directly.'
+        })
